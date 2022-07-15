@@ -1,0 +1,4 @@
+utils/*.js
+src/assets
+public
+dist
