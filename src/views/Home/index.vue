@@ -26,7 +26,7 @@ export default {
         },
         // 跳转github
         handleGitHub() {
-            window.open('https://github.com/qq282126990/ivue-ui');
+            window.open('https://github.com/qq282126990/ivue-ui-vue3');
         },
     },
     components: {

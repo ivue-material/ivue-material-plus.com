@@ -1,6 +1,7 @@
 <template>
-    <div id="app">
+    <div class="app">
         <div class="app-header" :style="{'z-index': hideMenu ? '0' : '100'}">
+            <!-- 头部 -->
             <div class="app-header-wrapper">
                 <div class="app-header-menu">
                     <ivue-button flat icon @click="handleMenu()">
@@ -13,6 +14,7 @@
                         <p class="text">IVue</p>
                     </div>
                 </router-link>
+                <!-- 生态系统 -->
                 <div class="app-header-github">
                     <div class="app-header-ecology">
                         <p>生态系统</p>
@@ -94,7 +96,7 @@ export default {
                     params: '/',
                 });
             }
-
+            console.log('this.isMobile', this.isMobile);
             // 移动端
             if (this.isMobile && !this.initial) {
                 this.setHideMenu(!this.hideMenu);
@@ -115,11 +117,13 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
 
-    height: 100%;
+    min-height: 100vh;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     background-color: #f5f5f5;
     font-size: 14px;
+
     h1,
     h2,
     h3,
@@ -146,7 +150,7 @@ export default {
     .hljs-regexp,
     .hljs-deletion,
     .hljs-selector-tag {
-        color: #4177f6;
+        color: #5B8EFF;
     }
 
     .hljs-string,
@@ -176,11 +180,18 @@ export default {
     }
 
     .router-link-active {
-        color: #2d8cf0;
+        color: #5B8EFF;
     }
 }
 
 .app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    flex: 1;
+
     /*头部*/
     &-header {
         position: fixed;
