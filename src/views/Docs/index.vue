@@ -2,7 +2,7 @@
     <div class="docs">
         <!-- 导航 -->
         <transition name="docs-transition">
-            <div class="docs-navigations" @click="handleHideMenu" v-show="!hideMenu">
+            <div class="docs-navigations" @click="handleHideMenu" v-show="hideMenu">
                 <!-- router -->
                 <ul class="router-list" @click.stop>
                     <li class="router-list-li" v-for="item in routers" :key="item.name">
@@ -50,12 +50,14 @@
                 </keep-alive>
             </router-view>
         </div>
+        <!-- footer -->
+        <ivue-footer></ivue-footer>
     </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import Footer from '@/components/Footer';
+import IvueFooter from '@/components/footer';
 
 export default {
     name: 'docs',
@@ -73,7 +75,7 @@ export default {
                     child: [],
                 },
                 {
-                    name: '开始使用',
+                    name: '快速开始',
                     router: '/docs/start-use',
                     child: [],
                 },
@@ -264,17 +266,6 @@ export default {
             ],
         };
     },
-    created() {
-        const route = this.$route;
-
-        // 错误跳转到主页
-        if (route.name === 'error') {
-            this.$router.replace({
-                name: 'error',
-                params: '/home',
-            });
-        }
-    },
     computed: {
         ...mapState({
             hideMenu: 'hideMenu',
@@ -296,7 +287,7 @@ export default {
         },
     },
     components: {
-        Footer,
+        IvueFooter,
     },
 };
 </script>
@@ -407,6 +398,11 @@ export default {
         display: block;
         width: 83.33333333%;
         background-color: #fff;
+        font-size: 14px;
+
+        a {
+            margin: 0 10px;
+        }
 
         p {
             margin: 5px;
@@ -451,7 +447,8 @@ export default {
             overflow-y: scroll;
             z-index: 100;
             background: rgba(0, 0, 0, 0.8);
-            .router-lists {
+
+            .router-list {
                 margin-right: 30%;
                 background: #fff;
             }
@@ -473,7 +470,8 @@ export default {
 .docs-transition-leave-to {
     opacity: 0;
 
-    .router-lists {
+    .router-list {
+        position: relative;
         transform: translate3d(-100%, 0, 0);
     }
 }

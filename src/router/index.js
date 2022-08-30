@@ -3,7 +3,6 @@ import {
   createWebHistory,
 } from 'vue-router';
 
-
 function lazyLoading(path, name) {
   return function() {
     return import(`@/views/${path}/${name}.vue`);
@@ -16,23 +15,29 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'error',
     redirect: '/',
-    component: lazyLoading('Home', 'index'),
+    component: lazyLoading('home', 'index'),
   },
   {
     path: '/',
-    name: 'Home',
-    component: lazyLoading('Home', 'index'),
+    name: 'home',
+    component: lazyLoading('home', 'index'),
   },
   {
     path: '/docs/',
     name: 'docs',
-    component: lazyLoading('Docs', 'index'),
+    component: lazyLoading('docs', 'index'),
     children: [
       // 安装
       {
         path: '/docs/install',
         name: 'install',
-        component: lazyLoading('Docs', 'install'),
+        component: lazyLoading('docs', 'install'),
+      },
+      // 快速开始
+      {
+        path: '/docs/start-use',
+        name: 'start-use',
+        component: lazyLoading('docs', 'start-use'),
       },
     ],
   },

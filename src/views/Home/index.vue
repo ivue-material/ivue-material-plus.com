@@ -5,17 +5,19 @@
             <h2 class="home-text">一套基于 Material Design 规范</h2>
             <h2 class="home-text">UI组件库</h2>
             <div class="button-wrapper">
+                <!-- 开始使用 -->
                 <ivue-button class="button" status="primary" depressed @click="handleStartUse">开始使用</ivue-button>
+                <!-- GitHub -->
                 <ivue-button class="button" outline @click="handleGitHub">GitHub</ivue-button>
             </div>
         </div>
         <!-- 底部 -->
-        <Footer></Footer>
+        <ivue-footer></ivue-footer>
     </div>
 </template>
 
 <script>
-import Footer from '@/components/Footer';
+import IvueFooter from '@/components/footer';
 
 export default {
     name: 'Home',
@@ -30,7 +32,7 @@ export default {
         },
     },
     components: {
-        Footer,
+        IvueFooter,
     },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <div class="app-header" :style="{'z-index': hideMenu ? '0' : '100'}">
+        <div class="app-header" :style="{'z-index': hideMenu ? '1' : '100'}">
             <!-- 头部 -->
             <div class="app-header-wrapper">
                 <div class="app-header-menu">
@@ -63,15 +63,6 @@ import { mapState, mapActions } from 'vuex';
 export default {
     name: 'app',
     mounted() {
-        const route = this.$route;
-
-        if (route.name === 'error') {
-            this.$router.replace({
-                name: 'error',
-                params: '/',
-            });
-        }
-
         // 初始化
         this.initial = true;
     },
@@ -81,6 +72,7 @@ export default {
         }),
     },
     methods: {
+        // 显示菜单
         handleMenu() {
             this.setHideMenu(!this.hideMenu);
         },
@@ -89,6 +81,7 @@ export default {
         }),
     },
     watch: {
+        // 监听路由
         $route(route) {
             if (route.path === '/docs/') {
                 this.$router.replace({
@@ -96,7 +89,7 @@ export default {
                     params: '/',
                 });
             }
-            console.log('this.isMobile', this.isMobile);
+
             // 移动端
             if (this.isMobile && !this.initial) {
                 this.setHideMenu(!this.hideMenu);
@@ -105,6 +98,7 @@ export default {
             // 初始化
             this.initial = false;
 
+            // 返回顶部
             window.scrollTo(0, 0);
         },
     },
@@ -135,7 +129,12 @@ export default {
         color: #2c3e50;
     }
 
+    pre {
+        margin-top: 10px;
+    }
+
     .hljs {
+        display: block;
         padding: 15px;
         border-radius: 5px;
         background-color: #f3f5f6;
@@ -150,7 +149,7 @@ export default {
     .hljs-regexp,
     .hljs-deletion,
     .hljs-selector-tag {
-        color: #5B8EFF;
+        color: #5b8eff;
     }
 
     .hljs-string,
@@ -180,7 +179,7 @@ export default {
     }
 
     .router-link-active {
-        color: #5B8EFF;
+        color: #5b8eff;
     }
 }
 
@@ -192,7 +191,7 @@ export default {
     font-size: 14px;
     flex: 1;
 
-    /*头部*/
+    // 头部
     &-header {
         position: fixed;
         top: 0;
@@ -291,13 +290,13 @@ export default {
             &-menu {
                 display: block;
                 .ivue-icon {
-                    font-size: 35px;
+                    font-size: 35px !important;
                 }
             }
         }
     }
 
-    /* 底部 */
+    // 底部
     &-footer {
         position: absolute;
         bottom: 0;

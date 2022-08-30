@@ -1,41 +1,34 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
-  'extends': [
+  extends: [
     'plugin:vue/vue3-essential',
-    'eslint:recommended',
-    "plugin:vue/base"
+    '@vue/airbnb',
   ],
-  "parser": "vue-eslint-parser",
-  "parserOptions": {
-    "vueFeatures": {
-      "filter": true,
-      "interpolationAsNonHTML": false,
-    }
+  parserOptions: {
+    parser: 'babel-eslint',
   },
   rules: {
-    // "quotes": ["error", "single"],
-    // "semi": ["error", "always"],
-    // "vue/jsx-uses-vars": 2,
-    // "no-console": ["error"],
-    // "@typescript-eslint/no-explicit-any": ["off"],
-    // "vue/no-use-v-if-with-v-for": ["error", {
-    //   "allowUsingIterationVar": false
-    // }],
-    // "vue/no-side-effects-in-computed-properties": ["off"],
     'vue/no-parsing-error': ['error', {
       'x-invalid-end-tag': false,
     }],
+    // indent: ['error', 4, {
+    //   SwitchCase: 1,
+    //   ignoredNodes: ['TemplateLiteral'],
+    // }],
     'no-nested-ternary': 'off',
     'no-underscore-dangle': 'off',
+    // "camelcase": ["error", {
+    //   "allow": ["aa_bb", "_aa"],
+
+    // }],
     'no-lonely-if': 'off',
     'no-named-as-default': 'off',
     'vue/no-side-effects-in-computed-properties': 'off',
     'vue/no-deprecated-v-on-native-modifier': 'off',
     radix: 'off',
-
     'linebreak-style': 'off',
     'space-before-function-paren': ['error', 'never'],
     'brace-style': [2, 'stroustrup'],
@@ -82,13 +75,15 @@ module.exports = {
     'prefer-template': 'warn',
     'no-use-before-define': 'off',
     'no-shadow': 'warn',
+    'import/no-extraneous-dependencies': 'warn',
+    'import/first': 'warn',
     'import/no-unresolved': 'off',
     'template-curly-spacing': 'off',
+    "vue/no-unused-components": ["error", {
+      "ignoreWhenBindingPresent": false
+    }]
   },
   globals: {
-    API: true,
-    axios: true,
-    SessionStore: true,
-    vm: true,
+    '@': true,
   },
-}
+};

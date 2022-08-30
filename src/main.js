@@ -1,25 +1,34 @@
+/* eslint-disable */
 import {
   createApp,
 } from 'vue';
+
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
 import Hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
-import IvueMaterial from '../dist/ivue';
+import javascript from 'highlight.js/lib/languages/javascript';
+
+import IvueMaterial from '../dist/ivue-material-plus.min.esm';
 import '../dist/styles/ivue.css';
+import '../dist/styles/elevation.css';
+import '../dist/styles/layout.css';
+import '../dist/styles/color.css';
+
+import DocMarkdown from './components/doc-markdown.vue';
 
 const app = createApp(App);
 
-app.use(IvueMaterial);
+// 识别为javascript
+Hljs.registerLanguage('javascript', javascript);
+Hljs.configure({ ignoreUnescapedHTML: true });
 
-app.directive('highlight', {
-  mounted: (e) => {
-    const blocks = e.querySelectorAll('pre code');
-    Array.prototype.forEach.call(blocks, Hljs.highlightBlock);
-  },
-});
+app.component('DocMarkdown', DocMarkdown);
+
+app.use(IvueMaterial);
 
 // 判断移动设备
 const ua = navigator.userAgent;
@@ -28,13 +37,13 @@ const isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
 const isAndroid = ua.match(/(Android)\s+([\d.]+)/);
 const isMobile = isIphone || isAndroid;
 
+// 移动端
 if (isMobile) {
   app.config.globalProperties.isMobile = true;
 }
- else {
+// 不是移动端
+else {
   app.config.globalProperties.isMobile = false;
 }
-
-
 
 app.use(store).use(router).mount('#app');
