@@ -14,8 +14,6 @@
             <code>unplugin-auto-import</code>
             <span>这两款插件</span>
         </p>
-        <h3>Vite</h3>
-        <pre><code>{{ code.vite }}</code></pre>
     </div>
 </template>
 

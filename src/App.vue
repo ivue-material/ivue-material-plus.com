@@ -178,15 +178,6 @@ export default {
         background-color: #f3f5f6;
     }
 
-    p code {
-        padding: 2px 4px;
-        font-size: 85%;
-        background: hsla(0, 0%, 58.8%, 0.1);
-        border-radius: 3px;
-        margin: 0 2px;
-        border: 1px solid hsla(0, 0%, 39.2%, 0.2);
-    }
-
     .router-link-active {
         color: #5b8eff;
     }

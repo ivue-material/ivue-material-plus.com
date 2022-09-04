@@ -19,7 +19,6 @@ import '../dist/styles/layout.css';
 import '../dist/styles/color.css';
 
 import DocMarkdown from './components/doc-markdown.vue';
-import Example from './components/install/example.vue';
 
 const app = createApp(App);
 
@@ -28,7 +27,6 @@ Hljs.registerLanguage('javascript', javascript);
 Hljs.configure({ ignoreUnescapedHTML: true });
 
 app.component('DocMarkdown', DocMarkdown);
-app.component('Example', Example);
 
 app.use(IvueMaterial);
 
