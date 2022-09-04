@@ -24,8 +24,33 @@
             <span>,</span>
             <a target="_blank" href="https://cli.vuejs.org/">Vue CLI</a>
             <span>)和配置工具</span>
-            <!-- , Vue CLI) 和配置工具 -->
+            <span>请参考</span>
+            <a
+                target="_blank"
+                href="https://github.com/antfu/unplugin-vue-components#installation"
+            >unplugin-vue-components</a>
+            <span>和</span>
+            <a
+                target="_blank"
+                href="https://github.com/antfu/unplugin-auto-import#install"
+            >unplugin-auto-import</a>
         </p>
+        <h3>按需加载组件</h3>
+        <p>
+            <span>借助插件</span>
+            <a
+                target="_blank"
+                href="https://github.com/umijs/babel-plugin-import"
+            >babel-plugin-import</a>
+            <span>
+                可以实现按需加载组件，减少文件体积。首先安装，并在文件
+                <code>.babelrc</code>
+                <span>或者在 webpack</span>
+                <code>babel-loader</code>
+                <span>中配置：</span>
+            </span>
+        </p>
+        <pre><code>{{ code.babel }}</code></pre>
     </div>
 </template>
 
@@ -49,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 .start-use {
     a {
-        margin: 0;
+        margin: 0 3px;
     }
 }
 </style>

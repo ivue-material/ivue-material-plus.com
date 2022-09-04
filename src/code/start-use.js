@@ -57,4 +57,21 @@ module.exports = {
 }
 `;
 
+code.babel = `npm install babel-plugin-import --save-dev
+
+// .babelrc or babel-loader
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "ivue-material-plus",
+        "libraryDirectory": "src/components"
+      },
+      "ivue-material-plus"
+    ]
+  ]
+}
+`;
+
 export default code;
