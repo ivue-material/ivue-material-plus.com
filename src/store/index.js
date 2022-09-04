@@ -2,7 +2,6 @@ import {
   createStore,
 } from 'vuex';
 
-
 export const HIDE_MENU = 'HIDE_MENU';
 
 /* eslint-disable */

@@ -13,7 +13,7 @@ import 'highlight.js/styles/github.css';
 import javascript from 'highlight.js/lib/languages/javascript';
 
 import IvueMaterial from '../dist/ivue-material-plus.min.esm';
-import '../dist/styles/ivue.css';
+import '../dist/styles/index.css';
 import '../dist/styles/elevation.css';
 import '../dist/styles/layout.css';
 import '../dist/styles/color.css';
