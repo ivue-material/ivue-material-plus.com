@@ -12,12 +12,12 @@ import 'highlight.js/styles/github.css';
 
 import javascript from 'highlight.js/lib/languages/javascript';
 
-import IvueMaterial from '../dist/ivue-material-plus.min.esm';
+import IvueMaterial from 'ivue-material-plus';
 
-import '../dist/styles/index.css';
-import '../dist/styles/elevation.css';
-import '../dist/styles/layout.css';
-import '../dist/styles/color.css';
+import 'ivue-material-plus/dist/styles/index.css';
+import 'ivue-material-plus/dist/styles/elevation.css';
+import 'ivue-material-plus/dist/styles/layout.css';
+import 'ivue-material-plus/dist/styles/color.css';
 
 import DocMarkdown from './components/doc-markdown.vue';
 import Example from './components/install/example.vue';
