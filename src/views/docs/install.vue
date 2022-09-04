@@ -26,11 +26,15 @@
             <pre><code ref="cdn">{{code.cdn}}</code></pre>
         </p>
         <h2>示例</h2>
-        <p>通过 CDN 引入快速使用 ivue-material 写出一个示例。</p>
+        <p>
+            <span>通过 CDN 引入快速使用</span>
+            <code>ivue-material</code>
+            <span>写出一个示例。</span>
+        </p>
         <doc-markdown
             :code="code.example"
             jsfiddle="//jsfiddle.net/qq282126990/68guqzk3/"
-            >
+        >
             <template #demo>
                   <example></example>
             </template>
@@ -45,7 +49,6 @@
 import Hljs from 'highlight.js';
 
 import Code from '@/code/install';
-import Example from '@/components/install/example.vue';
 
 export default {
     name: 'install',
@@ -56,9 +59,6 @@ export default {
     },
     mounted() {
         Hljs.highlightAll();
-    },
-    components: {
-        Example,
     },
 };
 </script>

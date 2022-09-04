@@ -19,4 +19,24 @@ app.use(IvueMaterialPlus)
 app.mount('#app')
 `;
 
+code.vite = `// vite.config.js
+import { defineConfig } from 'vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { IvueMaterialPlusResolver } from 'ivue-material-plus/resolvers/ivue-material-plus'
+
+export default defineConfig({
+  // ...
+  plugins: [
+    // ...
+    AutoImport({
+      resolvers: [IvueMaterialPlusResolver()],
+    }),
+    Components({
+      resolvers: [IvueMaterialPlusResolver()],
+    }),
+  ],
+})
+`;
+
 export default code;

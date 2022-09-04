@@ -13,12 +13,14 @@ import 'highlight.js/styles/github.css';
 import javascript from 'highlight.js/lib/languages/javascript';
 
 import IvueMaterial from '../dist/ivue-material-plus.min.esm';
+
 import '../dist/styles/index.css';
 import '../dist/styles/elevation.css';
 import '../dist/styles/layout.css';
 import '../dist/styles/color.css';
 
 import DocMarkdown from './components/doc-markdown.vue';
+import Example from './components/install/example.vue';
 
 const app = createApp(App);
 
@@ -27,6 +29,7 @@ Hljs.registerLanguage('javascript', javascript);
 Hljs.configure({ ignoreUnescapedHTML: true });
 
 app.component('DocMarkdown', DocMarkdown);
+app.component('Example', Example);
 
 app.use(IvueMaterial);
 
