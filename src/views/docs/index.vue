@@ -9,7 +9,9 @@
                         <!-- 父级导航 -->
                         <router-link
                             class="router-list-item"
-                            :to="item.router"
+                            :to="{
+                                name: item.router
+                            }"
                             v-if="item.router"
                         >{{ item.name }}</router-link>
                         <!-- 子导航 -->
@@ -31,7 +33,9 @@
                                         <router-link
                                             class="router-list--child-item"
                                             v-for="menu in child.menu"
-                                            :to="menu.router"
+                                            :to="{
+                                                name: menu.router
+                                            }"
                                             :key="menu.name"
                                         >{{ menu.name }}</router-link>
                                     </ul>
@@ -71,17 +75,12 @@ export default {
             routers: [
                 {
                     name: '安装',
-                    router: '/docs/install',
+                    router: 'install',
                     child: [],
                 },
                 {
                     name: '快速开始',
-                    router: '/docs/start-use',
-                    child: [],
-                },
-                {
-                    name: '色彩',
-                    router: '/docs/color',
+                    router: 'start-use',
                     child: [],
                 },
                 {
@@ -91,173 +90,8 @@ export default {
                             name: '基础',
                             menu: [
                                 {
-                                    name: 'content 内容',
-                                    router: '/components/content',
-                                },
-                                {
                                     name: 'button 按钮',
-                                    router: '/components/button',
-                                },
-                                {
-                                    name: 'icon 图标',
-                                    router: '/components/icon',
-                                },
-                            ],
-                        },
-                        {
-                            name: '布局',
-                            menu: [
-                                {
-                                    name: 'Elevation',
-                                    router: '/components/elevation',
-                                },
-                                {
-                                    name: 'Layout',
-                                    router: '/components/layout',
-                                },
-                            ],
-                        },
-                        {
-                            name: 'UI',
-                            menu: [
-                                {
-                                    name: 'List 列表',
-                                    router: '/components/list',
-                                },
-                                {
-                                    name: 'Carousel 走马灯',
-                                    router: '/components/carousel',
-                                },
-                                {
-                                    name: 'Switch 开关',
-                                    router: '/components/switch',
-                                },
-                                {
-                                    name: 'BottomNav 底部导航',
-                                    router: '/components/bottom-nav',
-                                },
-                                {
-                                    name: 'Breadcrumbs 面包屑',
-                                    router: '/components/breadcrumbs',
-                                },
-                                {
-                                    name: 'Select 选择器',
-                                    router: '/components/select',
-                                },
-                                {
-                                    name: 'AutoComplete 输入框自动完成功能',
-                                    router: '/components/auto-complete',
-                                },
-                                {
-                                    name: 'Input 输入框',
-                                    router: '/components/input',
-                                },
-                                {
-                                    name: 'Stepper 步骤条',
-                                    router: '/components/stepper',
-                                },
-                                {
-                                    name: 'UpLoad 上传',
-                                    router: '/components/upLoad',
-                                },
-                                {
-                                    name: 'Progress 进度条',
-                                    router: '/components/progress',
-                                },
-                                {
-                                    name: 'Notice 通知提醒',
-                                    router: '/components/notice',
-                                },
-                                {
-                                    name: 'Message 全局提示',
-                                    router: '/components/message',
-                                },
-                                {
-                                    name: 'LoadingBar 加载进度条',
-                                    router: '/components/loading-bar',
-                                },
-                                {
-                                    name: 'Tabs 标签页',
-                                    router: '/components/tabs',
-                                },
-                                {
-                                    name: 'Badge 图钉',
-                                    router: '/components/badge',
-                                },
-                                {
-                                    name: 'DatePicker 日期/月份选择器',
-                                    router: '/components/date-picker',
-                                },
-                                {
-                                    name: 'Collapse 折叠面板',
-                                    router: '/components/collapse',
-                                },
-                                {
-                                    name: 'Cascader 级联选择器',
-                                    router: '/components/cascader',
-                                },
-                                {
-                                    name: 'Tooltip 提示',
-                                    router: '/components/tooltip',
-                                },
-                                {
-                                    name: 'Chip 芯片',
-                                    router: '/components/chip',
-                                },
-                                {
-                                    name: 'Radio 单选框',
-                                    router: '/components/radio',
-                                },
-                                {
-                                    name: 'CheckBox 复选框',
-                                    router: '/components/checkbox',
-                                },
-                                {
-                                    name: 'Avatar 头像',
-                                    router: '/components/avatar',
-                                },
-                                {
-                                    name: 'Page 分页',
-                                    router: '/components/page',
-                                },
-                                {
-                                    name: 'Spin 加载中',
-                                    router: '/components/spin',
-                                },
-                                {
-                                    name: 'Table 表格',
-                                    router: '/components/table',
-                                },
-                            ],
-                        },
-                        {
-                            name: '其他',
-                            menu: [
-                                {
-                                    name: 'Affix 图钉',
-                                    router: '/components/affix',
-                                },
-                                {
-                                    name: 'VirtualCollection 无限滚动(块渲染)',
-                                    router: '/components/virtual-collection',
-                                },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    name: 'Directives',
-                    child: [
-                        {
-                            name: '指令',
-                            menu: [
-                                {
-                                    name: 'Ripple 波纹指令',
-                                    router: '/directives/ripple',
-                                },
-                                {
-                                    name: 'Touch 手势指令',
-                                    router: '/directives/touch',
+                                    router: 'button',
                                 },
                             ],
                         },

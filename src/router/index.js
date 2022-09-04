@@ -11,12 +11,12 @@ function lazyLoading(path, name) {
 
 const routes = [
   // 路径错误时跳转
-  {
-    path: '/:pathMatch(.*)*',
-    name: 'error',
-    redirect: '/',
-    component: lazyLoading('home', 'index'),
-  },
+  // {
+  //   path: '/:pathMatch(.*)*',
+  //   name: 'error',
+  //   redirect: '/',
+  //   component: lazyLoading('home', 'index'),
+  // },
   {
     path: '/',
     name: 'home',
@@ -29,15 +29,28 @@ const routes = [
     children: [
       // 安装
       {
-        path: '/docs/install',
+        path: 'install',
         name: 'install',
         component: lazyLoading('docs', 'install'),
       },
       // 快速开始
       {
-        path: '/docs/start-use',
+        path: 'start-use',
         name: 'start-use',
         component: lazyLoading('docs', 'start-use'),
+      },
+    ],
+  },
+  {
+    path: '/components/',
+    name: 'components',
+    component: lazyLoading('docs', 'index'),
+    children: [
+      // 按钮
+      {
+        path: 'button',
+        name: 'button',
+        component: lazyLoading('button', 'index'),
       },
     ],
   },
