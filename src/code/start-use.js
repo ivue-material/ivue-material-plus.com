@@ -39,4 +39,22 @@ export default defineConfig({
 })
 `;
 
+code.webpack = `// webpack.config.js
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+import { IvueMaterialPlusResolver } from 'ivue-material-plus/resolvers/ivue-material-plus'
+
+module.exports = {
+  // ...
+  plugins: [
+    AutoImport({
+      resolvers: [IvueMaterialPlusResolver()],
+    }),
+    Components({
+      resolvers: [IvueMaterialPlusResolver()],
+    }),
+  ],
+}
+`;
+
 export default code;
