@@ -190,6 +190,17 @@ export default {
     .router-link-active {
         color: #5b8eff;
     }
+
+    blockquote {
+        padding: 0 0 0 8px;
+        border-left: 4px solid hsla(0, 0%, 39.2%, 0.2);
+        opacity: 0.85;
+        margin: 14px 0;
+
+        p{
+            margin-bottom: 14px;
+        }
+    }
 }
 
 .app {

@@ -84,6 +84,11 @@ export default {
                     child: [],
                 },
                 {
+                    name: '全局配置',
+                    router: 'global',
+                    child: [],
+                },
+                {
                     name: '组件',
                     child: [
                         {
@@ -118,6 +123,8 @@ export default {
         // 监听路由
         $route() {
             window.scrollTo(0, 0);
+
+            this.setHideMenu(false);
         },
     },
     components: {
@@ -154,12 +161,12 @@ export default {
             display: flex;
             flex-direction: column;
             padding: 24px 26px;
+            height: 100%;
             margin: 0;
             transition: transform 0.4s;
 
             &-li {
                 display: block;
-                flex: 1;
                 margin-bottom: 8px;
                 text-align: left;
                 color: #7f8c8d;

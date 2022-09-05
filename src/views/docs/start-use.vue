@@ -51,6 +51,15 @@
             </span>
         </p>
         <pre><code>{{ code.babel }}</code></pre>
+        <p>然后这样按需引入组件，就可以减小体积了</p>
+        <pre><code>{{ code.main }}</code></pre>
+        <h2>特别提醒</h2>
+        <p>
+            <span>按需引用仍然需要导入样式，即在</span>
+            <code>main.js</code>
+            <span>或根组件执行</span>
+            <code>import 'ivue-material-plus/dist/styles/index.css';</code>
+        </p>
     </div>
 </template>
 

@@ -39,6 +39,12 @@ const routes = [
         name: 'start-use',
         component: lazyLoading('docs', 'start-use'),
       },
+      // 全局配置
+      {
+        path: 'global',
+        name: 'global',
+        component: lazyLoading('docs', 'global'),
+      },
     ],
   },
   {

@@ -66,12 +66,17 @@ code.babel = `npm install babel-plugin-import --save-dev
       "import",
       {
         "libraryName": "ivue-material-plus",
-        "libraryDirectory": "src/components"
+        "libraryDirectory": "dist/unplugin-vue-components/es"
       },
       "ivue-material-plus"
     ]
-  ]
+  ],
 }
+`;
+
+code.main = `import { IvueAffix, IvueInput } from 'ivue-material-plus';
+app.component(IvueAffix.name, IvueAffix);
+app.component(IvueInput.name, IvueInput);
 `;
 
 export default code;
