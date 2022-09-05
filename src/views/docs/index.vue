@@ -89,6 +89,11 @@ export default {
                     child: [],
                 },
                 {
+                    name: '色彩',
+                    router: 'color',
+                    child: [],
+                },
+                {
                     name: '组件',
                     child: [
                         {

@@ -47,7 +47,6 @@
 
 <script>
 import Hljs from 'highlight.js';
-
 import Code from '@/code/install';
 
 export default {
