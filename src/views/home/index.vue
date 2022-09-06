@@ -1,7 +1,10 @@
 <template>
     <div class="home">
         <div class="home-wrapper">
-            <h1 class="home-title">IVue</h1>
+            <div class="home-title--wrapper">
+                <img class="home-image" src="@/static/logo.png" />
+                <h1 class="home-title">IVue</h1>
+            </div>
             <h2 class="home-text">一套基于 Material Design 规范</h2>
             <h2 class="home-text">UI组件库</h2>
             <div class="button-wrapper">
@@ -45,6 +48,7 @@ export default {
     background: url('../../assets/home-bg.jpg') no-repeat;
     background-position: center;
     background-size: cover;
+
     &-wrapper {
         display: flex;
         align-items: flex-start;
@@ -54,19 +58,31 @@ export default {
         height: 100%;
         text-align: left;
     }
+
     &-title {
         margin: 0;
         display: block;
         font-size: 60px;
+
+        &--wrapper {
+            display: flex;
+            align-items: center;
+        }
     }
+
     &-text {
         margin: 12px 10px !important;
         font-size: 24px;
+    }
+
+    &-image {
+        height: 80px;
     }
 }
 
 .button-wrapper {
     margin-top: 50px;
+
     .button {
         margin: 0 20px 0 0;
         width: 100px;

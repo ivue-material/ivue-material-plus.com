@@ -248,7 +248,6 @@ export default {
             }
 
             .text {
-                margin-left: 20px;
                 font-size: 26px;
                 color: #000;
             }
