@@ -23,25 +23,22 @@
                 href="https://unpkg.com/ivue-material-plus"
             >unpkg.com/ivue-material-plus</a>
             <span>看到最新的版本资源，你也可以切换版本选择需要的资源:</span>
-            <pre><code ref="cdn">{{code.cdn}}</code></pre>
+            <pre-code>{{ code.cdn }}</pre-code>
         </p>
         <h2>示例</h2>
         <p>
             <span>通过 CDN 引入快速使用</span>
-            <code>ivue-material</code>
+            <code>ivue-material-plus</code>
             <span>写出一个示例。</span>
         </p>
-        <doc-markdown
-            :code="code.example"
-            jsfiddle="//jsfiddle.net/qq282126990/68guqzk3/"
-        >
+        <doc-markdown :code="code.example" jsfiddle="//jsfiddle.net/qq282126990/68guqzk3/">
             <template #demo>
-                  <example></example>
+                <example></example>
             </template>
         </doc-markdown>
         <h2>NPM</h2>
         <p>推荐使用 npm 来安装，享受生态圈和工具带来的便利，更好地和 webpack 配合使用，当然，我们也推荐使用 ES2015。</p>
-        <pre><code>{{ code.npm }}</code></pre>
+        <pre-code>{{ code.npm }}</pre-code>
     </div>
 </template>
 

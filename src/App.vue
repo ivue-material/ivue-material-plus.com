@@ -174,27 +174,14 @@ export default {
         color: black;
     }
 
-    code {
-        background-color: #f3f5f6;
-    }
-
-    p code {
+    p code,
+    li code {
         margin: 0 2px;
         border: 1px solid hsla(0, 0%, 39.2%, 0.2);
         padding: 2px 4px;
         font-size: 85%;
         background-color: hsla(0, 0%, 58.8%, 0.1);
         border-radius: 3px;
-    }
-
-    pre code {
-        margin: 0;
-        border: none;
-        padding: 0;
-        font-size: 85%;
-        background: hsla(0, 0%, 58.8%, 0.1);
-        border-radius: 3px;
-        font-size: initial;
         background-color: #f3f5f6;
     }
 

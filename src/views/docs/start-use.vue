@@ -3,7 +3,7 @@
         <h1>快速开始</h1>
         <h2>引入 IVue Material Plus</h2>
         <p>如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便</p>
-        <pre><code>{{ code.main }}</code></pre>
+        <pre-code>{{ code.main }}</pre-code>
         <h2>按需导入</h2>
         <p>您需要使用额外的插件来导入要使用的组件</p>
         <h3>自动导入</h3>
@@ -15,9 +15,9 @@
             <span>这两款插件</span>
         </p>
         <h3>Vite</h3>
-        <pre><code>{{ code.vite }}</code></pre>
+        <pre-code>{{ code.vite }}</pre-code>
         <h3>Webpack</h3>
-        <pre><code>{{ code.webpack }}</code></pre>
+        <pre-code>{{ code.webpack }}</pre-code>
         <p>
             <span>想了解更多打包(</span>
             <a target="_blank" href="https://rollupjs.org/">Rollup</a>
@@ -50,9 +50,9 @@
                 <span>中配置：</span>
             </span>
         </p>
-        <pre><code>{{ code.babel }}</code></pre>
+        <pre-code>{{ code.babel }}</pre-code>
         <p>然后这样按需引入组件，就可以减小体积了</p>
-        <pre><code>{{ code.main }}</code></pre>
+        <pre-code>{{ code.main }}</pre-code>
         <h2>特别提醒</h2>
         <p>
             <span>按需引用仍然需要导入样式，即在</span>

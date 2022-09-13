@@ -16,13 +16,9 @@
         <h2>Class</h2>
         <p>
             <span>规范中的每种色彩都会被转换为背景和文本颜色以便在应用程序中通过一个类进行样式化，比如：</span>
-            <!-- <code>
-              {{ `<div class="red"></div>` }}
-            </code>
+            <code>{{ code.class1 }}</code>
             <span>或者</span>
-            <code>
-              {{ `<span class="red--text"></span>` }}
-            </code>-->
+            <code>{{ code.class2 }}</code>
         </p>
         <p>
             <a
@@ -37,7 +33,7 @@
             </template>
         </doc-markdown>
         <h2>引入颜色包</h2>
-        <pre><code ref="cdn">{{ code.import }}</code></pre>
+        <pre-code>{{ code.cdn }}</pre-code>
         <div class="ivue-layout ivue-gutter ivue-alignment-left list">
             <div
                 class="ivue-layout-item ivue-medium-size-33 ivue-small-size-50 ivue-xsmall-size-100"

@@ -21,6 +21,7 @@ import 'ivue-material-plus/dist/styles/color.css';
 
 import DocMarkdown from './components/doc-markdown.vue';
 import Example from './components/install/example.vue';
+import PreCode from './components/pre-code.vue';
 
 const app = createApp(App);
 
@@ -30,6 +31,7 @@ Hljs.configure({ ignoreUnescapedHTML: true });
 
 app.component('DocMarkdown', DocMarkdown);
 app.component('Example', Example);
+app.component('PreCode', PreCode);
 
 app.use(IvueMaterial);
 
