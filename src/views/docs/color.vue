@@ -27,13 +27,13 @@
                 href="https://github.com/qq282126990/ivue-ui/blob/master/src/styles/theme/color.scss"
             >点击这里查看的色彩定义</a>
         </p>
-        <doc-markdown :code="code.base" jsfiddle="//jsfiddle.net/qq282126990/68guqzk3/">
+        <doc-markdown :code="code.base" jsfiddle="">
             <template #demo>
                 <color></color>
             </template>
         </doc-markdown>
         <h2>引入颜色包</h2>
-        <pre-code>{{ code.cdn }}</pre-code>
+        <pre-code>{{ code.import }}</pre-code>
         <div class="ivue-layout ivue-gutter ivue-alignment-left list">
             <div
                 class="ivue-layout-item ivue-medium-size-33 ivue-small-size-50 ivue-xsmall-size-100"

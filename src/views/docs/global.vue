@@ -9,9 +9,9 @@
         <div>
             <ul>
                 <li>
-                    <strong>capture</strong>
+                    <strong>capture：</strong>
                     <span>
-                        ：所有带下拉的组件或者
+                        所有带下拉的组件或者
                         <code>ivue-tooltip</code>，是否开启
                     </span>
                     <code>capture</code> 模式，默认为
@@ -28,14 +28,35 @@
                     >更多可查看 JavaScript 事件顺序</a>
                 </li>
                 <li>
-                    <strong>transfer</strong>
+                    <strong>transfer：</strong>
                     <span>
-                        ：所有带浮层的组件，是否将浮层放置在 body 内，默认为不设置，详见各组件默认的
+                        所有带浮层的组件，是否将浮层放置在 body 内，默认为不设置，详见各组件默认的
                         <code>transfer</code>
                         值。可选值为
                     </span>
                     <code>true</code> 或
                     <code>false</code>
+                </li>
+                <li>
+                    <strong>image.toolbar：</strong>
+                    <span>
+                        IvueImage 的
+                        <code>toolbar</code> 属性, 图片预览操作栏选项，按数组顺序排序
+                    </span>
+                </li>
+                <li>
+                    <strong>modal.maskClosable：</strong>
+                    <span>
+                        IvueModal 的
+                        <code>maskClosable</code> 属性, 是否允许点击遮罩层关闭
+                    </span>
+                </li>
+                <li>
+                    <strong>spin.fix</strong>
+                    <span>
+                        IvueSpin 的
+                        <code>fix</code> 属性, 是否固定，需要父级有relative或absolute
+                    </span>
                 </li>
             </ul>
         </div>
