@@ -4,7 +4,7 @@
         <p>按钮传达用户触摸它们时将发生的操作。它们可以是平坦的，凸起的，任何色彩辅助类都可以用来改变背景或文字的颜色。</p>
         <h2>基本用法</h2>
         <p>基本用法，凸陷的按钮具有单击时增加的框阴影，这是默认样式。</p>
-        <doc-markdown :code="code.default" jsfiddle>
+        <doc-markdown :code="code.default" jsfiddle="https://codesandbox.io/s/button-default-6tqvkm">
             <template #demo>
                 <default></default>
             </template>
@@ -15,7 +15,7 @@
             <code>flat</code>
             使按钮没有框阴影，也没有背景。仅在悬停时显示按钮的背景。
         </p>
-        <doc-markdown :code="code.flat" jsfiddle>
+        <doc-markdown :code="code.flat" jsfiddle="https://codesandbox.io/s/flat-gcgi69">
             <template #demo>
                 <flat></flat>
             </template>
@@ -25,7 +25,7 @@
             通过设置属性
             <code>depressed</code> 使按钮仍然保持其背景颜色，但没有框阴影。
         </p>
-        <doc-markdown :code="code.depressed" jsfiddle>
+        <doc-markdown :code="code.depressed" jsfiddle="https://codesandbox.io/s/depressed-pvg5em">
             <template #demo>
                 <depressed></depressed>
             </template>
@@ -35,17 +35,7 @@
             通过设置属性
             <code>outline</code> 使按钮继承其当前边框颜色。
         </p>
-        <doc-markdown :code="code.outline" jsfiddle>
-            <template #demo>
-                <outline></outline>
-            </template>
-        </doc-markdown>
-        <h2>轮廓</h2>
-        <p>
-            通过设置属性
-            <code>outline</code> 使按钮继承其当前边框颜色。
-        </p>
-        <doc-markdown :code="code.outline" jsfiddle>
+        <doc-markdown :code="code.outline" jsfiddle="https://codesandbox.io/s/outline-h7dxn4">
             <template #demo>
                 <outline></outline>
             </template>
@@ -57,7 +47,7 @@
             <code>a</code> 连接跳转到
             <code>href</code> 指定的地址。
         </p>
-        <doc-markdown :code="code.href" jsfiddle>
+        <doc-markdown :code="code.href" jsfiddle="https://codesandbox.io/s/href-zwrmdj">
             <template #demo>
                 <href></href>
             </template>
@@ -67,7 +57,7 @@
             通过设置属性
             <code>icon</code> 使按钮显示为圆形图标。
         </p>
-        <doc-markdown :code="code.icon" jsfiddle>
+        <doc-markdown :code="code.icon" jsfiddle="https://codesandbox.io/s/icon-cr0pcs">
             <template #demo>
                 <icon></icon>
             </template>
@@ -77,7 +67,7 @@
             通过设置属性
             <code>color</code> 设置按钮颜色
         </p>
-        <doc-markdown :code="code.color" jsfiddle>
+        <doc-markdown :code="code.color" jsfiddle="https://codesandbox.io/s/color-ywbqdb">
             <template #demo>
                 <color></color>
             </template>

@@ -8,8 +8,7 @@ code.cdn = `<!-- 引入 stylesheet -->
 <script src="//unpkg.com/ivue-material-plus"></script>
 `;
 
-code.example = `
-<html>
+code.example = `<html>
   <head>
     <meta charset="utf-8">
     <title>example</title>
@@ -32,8 +31,7 @@ code.example = `
     })
   </script>
   </body>
-</html>
-`;
+</html>`;
 
 code.npm = '$ npm install ivue-material-plus --save';
 

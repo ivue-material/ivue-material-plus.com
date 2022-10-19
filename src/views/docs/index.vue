@@ -94,14 +94,28 @@ export default {
                     child: [],
                 },
                 {
+                    name: '基础动画',
+                    router: 'animation',
+                    child: [],
+                },
+                {
                     name: '组件',
                     child: [
                         {
                             name: '基础',
                             menu: [
                                 {
-                                    name: 'button 按钮',
+                                    name: 'Button 按钮',
                                     router: 'button',
+                                },
+                            ],
+                        },
+                        {
+                            name: '其他',
+                            menu: [
+                                {
+                                    name: 'Affix 图钉',
+                                    router: 'affix',
                                 },
                             ],
                         },

@@ -51,6 +51,12 @@ const routes = [
         name: 'color',
         component: lazyLoading('docs', 'color'),
       },
+       // 颜色
+       {
+        path: 'animation',
+        name: 'animation',
+        component: lazyLoading('animation', 'index'),
+      },
     ],
   },
   {
@@ -63,6 +69,12 @@ const routes = [
         path: 'button',
         name: 'button',
         component: lazyLoading('button', 'index'),
+      },
+       // 图钉
+       {
+        path: 'affix',
+        name: 'affix',
+        component: lazyLoading('affix', 'index'),
       },
     ],
   },

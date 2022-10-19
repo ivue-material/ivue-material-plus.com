@@ -1,7 +1,6 @@
 const code = {};
 
-code.default = `
-<template>
+code.default = `<template>
       <div>
         <ivue-button class="button" status="primary">primary</ivue-button>
         <ivue-button class="button" status="light-primary">Light Primary</ivue-button>
@@ -11,11 +10,9 @@ code.default = `
         <ivue-button class="button" status="error">Error</ivue-button>
         <ivue-button class="button" disabled>disabled</ivue-button>
       </div>
-</template>
-`;
+</template>`;
 
-code.flat = `
-<template>
+code.flat = `<template>
     <div class="button-wrapper">
         <ivue-button class="button" status="primary" depressed>primary</ivue-button>
         <ivue-button class="button" status="light-primary" depressed>Light Primary</ivue-button>
@@ -24,11 +21,9 @@ code.flat = `
         <ivue-button class="button" status="warning" depressed>Warning</ivue-button>
         <ivue-button class="button" status="error" depressed>Error</ivue-button>
     </div>
-</template>
-`;
+</template>`;
 
-code.depressed = `
-<template>
+code.depressed = `<template>
     <div class="button-wrapper">
         <ivue-button class="button" status="primary" depressed>primary</ivue-button>
         <ivue-button class="button" status="light-primary" depressed>Light Primary</ivue-button>
@@ -37,11 +32,9 @@ code.depressed = `
         <ivue-button class="button" status="warning" depressed>Warning</ivue-button>
         <ivue-button class="button" status="error" depressed>Error</ivue-button>
     </div>
-</template>
-`;
+</template>`;
 
-code.outline = `
-<template>
+code.outline = `<template>
     <div class="button-wrapper">
         <ivue-button class="button" status="primary" outline>primary</ivue-button>
         <ivue-button class="button" status="light-primary" outline>Light Primary</ivue-button>
@@ -53,8 +46,7 @@ code.outline = `
 </template>
 `;
 
-code.href = `
-<template>
+code.href = `<template>
     <div class="button-wrapper">
         <ivue-button
             class="button"
@@ -62,11 +54,9 @@ code.href = `
             href="https://github.com/qq282126990/ivue-ui-plus"
         >Link Github</ivue-button>
     </div>
-</template>
-`;
+</template>`;
 
-code.icon = `
-<template>
+code.icon = `<template>
     <div class="button-wrapper">
         <ivue-button class="button" status="primary" icon>
             <ivue-icon>face</ivue-icon>
@@ -87,10 +77,16 @@ code.icon = `
             <ivue-icon>face</ivue-icon>
         </ivue-button>
     </div>
-</template>
-`;
+</template>`;
 
-code.color = `
-`;
+code.color = `<template>
+    <div class="button-wrapper">
+        <ivue-button class="button" color="#5B8EFF">primary</ivue-button>
+        <ivue-button class="button" :color="['#5AB2FF', '#5B8EFF']">渐变</ivue-button>
+        <ivue-button class="button" :color="['#5AB2FF', '#5B8EFF']" radius>圆角按钮</ivue-button>
+        <ivue-button class="button" color="#27E2B2" loading>加载中</ivue-button>
+        <ivue-button class="button" disabled>禁用</ivue-button>
+    </div>
+</template>`;
 
 export default code;

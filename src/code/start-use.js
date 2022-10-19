@@ -1,6 +1,6 @@
 const code = {};
 
-code.main = `import { createApp } from 'vue'
+code.all = `import { createApp } from 'vue'
 import IvueMaterialPlus from 'ivue-material-plus';
 import App from './App.vue'
 import Router from './router'

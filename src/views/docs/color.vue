@@ -27,7 +27,7 @@
                 href="https://github.com/qq282126990/ivue-ui/blob/master/src/styles/theme/color.scss"
             >点击这里查看的色彩定义</a>
         </p>
-        <doc-markdown :code="code.base" jsfiddle="">
+        <doc-markdown :code="code.base">
             <template #demo>
                 <color></color>
             </template>

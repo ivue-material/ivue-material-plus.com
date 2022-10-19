@@ -3,7 +3,7 @@
         <h1>快速开始</h1>
         <h2>引入 IVue Material Plus</h2>
         <p>如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便</p>
-        <pre-code>{{ code.main }}</pre-code>
+        <pre-code>{{ code.all }}</pre-code>
         <h2>按需导入</h2>
         <p>您需要使用额外的插件来导入要使用的组件</p>
         <h3>自动导入</h3>

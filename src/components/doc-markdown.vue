@@ -4,7 +4,7 @@
         <div class="doc-markdown-header">
             <div class="doc-markdown-header--content">
                 <!-- codesandbox -->
-                <ivue-button icon flat @click="clickJsfiddle">
+                <ivue-button icon flat @click="clickJsfiddle" v-show="jsfiddle">
                     <svg width="25px" height="25px" viewBox="0 0 46 33">
                         <g stroke-width="3" fill="none" fill-rule="evenodd" stroke="#000">
                             <path
