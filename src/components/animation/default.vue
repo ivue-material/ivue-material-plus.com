@@ -123,6 +123,7 @@
 
 <script>
 export default {
+    name: 'animation-default',
     data() {
         return {
             anim1: true,

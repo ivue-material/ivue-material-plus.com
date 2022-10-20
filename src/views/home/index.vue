@@ -23,7 +23,6 @@
 import IvueFooter from '@/components/footer';
 
 export default {
-    name: 'Home',
     methods: {
         // 跳转安装页面
         handleStartUse() {

@@ -105,6 +105,10 @@ export default {
                             name: '基础',
                             menu: [
                                 {
+                                    name: 'Icon 图标',
+                                    router: 'icon',
+                                },
+                                {
                                     name: 'Button 按钮',
                                     router: 'button',
                                 },

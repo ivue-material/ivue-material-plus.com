@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "clipboard": "^2.0.11",
     "core-js": "^3.6.5",
     "highlight.js": "^11.5.1",
     "ivue-material-plus": "0.1.3",

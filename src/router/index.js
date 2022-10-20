@@ -45,14 +45,14 @@ const routes = [
         name: 'global',
         component: lazyLoading('docs', 'global'),
       },
-       // 颜色
-       {
+      // 颜色
+      {
         path: 'color',
         name: 'color',
         component: lazyLoading('docs', 'color'),
       },
-       // 颜色
-       {
+      // 颜色
+      {
         path: 'animation',
         name: 'animation',
         component: lazyLoading('animation', 'index'),
@@ -70,11 +70,17 @@ const routes = [
         name: 'button',
         component: lazyLoading('button', 'index'),
       },
-       // 图钉
-       {
+      // 图钉
+      {
         path: 'affix',
         name: 'affix',
         component: lazyLoading('affix', 'index'),
+      },
+      // 图标
+      {
+        path: 'icon',
+        name: 'icon',
+        component: lazyLoading('icon', 'index'),
       },
     ],
   },

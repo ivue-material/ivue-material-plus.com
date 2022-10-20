@@ -5,7 +5,14 @@
 </template>
 
 <script>
-export default {};
+import Hljs from 'highlight.js';
+
+export default {
+    name: 'pre-code',
+    mounted() {
+        Hljs.highlightAll();
+    },
+};
 </script>
 
 <style lang="scss" scoped>

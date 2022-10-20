@@ -46,7 +46,7 @@
             </template>
         </doc-markdown>
         <h2>API</h2>
-        <h3>props</h3>
+        <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明">
@@ -57,7 +57,7 @@
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
-        <h3>events</h3>
+        <h3>Events</h3>
         <ivue-table :data="eventsData" border>
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>

@@ -8,6 +8,7 @@
 
 <script>
 export default {
+    name: 'affix-callback',
     methods: {
         handleChange(status) {
             this.$message.info({
