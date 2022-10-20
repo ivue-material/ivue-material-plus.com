@@ -82,6 +82,12 @@ const routes = [
         name: 'icon',
         component: lazyLoading('icon', 'index'),
       },
+      // 自动完成
+      {
+        path: 'auto-complete',
+        name: 'auto-complete',
+        component: lazyLoading('auto-complete', 'index'),
+      },
     ],
   },
 ];

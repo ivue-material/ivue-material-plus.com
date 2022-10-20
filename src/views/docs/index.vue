@@ -115,6 +115,15 @@ export default {
                             ],
                         },
                         {
+                            name: '表单',
+                            menu: [
+                                {
+                                    name: 'AutoComplete 自动完成',
+                                    router: 'auto-complete',
+                                },
+                            ],
+                        },
+                        {
                             name: '其他',
                             menu: [
                                 {
