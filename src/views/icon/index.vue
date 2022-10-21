@@ -42,9 +42,9 @@
         </ivue-table>
         <h3>Event</h3>
         <ivue-table :data="eventData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="name" label="事件名"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
-            <ivue-table-column prop="default" label="value"></ivue-table-column>
+            <ivue-table-column prop="default" label="返回值"></ivue-table-column>
         </ivue-table>
         <h2>所有图标</h2>
         <h3>Action</h3>

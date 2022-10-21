@@ -49,9 +49,9 @@
         <!-- 内容 -->
         <div class="docs-content">
             <router-view v-slot="{ Component }">
-                <keep-alive>
-                    <component :is="Component" />
-                </keep-alive>
+                <!-- <keep-alive> -->
+                <component :is="Component" :key="$route.fullPath" />
+                <!-- </keep-alive> -->
             </router-view>
         </div>
         <!-- footer -->

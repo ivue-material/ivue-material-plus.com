@@ -59,7 +59,7 @@
         </ivue-table>
         <h3>Events</h3>
         <ivue-table :data="eventsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="name" label="事件名"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
             <ivue-table-column prop="default" label="返回值"></ivue-table-column>
         </ivue-table>
