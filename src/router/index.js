@@ -88,6 +88,12 @@ const routes = [
         name: 'auto-complete',
         component: lazyLoading('auto-complete', 'index'),
       },
+       // 头像
+       {
+        path: 'avatar',
+        name: 'avatar',
+        component: lazyLoading('avatar', 'index'),
+      },
     ],
   },
 ];

@@ -210,7 +210,7 @@ export default {
                 },
                 {
                     name: 'on-blur',
-                    illustrate: '聚焦时触发',
+                    illustrate: '失焦时触发',
                     default: 'event',
                 },
                 {

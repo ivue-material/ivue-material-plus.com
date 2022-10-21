@@ -115,6 +115,15 @@ export default {
                             ],
                         },
                         {
+                            name: '视图',
+                            menu: [
+                                {
+                                    name: 'Avatar 头像',
+                                    router: 'avatar',
+                                },
+                            ],
+                        },
+                        {
                             name: '表单',
                             menu: [
                                 {
