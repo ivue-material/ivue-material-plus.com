@@ -21,10 +21,6 @@
             <code>ivue-layout</code> 父元素，它将包含一个列表
             <code>ivue-layout-item</code> 。您可以设置所需的列数：
         </p>
-        <ivue-table :data="rowData" border>
-            <ivue-table-column prop="name" label="屏幕尺寸"></ivue-table-column>
-            <ivue-table-column prop="interval" label="间隔"></ivue-table-column>
-        </ivue-table>
         <doc-markdown :code="code.default">
             <template #demo>
                 <default></default>
@@ -34,7 +30,11 @@
             默认情况下，布局之间没有空格，这对于常规布局有点不好，例如卡片列表,您可以使用
             <code>ivue-gutter</code> 为自动计算元素之间的空间，这些空间基于屏幕宽度：
         </p>
-        <p>查看这段代码并调整浏览器大小以查看更改：</p>
+        <p>查看这段代码并调整浏览器大小以查看更改(观察布局之间的间隔大小)：</p>
+        <ivue-table :data="rowData" border>
+            <ivue-table-column prop="name" label="屏幕尺寸"></ivue-table-column>
+            <ivue-table-column prop="interval" label="间隔"></ivue-table-column>
+        </ivue-table>
         <doc-markdown :code="code.gutter">
             <template #demo>
                 <gutter></gutter>
