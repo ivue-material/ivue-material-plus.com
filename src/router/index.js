@@ -88,11 +88,17 @@ const routes = [
         name: 'auto-complete',
         component: lazyLoading('auto-complete', 'index'),
       },
-       // 头像
-       {
+      // 头像
+      {
         path: 'avatar',
         name: 'avatar',
         component: lazyLoading('avatar', 'index'),
+      },
+      // Elevation 海拔
+      {
+        path: 'elevation',
+        name: 'elevation',
+        component: lazyLoading('elevation', 'index'),
       },
     ],
   },
