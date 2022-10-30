@@ -123,6 +123,7 @@ export default {
 
 <style lang="scss" scoped>
 .doc-markdown {
+    margin: 10px 0;
     width: 100%;
     height: 100%;
 

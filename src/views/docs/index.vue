@@ -108,6 +108,10 @@ export default {
                                     name: 'Elevation 海拔',
                                     router: 'elevation',
                                 },
+                                {
+                                    name: 'Layout 布局',
+                                    router: 'layout',
+                                },
                             ],
                         },
                         {

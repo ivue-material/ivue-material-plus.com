@@ -100,6 +100,12 @@ const routes = [
         name: 'elevation',
         component: lazyLoading('elevation', 'index'),
       },
+      // Layout 布局
+      {
+        path: 'layout',
+        name: 'layout',
+        component: lazyLoading('layout', 'index'),
+      },
     ],
   },
 ];
