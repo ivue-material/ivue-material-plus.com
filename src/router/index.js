@@ -106,6 +106,12 @@ const routes = [
         name: 'layout',
         component: lazyLoading('layout', 'index'),
       },
+      // Card 卡片
+      {
+        path: 'card',
+        name: 'card',
+        component: lazyLoading('card', 'index'),
+      },
     ],
   },
 ];

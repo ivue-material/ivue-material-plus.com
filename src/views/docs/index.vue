@@ -112,6 +112,10 @@ export default {
                                     name: 'Layout 布局',
                                     router: 'layout',
                                 },
+                                {
+                                    name: 'Card 卡片',
+                                    router: 'card',
+                                },
                             ],
                         },
                         {
