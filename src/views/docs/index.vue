@@ -102,6 +102,19 @@ export default {
                     name: '组件',
                     child: [
                         {
+                            name: '布局',
+                            menu: [
+                                {
+                                    name: 'Elevation 海拔',
+                                    router: 'elevation',
+                                },
+                                {
+                                    name: 'Layout 布局',
+                                    router: 'layout',
+                                },
+                            ],
+                        },
+                        {
                             name: '基础',
                             menu: [
                                 {
