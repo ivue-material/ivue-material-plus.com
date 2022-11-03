@@ -2,19 +2,15 @@
     <div class="card">
         <ivue-card class="dis-hover" disHover>
             <template #title>The standard card</template>
-            <p>
-                Content of card
-                Content of card
-                Content of card
-            </p>
+            Content of card
+            Content of card
+            Content of card
         </ivue-card>
         <ivue-card class="no-dis-hover">
             <template #title>Disable card with hover shadows</template>
-            <p>
-                Content of card
-                Content of card
-                Content of card
-            </p>
+            Content of card
+            Content of card
+            Content of card
         </ivue-card>
     </div>
 </template>
@@ -30,10 +26,10 @@ export default {};
 }
 
 .dis-hover {
-    margin: 20px;
+    margin:0 20px;
 }
 
 .not-dis-hover {
-    margin: 20px;
+    margin: 0 20px;
 }
 </style>

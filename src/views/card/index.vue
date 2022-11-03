@@ -39,9 +39,9 @@
             通过设置
             <code>shadow</code>属性来显示卡片阴影
         </p>
-        <doc-markdown :code="code.cardumbra">
+        <doc-markdown :code="code.shadow">
             <template #demo>
-                <cardumbra></cardumbra>
+                <card-shadow></card-shadow>
             </template>
         </doc-markdown>
         <h2>简洁卡片</h2>
@@ -51,8 +51,32 @@
                 <simple></simple>
             </template>
         </doc-markdown>
-        <!-- <h2>API</h2>
-        <h3>Card props</h3> -->
+        <h2>样式联动</h2>
+        <p>
+            通过设置
+            <code>padding-styles-linkage</code> 属性来设置联动标题和内容的
+            <code>padding</code>,设置
+            <code>title-padding</code>标题内部间距(
+            <code>padding-styles-linkage</code>开启该属性将不生效)
+        </p>
+        <doc-markdown :code="code.padding">
+            <template #demo>
+                <padding></padding>
+            </template>
+        </doc-markdown>
+        <h2>API</h2>
+        <h3>Props</h3>
+        <ivue-table :data="propsData" border>
+            <ivue-table-column prop="name" label="名称" :width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" :width="150"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" :width="150"></ivue-table-column>
+        </ivue-table>
+        <h3>Slots</h3>
+        <ivue-table :data="slotsData" border>
+            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+        </ivue-table>
     </div>
 </template>
 
@@ -62,12 +86,97 @@ import Default from '@/components/card/default';
 import NotBorder from '@/components/card/not-border';
 import Umbra from '@/components/card/umbra';
 import Simple from '@/components/card/simple';
-import Cardumbra from '@/components/card/cardumbra';
+import Padding from '@/components/card/padding';
+import CardShadow from '@/components/card/shadow';
 
 export default {
     data() {
         return {
             code: Code,
+            propsData: [
+                {
+                    name: 'title',
+                    illustrate: '标题',
+                    type: 'String',
+                    default: '-',
+                },
+                {
+                    name: 'border',
+                    illustrate: '是否显示边框，建议在灰色背景下使用',
+                    type: 'Boolean',
+                    default: 'true',
+                },
+                {
+                    name: 'shadow',
+                    illustrate: '卡片阴影，建议在灰色背景下使用',
+                    type: 'Boolean',
+                    default: 'false',
+                },
+                {
+                    name: 'dis-hover',
+                    illustrate: '禁用鼠标悬停显示阴影',
+                    type: 'Boolean',
+                    default: 'false',
+                },
+                {
+                    name: 'padding',
+                    illustrate: '卡片内部间距,(可自定义单位，如：1rem)',
+                    type: 'Number | String',
+                    default: '-',
+                },
+                {
+                    name: 'title-padding',
+                    illustrate:
+                        '标题内部间距(padding-styles-linkage开启该属性将不生效),(可自定义单位，如：1rem)',
+                    type: 'Number | String',
+                    default: '-',
+                },
+                {
+                    name: 'radius',
+                    illustrate: '圆角大小',
+                    type: 'Number',
+                    default: '-',
+                },
+                {
+                    name: 'padding-styles-linkage',
+                    illustrate: '样式联动(联动标题和内容的padding)',
+                    type: 'Boolean',
+                    default: 'true',
+                },
+                {
+                    name: 'to',
+                    illustrate: '跳转的链接，支持 vue-router 对象',
+                    type: 'Object | String',
+                    default: '-',
+                },
+                {
+                    name: 'target',
+                    illustrate: '相当于 a 链接的 target 属性',
+                    type: 'String',
+                    default: '_self',
+                },
+                {
+                    name: 'replace',
+                    illustrate:
+                        '路由跳转时，开启 replace 将不会向 history 添加新记录',
+                    type: 'Boolean',
+                    default: 'false',
+                },
+            ],
+            slotsData: [
+                {
+                    name: 'title',
+                    illustrate: '自定义卡片标题',
+                },
+                {
+                    name: 'extra',
+                    illustrate: '额外显示的内容，默认位置在右上角',
+                },
+                {
+                    name: 'default',
+                    illustrate: '卡片主体内容',
+                },
+            ],
         };
     },
     components: {
@@ -75,7 +184,8 @@ export default {
         NotBorder,
         Umbra,
         Simple,
-        Cardumbra,
+        CardShadow,
+        Padding,
     },
 };
 </script>

@@ -88,7 +88,7 @@ export default {};
 </style>
 `;
 
-code.cardumbra = `<template>
+code.shadow = `<template>
     <div class="card">
         <ivue-card :border="true">
             <template #title>shadow title</template>
@@ -130,4 +130,24 @@ export default {};
 <style lang="scss" scoped>
 </style>
 `;
+
+code.padding = `<template>
+    <div>
+        <ivue-card :padding="50" :radius="10" :padding-styles-linkage="false" :title-padding="30">
+            <template #title>title</template>
+            Content of card
+            Content of card
+            Content of card
+        </ivue-card>
+    </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+</style>
+`;
+
 export default code;

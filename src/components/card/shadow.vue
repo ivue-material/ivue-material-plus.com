@@ -9,7 +9,7 @@
             </p>
         </ivue-card>
 
-        <ivue-card class="card-content" :shadow="false">
+        <ivue-card class="card-content" :shadow="false" :border="false">
             <template #title>shadow title</template>
             <p>
                 Content of card

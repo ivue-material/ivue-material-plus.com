@@ -4,7 +4,10 @@
         <p>按钮传达用户触摸它们时将发生的操作。它们可以是平坦的，凸起的，任何色彩辅助类都可以用来改变背景或文字的颜色。</p>
         <h2>基本用法</h2>
         <p>基本用法，凸陷的按钮具有单击时增加的框阴影，这是默认样式。</p>
-        <doc-markdown :code="code.default" jsfiddle="https://codesandbox.io/s/button-default-6tqvkm">
+        <doc-markdown
+            :code="code.default"
+            jsfiddle="https://codesandbox.io/s/button-default-6tqvkm"
+        >
             <template #demo>
                 <default></default>
             </template>
@@ -102,7 +105,8 @@ export default {
                     name: 'status',
                     illustrate: '按钮状态',
                     type: 'String',
-                    default: 'primary | light-primary | dark-primary | success | warning | error',
+                    default:
+                        'primary | light-primary | dark-primary | success | warning | error',
                 },
                 {
                     name: 'color',
