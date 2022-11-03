@@ -2,20 +2,14 @@ const code = {};
 
 code.import = '';
 
-code.default = `
-<template>
+code.default = `<template>
     <div>
-        <ivue-card style="width:100%" :padding="50" :radius="10">
+        <ivue-card>
             <template #title>title</template>
             <template #extra>extra</template>
-            212112
-            <!-- <p class="rate-demo" v-for="item in randomMovieList">
-                <a :href="item.url" target="_blank">{{ item.name }}</a>
-                <span>
-                    <Rate disabled v-model="item.rate" />
-                    {{ item.rate }}
-                </span>
-            </p>-->
+            Content of card
+            Content of card
+            Content of card
         </ivue-card>
     </div>
 </template>
@@ -28,17 +22,15 @@ export default {};
 </style>
 `;
 
-code.explanation = `<template>
-    <div>
-        <ivue-card style="width:100%" title="标题">
-            212112
-            <!-- <p class="rate-demo" v-for="item in randomMovieList">
-                <a :href="item.url" target="_blank">{{ item.name }}</a>
-                <span>
-                    <Rate disabled v-model="item.rate" />
-                    {{ item.rate }}
-                </span>
-            </p>-->
+code.notBorder = `<template>
+    <div class="card">
+        <ivue-card :border="false">
+            <template #title>No border title</template>
+            <p>
+                Content of card
+                Content of card
+                Content of card
+            </p>
         </ivue-card>
     </div>
 </template>
@@ -48,33 +40,32 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-</style>
-`;
-
-code.notborder = `<template>
-<div>
-    <ivue-card :border="false">
-        <template #title>No border title</template>
-        <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type.</p>
-    </ivue-card>
-</div>
-</template>
-
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
+.card {
+    background-color: #ccc;
+    padding: 20px;
+}
 </style>
 `;
 
 code.umbra = `<template>
-<div>
-    <ivue-card disHover>
-        <template #title>No border title</template>
-        <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type.</p>
-    </ivue-card>
-</div>
+    <div class="card">
+        <ivue-card class="dis-hover" disHover>
+            <template #title>The standard card</template>
+            <p>
+                Content of card
+                Content of card
+                Content of card
+            </p>
+        </ivue-card>
+        <ivue-card class="no-dis-hover">
+            <template #title>Disable card with hover shadows</template>
+            <p>
+                Content of card
+                Content of card
+                Content of card
+            </p>
+        </ivue-card>
+    </div>
 </template>
 
 <script>
@@ -82,15 +73,52 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+.dis-hover {
+    margin: 20px;
+}
+
+.not-dis-hover {
+    margin: 20px;
+}
+</style>
+`;
+
+code.cardumbra = `<template>
+    <div class="card">
+        <ivue-card :border="true">
+            <template #title>shadow title</template>
+            <p>
+                Content of card
+                Content of card
+                Content of card
+            </p>
+        </ivue-card>
+    </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+.card {
+    background-color: #ccc;
+    padding: 20px;
+}
 </style>
 `;
 
 code.simple = `<template>
 <div>
-    <ivue-card padding="1rem" to="/count-down">
-        <div style="text-align:center">
-            <h3>A high quality UI Toolkit based on Vue.js</h3>
-        </div>
+    <ivue-card>
+        Content of card
+        Content of card
+        Content of card
     </ivue-card>
 </div>
 </template>

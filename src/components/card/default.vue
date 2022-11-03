@@ -1,16 +1,11 @@
 <template>
     <div>
-        <ivue-card style="width:100%" :padding="50" :radius="10">
+        <ivue-card>
             <template #title>title</template>
             <template #extra>extra</template>
-            212112
-            <!-- <p class="rate-demo" v-for="item in randomMovieList">
-                <a :href="item.url" target="_blank">{{ item.name }}</a>
-                <span>
-                    <Rate disabled v-model="item.rate" />
-                    {{ item.rate }}
-                </span>
-            </p>-->
+            Content of card
+            Content of card
+            Content of card
         </ivue-card>
     </div>
 </template>

@@ -1,8 +1,12 @@
 <template>
-    <div>
+    <div class="card">
         <ivue-card :border="false">
             <template #title>No border title</template>
-            <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type.</p>
+            <p>
+                Content of card
+                Content of card
+                Content of card
+            </p>
         </ivue-card>
     </div>
 </template>
@@ -12,4 +16,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.card {
+    background-color: #ccc;
+    padding: 20px;
+}
 </style>
