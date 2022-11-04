@@ -3,6 +3,7 @@ const code = {};
 code.import = 'import \'ivue-material-plus/dist/styles/elevation.css\';';
 
 code.default = `<template>
+    <link rel="stylesheet" href="//unpkg.com/ivue-material-plus/dist/styles/elevation.css">
     <div class="elevation-demo">
         <div
             :class="\`ivue-content ivue-elevation-\${index}\`"
@@ -22,7 +23,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .elevation-demo {
     padding: 16px;
     display: flex;

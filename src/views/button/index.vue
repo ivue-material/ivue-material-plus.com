@@ -81,6 +81,7 @@
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值"></ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
     </div>
@@ -105,19 +106,21 @@ export default {
                     name: 'status',
                     illustrate: '按钮状态',
                     type: 'String',
-                    default:
-                        'primary | light-primary | dark-primary | success | warning | error',
+                    value: 'primary | light-primary | dark-primary | success | warning | error',
+                    default: '-',
                 },
                 {
                     name: 'color',
                     illustrate: '定义按钮颜色',
                     type: 'String',
+                    value: '-',
                     default: '-',
                 },
                 {
                     name: 'textColor',
                     illustrate: '文字颜色',
                     type: 'String',
+                    value: '-',
                     default: '#ffffff',
                 },
                 {
@@ -125,60 +128,63 @@ export default {
                     illustrate:
                         '在按钮上创建一个锚点。在这种情况下，生成的标签将是 <a>',
                     type: 'String',
+                    value: '-',
                     default: '-',
                 },
                 {
                     name: 'disabled',
                     illustrate: '禁用该按钮并阻止其操作',
                     type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {
                     name: 'ripple',
                     illustrate: '启用/禁用涟漪效应',
                     type: 'Boolean',
+                    value: '-',
                     default: 'true',
                 },
                 {
                     name: 'flat',
                     illustrate: '是否扁平按钮',
                     type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {
                     name: 'depressed',
                     illustrate: '凹陷的按钮依然保持其背景色，但没有框阴影',
                     type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {
                     name: 'icon',
                     illustrate: '按钮显示为圆形图标',
                     type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {
                     name: 'outline',
                     illustrate: '轮廓按钮从当前色彩应用继承他们的边框颜色',
                     type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {
                     name: 'center',
                     illustrate: '当使用中心选项时，纹波将始终来自目标的中心',
                     type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {
                     name: 'radius',
                     illustrate: '圆角按钮',
                     type: 'Boolean',
-                    default: 'false',
-                },
-                {
-                    name: 'radius',
-                    illustrate: '圆角按钮',
-                    type: 'Boolean',
+                    value: '-',
                     default: 'false',
                 },
                 {

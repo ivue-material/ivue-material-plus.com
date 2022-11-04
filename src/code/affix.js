@@ -1,7 +1,7 @@
 const code = {};
 
 code.default = `<template>
-    <div>
+    <div class="content">
         <ivue-affix>
             <div class="demo-affix">固定在最顶部</div>
         </ivue-affix>
@@ -12,7 +12,11 @@ code.default = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.content{
+    height: 1000px;
+}
+
 .demo-affix {
     width: 100px;
     height: 30px;
@@ -26,7 +30,7 @@ export default {};
 </style>`;
 
 code.offsetTop = `<template>
-    <div>
+    <div class="content">
         <ivue-affix :offsetTop="50">
             <div class="demo-affix">固定在距顶部 50px 的位置</div>
         </ivue-affix>
@@ -37,7 +41,11 @@ code.offsetTop = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.content{
+    height: 1000px;
+}
+
 .demo-affix {
     width: 200px;
     height: 30px;
@@ -52,7 +60,7 @@ export default {};
 `;
 
 code.offsetBottom = `<template>
-    <div>
+    <div class="content">
         <ivue-affix :offsetBottom="20">
             <div class="demo-affix">固定在距底部 20px 的位置</div>
         </ivue-affix>
@@ -63,8 +71,13 @@ code.offsetBottom = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.content{
+    height: 2000px;
+}
+
 .demo-affix {
+    margin-top: 1000px;
     width: 200px;
     height: 30px;
     text-align: center;
@@ -77,7 +90,7 @@ export default {};
 </style>`;
 
 code.callback = `<template>
-    <div>
+    <div class="content">
         <ivue-affix :offsetTop="100" @on-change="handleChange">
             <div class="demo-affix">固定在距顶部 100px 的位置 触发回调</div>
         </ivue-affix>
@@ -89,14 +102,18 @@ export default {
     methods: {
         handleChange(status) {
             this.$message.info({
-                content: status: \${status},
+                content: \`status $\{status}\`
             });
         },
     },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.content{
+    height: 2000px;
+}
+
 .demo-affix {
     width: 300px;
     height: 30px;

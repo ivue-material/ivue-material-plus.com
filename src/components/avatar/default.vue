@@ -13,7 +13,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .avatar {
     margin: 10px;
 }

@@ -4,7 +4,7 @@
         <div class="doc-markdown-header">
             <div class="doc-markdown-header--content">
                 <!-- codesandbox -->
-                <ivue-button icon flat @click="clickJsfiddle" v-show="jsfiddle">
+                <ivue-button icon flat @click="clickJsfiddle" v-show="showPlayground">
                     <svg width="25px" height="25px" viewBox="0 0 46 33">
                         <g stroke-width="3" fill="none" fill-rule="evenodd" stroke="#000">
                             <path
@@ -62,17 +62,19 @@
 
 <script>
 import Hljs from 'highlight.js';
+import { utoa } from '@/utils/encode';
 
 export default {
     name: 'doc-markdown',
     props: {
         /**
-         * 测试网站
+         * 显示游乐场
          *
-         * @type {StrinG}
+         * @type {Boolean}
          */
-        jsfiddle: {
-            type: String,
+        showPlayground: {
+            type: Boolean,
+            default: true,
         },
         /**
          * github地址
@@ -99,10 +101,24 @@ export default {
              * @type {Boolean}
              */
             showCode: false,
+            /**
+             * 游乐场
+             *
+             * @type {Object}
+             */
+            playground: {},
         };
     },
     mounted() {
         Hljs.highlightBlock(this.$refs.code);
+
+        if (this.code) {
+            this.playground = {
+                'App.vue': this.code,
+            };
+
+            this.playground = utoa(JSON.stringify(this.playground));
+        }
     },
     methods: {
         // 显示代码
@@ -111,7 +127,18 @@ export default {
         },
         // 跳转测试网站
         clickJsfiddle() {
-            window.open(this.jsfiddle);
+            const isProduction = process.env.NODE_ENV === 'production';
+
+            let url = '';
+
+            if (!isProduction) {
+                url = `https://localhost:4173/#${this.playground}`;
+            }
+            else {
+                url = '';
+            }
+
+            window.open(url);
         },
         // 跳转github
         clickGithub() {

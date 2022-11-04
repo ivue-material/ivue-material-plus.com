@@ -13,13 +13,6 @@ code.default = `<template>
         </ivue-card>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
-</style>
 `;
 
 code.notBorder = `<template>
@@ -39,7 +32,7 @@ code.notBorder = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .card {
     background-color: #ccc;
     padding: 20px;
@@ -72,25 +65,34 @@ code.umbra = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .card {
     display: flex;
     justify-content: center;
 }
 
 .dis-hover {
-    margin: 20px;
+    margin: 0 20px;
 }
 
 .not-dis-hover {
-    margin: 20px;
+    margin: 0 20px;
 }
 </style>
 `;
 
 code.shadow = `<template>
     <div class="card">
-        <ivue-card :border="true">
+        <ivue-card class="card-content" shadow :border="false">
+            <template #title>shadow title</template>
+            <p>
+                Content of card
+                Content of card
+                Content of card
+            </p>
+        </ivue-card>
+
+        <ivue-card class="card-content" :shadow="false" :border="false">
             <template #title>shadow title</template>
             <p>
                 Content of card
@@ -105,16 +107,22 @@ code.shadow = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .card {
+    display: flex;
+    justify-content: center;
     background-color: #ccc;
     padding: 20px;
+}
+
+.card-content {
+    margin: 20px;
 }
 </style>
 `;
 
 code.simple = `<template>
-<div>
+<div class="card">
     <ivue-card>
         Content of card
         Content of card
@@ -127,12 +135,15 @@ code.simple = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.card {
+    padding: 20px;
+}
 </style>
 `;
 
 code.padding = `<template>
-    <div>
+    <div class="card">
         <ivue-card :padding="50" :radius="10" :padding-styles-linkage="false" :title-padding="30">
             <template #title>title</template>
             Content of card
@@ -146,7 +157,10 @@ code.padding = `<template>
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.card {
+    padding: 20px;
+}
 </style>
 `;
 

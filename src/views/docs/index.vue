@@ -116,6 +116,10 @@ export default {
                                     name: 'Card 卡片',
                                     router: 'card',
                                 },
+                                // {
+                                //     name: 'List 列表',
+                                //     router: 'list',
+                                // },
                             ],
                         },
                         {
@@ -137,6 +141,10 @@ export default {
                                 {
                                     name: 'Avatar 头像',
                                     router: 'avatar',
+                                },
+                                {
+                                    name: 'Carousel 走马灯',
+                                    router: 'carousel',
                                 },
                             ],
                         },

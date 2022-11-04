@@ -13,11 +13,8 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .button {
     margin: 10px;
-
-    &-wrapper {
-    }
 }
 </style>

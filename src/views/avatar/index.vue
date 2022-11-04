@@ -44,6 +44,7 @@
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值"></ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
         <h3>Events</h3>
@@ -69,15 +70,16 @@ export default {
             propsData: [
                 {
                     name: 'shape',
-                    illustrate:
-                        '指定头像的形状，可选值为 <code>circle</code>、<code>square</code>',
+                    illustrate: '指定头像的形状',
                     type: 'String',
+                    value: 'circle | square',
                     default: 'circle',
                 },
                 {
                     name: 'src',
                     illustrate: '图片类头像的资源地址',
                     type: 'String',
+                    value: '-',
                     default: '-',
                 },
                 {
@@ -85,6 +87,7 @@ export default {
                     illustrate:
                         '设置头像的图标类型，参考 <code>ivue-icon</code> 组件',
                     type: 'String',
+                    value: '-',
                     default: '-',
                 },
                 {
@@ -92,6 +95,7 @@ export default {
                     illustrate:
                         '设置组件的大小，该属性同时接受带 px、 rem、 em等单位的字符串，如：12px、12rem、12em',
                     type: 'String',
+                    value: '-',
                     default: '-',
                 },
             ],

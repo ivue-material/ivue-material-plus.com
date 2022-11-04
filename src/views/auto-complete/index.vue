@@ -71,6 +71,11 @@
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值">
+                <template #default="props">
+                    <p>{{ props.row.value || '-' }}</p>
+                </template>
+            </ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
         <h3>Events</h3>
@@ -126,9 +131,9 @@ export default {
                 },
                 {
                     name: 'placement',
-                    illustrate:
-                        '弹窗的展开方向，可选值为 <code>top</code>、<code>top-start</code>、<code>top-end</code>、<code>bottom</code>、<code>bottom-start</code>、<code>bottom-end</code>',
+                    illustrate: '弹窗的展开方向',
                     type: 'String',
+                    value: 'top | top-start | top-end | bottom | bottom-start | bottom-end',
                     default: 'bottom-start',
                 },
                 {

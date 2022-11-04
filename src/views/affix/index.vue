@@ -4,7 +4,7 @@
         <p>使用图钉，可以将内容固定在屏幕上，并且不随页面的滚动而滚动。常用于侧边菜单等。</p>
         <h2>基础用法</h2>
         <p>基础用法，当元素不可见时，直接固定在最顶端。</p>
-        <doc-markdown :code="code.default" jsfiddle="https://codesandbox.io/s/default-9bxmm4">
+        <doc-markdown :code="code.default">
             <template #demo>
                 <default></default>
             </template>
@@ -14,7 +14,7 @@
             通过设置属性
             <code>offset-top</code>，当滚动到一定距离时再固定。
         </p>
-        <doc-markdown :code="code.offsetTop" jsfiddle="https://codesandbox.io/s/offset-top-4iczvn">
+        <doc-markdown :code="code.offsetTop">
             <template #demo>
                 <offset-top></offset-top>
             </template>
@@ -27,20 +27,14 @@
             <code>offset-bottom</code> 只可以设置一个，如果都设置，会使用
             <code>offset-top</code>。
         </p>
-        <doc-markdown
-            :code="code.offsetBottom"
-            jsfiddle="https://codesandbox.io/s/offset-bottom-uccnsk"
-        >
+        <doc-markdown :code="code.offsetBottom">
             <template #demo>
                 <offset-bottom></offset-bottom>
             </template>
         </doc-markdown>
         <h2>固定状态改变时的回调</h2>
         <p>当固定状态发生改变时，会触发事件</p>
-        <doc-markdown
-            :code="code.callback"
-            jsfiddle="https://codesandbox.io/s/callback-6dg9y9?file=/src/App.vue"
-        >
+        <doc-markdown :code="code.callback">
             <template #demo>
                 <callback></callback>
             </template>

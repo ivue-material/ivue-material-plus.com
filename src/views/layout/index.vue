@@ -103,7 +103,7 @@
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="value">
+            <ivue-table-column prop="default" label="可选值">
                 <template #default="props">
                     <p v-html="props.row.default"></p>
                 </template>
@@ -118,7 +118,7 @@
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="value">
+            <ivue-table-column prop="default" label="可选值">
                 <template #default="props">
                     <p v-html="props.row.default"></p>
                 </template>
@@ -133,7 +133,7 @@
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="value">
+            <ivue-table-column prop="default" label="可选值">
                 <template #default="props">
                     <p v-html="props.row.default"></p>
                 </template>

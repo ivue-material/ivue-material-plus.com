@@ -36,9 +36,6 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
 `;
 
 code.custom = `<template>
@@ -70,9 +67,7 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>`;
+`;
 
 code.notCaseSensitive = `<template>
     <div>
@@ -100,9 +95,7 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>`;
+`;
 
 code.queryMod = `<template>
     <div>
@@ -182,7 +175,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .demo-auto-complete-item {
     padding: 4px 0;
     border-bottom: 1px solid #f6f6f6;
@@ -278,8 +271,6 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>`;
+`;
 
 export default code;

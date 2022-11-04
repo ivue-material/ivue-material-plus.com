@@ -31,7 +31,7 @@
             <code>ivue-material-plus</code>
             <span>写出一个示例。</span>
         </p>
-        <doc-markdown :code="code.example">
+        <doc-markdown :code="code.example" :showPlayground="false">
             <template #demo>
                 <example></example>
             </template>
