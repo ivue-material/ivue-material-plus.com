@@ -124,6 +124,12 @@ const routes = [
         name: 'carousel',
         component: lazyLoading('carousel', 'index'),
       },
+      // Switch 开关
+      {
+        path: 'switch',
+        name: 'switch',
+        component: lazyLoading('switch', 'index'),
+      },
     ],
   },
 ];

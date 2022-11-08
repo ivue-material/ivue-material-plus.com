@@ -7,7 +7,7 @@
             基本用法，通过
             <code>list</code> 设置自动完成的数据源
         </p>
-        <doc-markdown :code="code.default" jsfiddle="https://codesandbox.io/s/auto-complete-2hg3t3">
+        <doc-markdown :code="code.default">
             <template #demo>
                 <default></default>
             </template>
@@ -23,7 +23,7 @@
                 <code>slot</code> 使用，这样可以自定义显示效果。
             </span>
         </p>
-        <doc-markdown :code="code.custom" jsfiddle="https://codesandbox.io/s/custom-493cfm">
+        <doc-markdown :code="code.custom">
             <template #demo>
                 <custom></custom>
             </template>
@@ -33,10 +33,7 @@
             不区分大小写的
             <code>auto-complete</code>，及过滤的用法
         </p>
-        <doc-markdown
-            :code="code.notCaseSensitive"
-            jsfiddle="https://codesandbox.io/s/not-case-sensitive-tbfg0l"
-        >
+        <doc-markdown :code="code.notCaseSensitive">
             <template #demo>
                 <not-case-sensitive></not-case-sensitive>
             </template>
@@ -46,17 +43,14 @@
             完全自定义
             <code>ivue-option</code>，显示复杂的布局
         </p>
-        <doc-markdown :code="code.queryMod" jsfiddle="https://codesandbox.io/s/query-mode-uoyx63">
+        <doc-markdown :code="code.queryMod">
             <template #demo>
                 <query-mode></query-mode>
             </template>
         </doc-markdown>
         <h2>远程搜索</h2>
         <p>从服务端搜索数据</p>
-        <doc-markdown
-            :code="code.remoteSearch"
-            jsfiddle="https://codesandbox.io/s/remote-search-23f1fu"
-        >
+        <doc-markdown :code="code.remoteSearch">
             <template #demo>
                 <remote-search></remote-search>
             </template>

@@ -155,6 +155,10 @@ export default {
                                     name: 'AutoComplete 自动完成',
                                     router: 'auto-complete',
                                 },
+                                {
+                                    name: 'Switch 开关',
+                                    router: 'switch',
+                                },
                             ],
                         },
                         {
