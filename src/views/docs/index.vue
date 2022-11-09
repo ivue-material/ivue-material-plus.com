@@ -146,6 +146,10 @@ export default {
                                     name: 'Carousel 走马灯',
                                     router: 'carousel',
                                 },
+                                {
+                                    name: 'BottomNav 底部导航',
+                                    router: 'bottom-nav',
+                                },
                             ],
                         },
                         {

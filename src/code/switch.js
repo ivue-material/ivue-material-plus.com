@@ -25,7 +25,9 @@ export default {
     },
     methods: {
         handleChange(status) {
-            this.$message.info(\`开关状态：$\{status}\`);
+            this.$message.info({
+                content: \`开关状态：\${status}\`,
+            });
         },
     },
 };

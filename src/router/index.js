@@ -130,6 +130,12 @@ const routes = [
         name: 'switch',
         component: lazyLoading('switch', 'index'),
       },
+       // BottomNav 底部导航
+       {
+        path: 'bottom-nav',
+        name: 'bottom-nav',
+        component: lazyLoading('bottom-nav', 'index'),
+      },
     ],
   },
 ];
