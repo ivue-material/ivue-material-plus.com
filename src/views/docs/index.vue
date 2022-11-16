@@ -102,6 +102,19 @@ export default {
                     name: '组件',
                     child: [
                         {
+                            name: '基础',
+                            menu: [
+                                {
+                                    name: 'Icon 图标',
+                                    router: 'icon',
+                                },
+                                {
+                                    name: 'Button 按钮',
+                                    router: 'button',
+                                },
+                            ],
+                        },
+                        {
                             name: '布局',
                             menu: [
                                 {
@@ -116,25 +129,18 @@ export default {
                                     name: 'Card 卡片',
                                     router: 'card',
                                 },
-                                // {
-                                //     name: 'List 列表',
-                                //     router: 'list',
-                                // },
                             ],
                         },
                         {
-                            name: '基础',
+                            name: '导航',
                             menu: [
                                 {
-                                    name: 'Icon 图标',
-                                    router: 'icon',
-                                },
-                                {
-                                    name: 'Button 按钮',
-                                    router: 'button',
+                                    name: 'Breadcrumb 面包屑',
+                                    router: 'breadcrumb',
                                 },
                             ],
                         },
+
                         {
                             name: '视图',
                             menu: [

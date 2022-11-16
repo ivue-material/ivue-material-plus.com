@@ -1,89 +1,42 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
-  extends: [
+  'extends': [
     'plugin:vue/vue3-essential',
-    '@vue/airbnb',
+    'eslint:recommended',
   ],
-  parserOptions: {
-    parser: 'babel-eslint',
+  'parser': 'vue-eslint-parser',
+  'parserOptions': {
+    'sourceType': 'module',
+    'ecmaVersion': 2018,
+    'ecmaFeatures': {
+      'globalReturn': false,
+      'impliedStrict': false,
+      'jsx': false
+    }
   },
   rules: {
-    'vue/no-parsing-error': ['error', {
-      'x-invalid-end-tag': false,
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'always'],
+    'vue/jsx-uses-vars': 2,
+    'no-console': ['error'],
+    '@typescript-eslint/no-explicit-any': ['off'],
+    'vue/no-use-v-if-with-v-for': ['error', {
+      'allowUsingIterationVar': false
     }],
-    // indent: ['error', 4, {
-    //   SwitchCase: 1,
-    //   ignoredNodes: ['TemplateLiteral'],
-    // }],
-    'no-nested-ternary': 'off',
-    'no-underscore-dangle': 'off',
-    // "camelcase": ["error", {
-    //   "allow": ["aa_bb", "_aa"],
-
-    // }],
-    'no-lonely-if': 'off',
-    'no-named-as-default': 'off',
-    'vue/no-side-effects-in-computed-properties': 'off',
-    'vue/no-deprecated-v-on-native-modifier': 'off',
-    radix: 'off',
-    'linebreak-style': 'off',
-    'space-before-function-paren': ['error', 'never'],
-    'brace-style': [2, 'stroustrup'],
-    indent: ['off', 2],
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    semi: ['error', 'always'],
-    'no-mixed-spaces-and-tabs': ['error', false],
-    'func-names': 'off',
-    'no-param-reassign': 'off',
-    'object-curly-spacing': 'off',
-    'arrow-parens': 'off',
-    'global-require': 'off',
-    'no-extra-boolean-cast': 'off',
-    'object-shorthand': 'off',
-    'prefer-destructuring': 'off',
-    'consistent-return': 0,
-    'import/extensions': 'off',
-    'comma-dangle': ['error', 'always-multiline'],
-    quotes: ['error', 'single'],
-    'guard-for-in': 'off',
-    'no-var': 'error',
-    'no-unused-vars': 'warn',
-    'no-unused-expressions': 'warn',
-    'no-return-assign': 'warn',
-    'max-len': ['error', {
-      code: 1200,
-      ignoreUrls: true,
+    'vue/no-side-effects-in-computed-properties': ['off'],
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/ban-ts-comment': ['off', {
+      'ts-ignore': false
     }],
-    'no-tabs': 'off',
-    'vue/script-indent': [
-      'error',
-      4,
-    ],
-    'class-methods-use-this': 'off',
-    'no-continue': 'off',
-    'no-mixed-operators': 'off',
-    'no-plusplus': 'off',
-    'no-await-in-loop': 'off',
-    'no-restricted-syntax': 'warn',
-    'prefer-const': 'warn',
-    'no-new': 'warn',
-    radix: 'warn',
-    'prefer-template': 'warn',
-    'no-use-before-define': 'off',
-    'no-shadow': 'warn',
-    'import/no-extraneous-dependencies': 'warn',
-    'import/first': 'warn',
-    'import/no-unresolved': 'off',
-    'template-curly-spacing': 'off',
-    "vue/no-unused-components": ["error", {
-      "ignoreWhenBindingPresent": false
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'vue/prefer-import-from-vue': 'off',
+    'vue/multi-word-component-names': ['off', {
+      'ignores': []
     }]
-  },
-  globals: {
-    '@': true,
-  },
+  }
 };
