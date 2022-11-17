@@ -169,6 +169,10 @@ export default {
                                     name: 'Switch 开关',
                                     router: 'switch',
                                 },
+                                {
+                                    name: 'Select 选择器',
+                                    router: 'select',
+                                },
                             ],
                         },
                         {

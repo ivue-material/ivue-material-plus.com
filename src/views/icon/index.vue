@@ -279,9 +279,10 @@
 </template>
 
 <script>
+import Clipboard from 'clipboard';
+
 import Code from '@/code/icon';
 import Default from '@/components/icon/default.vue';
-import Clipboard from 'clipboard';
 import Font from './font';
 
 export default {

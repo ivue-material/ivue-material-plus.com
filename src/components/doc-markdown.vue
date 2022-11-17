@@ -39,6 +39,10 @@
                         />
                     </svg>
                 </ivue-button>
+                <!-- 复制代码 -->
+                <ivue-button class="copy-code" icon flat :data-clipboard-text="code" @click="handleCopy(item)">
+                    <ivue-icon class="icon">content_copy</ivue-icon>
+                </ivue-button>
                 <!-- 查看代码 -->
                 <ivue-button icon flat @click="handleShowCode">
                     <ivue-icon class="icon">code</ivue-icon>
@@ -61,7 +65,9 @@
 </template>
 
 <script>
+import Clipboard from 'clipboard';
 import Hljs from 'highlight.js';
+
 import { utoa } from '@/utils/encode';
 
 export default {
@@ -133,8 +139,7 @@ export default {
 
             if (!isProduction) {
                 url = `https://localhost:4173/#${this.playground}`;
-            }
-            else {
+            } else {
                 url = '';
             }
 
@@ -143,6 +148,16 @@ export default {
         // 跳转github
         clickGithub() {
             window.open(this.github);
+        },
+        // 复制
+        handleCopy(item) {
+            const clipboard = new Clipboard('.copy-code');
+
+            clipboard.on('success', (event) => {
+                this.$message.success(`copy success ${item}`);
+
+                event.clearSelection();
+            });
         },
     },
 };

@@ -142,6 +142,12 @@ const routes = [
         name: 'breadcrumb',
         component: lazyLoading('breadcrumb', 'index'),
       },
+       // Select 选择器
+       {
+        path: 'select',
+        name: 'select',
+        component: lazyLoading('select', 'index'),
+      },
     ],
   },
 ];
