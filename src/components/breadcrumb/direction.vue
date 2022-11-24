@@ -1,18 +1,18 @@
 <template>
     <div>
         <h3>中间对齐</h3>
-        <ivue-breadcrumbs justifyCenter>
-            <ivue-breadcrumbs-item to="/">Home</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">Install</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>Breadcrumb</ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+        <ivue-breadcrumb justifyCenter>
+            <ivue-breadcrumb-item to="/">Home</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">Install</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>Breadcrumb</ivue-breadcrumb-item>
+        </ivue-breadcrumb>
 
         <h3>尾部对齐</h3>
-        <ivue-breadcrumbs justifyEnd>
-            <ivue-breadcrumbs-item to="/">Home</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">Install</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>Breadcrumb</ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+        <ivue-breadcrumb justifyEnd>
+            <ivue-breadcrumb-item to="/">Home</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">Install</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>Breadcrumb</ivue-breadcrumb-item>
+        </ivue-breadcrumb>
     </div>
 </template>
 

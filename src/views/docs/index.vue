@@ -135,6 +135,10 @@ export default {
                             name: '导航',
                             menu: [
                                 {
+                                    name: 'Steps 步骤条',
+                                    router: 'steps',
+                                },
+                                {
                                     name: 'Breadcrumb 面包屑',
                                     router: 'breadcrumb',
                                 },

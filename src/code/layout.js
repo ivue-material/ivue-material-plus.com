@@ -306,4 +306,5 @@ export default {};
 }
 </style>
 `;
+
 export default code;

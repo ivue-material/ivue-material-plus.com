@@ -1,44 +1,44 @@
 const code = {};
 
 code.default = `<template>
-    <ivue-breadcrumbs>
-      <ivue-breadcrumbs-item to="/">Home</ivue-breadcrumbs-item>
-      <ivue-breadcrumbs-item to="/docs/install">Install</ivue-breadcrumbs-item>
-      <ivue-breadcrumbs-item>Breadcrumb</ivue-breadcrumbs-item>
-    </ivue-breadcrumbs>
+    <ivue-breadcrumb>
+      <ivue-breadcrumb-item to="/">Home</ivue-breadcrumb-item>
+      <ivue-breadcrumb-item to="/docs/install">Install</ivue-breadcrumb-item>
+      <ivue-breadcrumb-item>Breadcrumb</ivue-breadcrumb-item>
+    </ivue-breadcrumb>
 </template>
 `;
 
 code.divider = `<template>
     <div>
         <h3>通过插槽修改</h3>
-        <ivue-breadcrumbs>
+        <ivue-breadcrumb>
             <template #divider>
                 <ivue-icon>forward</ivue-icon>
             </template>
-            <ivue-breadcrumbs-item>
+            <ivue-breadcrumb-item>
                 <span>Home</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">
                 <span>Install</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>
                 <span>Breadcrumb</span>
-            </ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+            </ivue-breadcrumb-item>
+        </ivue-breadcrumb>
 
         <h3>通过pops修改</h3>
-        <ivue-breadcrumbs divider=">">
-            <ivue-breadcrumbs-item>
+        <ivue-breadcrumb divider=">">
+            <ivue-breadcrumb-item>
                 <span>Home</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">
                 <span>Install</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>
                 <span>Breadcrumb</span>
-            </ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+            </ivue-breadcrumb-item>
+        </ivue-breadcrumb>
     </div>
 </template>
 `;
@@ -46,18 +46,18 @@ code.divider = `<template>
 code.direction = `<template>
     <div>
         <h3>中间对齐</h3>
-        <ivue-breadcrumbs justifyCenter>
-            <ivue-breadcrumbs-item to="/">Home</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">Install</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>Breadcrumb</ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+        <ivue-breadcrumb justifyCenter>
+            <ivue-breadcrumb-item to="/">Home</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">Install</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>Breadcrumb</ivue-breadcrumb-item>
+        </ivue-breadcrumb>
 
         <h3>尾部对齐</h3>
-        <ivue-breadcrumbs justifyEnd>
-            <ivue-breadcrumbs-item to="/">Home</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">Install</ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>Breadcrumb</ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+        <ivue-breadcrumb justifyEnd>
+            <ivue-breadcrumb-item to="/">Home</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">Install</ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>Breadcrumb</ivue-breadcrumb-item>
+        </ivue-breadcrumb>
     </div>
 </template>
 `;

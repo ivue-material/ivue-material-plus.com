@@ -3,8 +3,8 @@ import {
   createWebHistory,
 } from 'vue-router';
 
-function lazyLoading(path, name) {
-  return function() {
+function lazyLoading (path, name) {
+  return function () {
     return import(`@/views/${path}/${name}.vue`);
   };
 }
@@ -142,11 +142,17 @@ const routes = [
         name: 'breadcrumb',
         component: lazyLoading('breadcrumb', 'index'),
       },
-       // Select 选择器
-       {
+      // Select 选择器
+      {
         path: 'select',
         name: 'select',
         component: lazyLoading('select', 'index'),
+      },
+      // Steps 步骤条
+      {
+        path: 'steps',
+        name: 'steps',
+        component: lazyLoading('steps', 'index'),
       },
     ],
   },

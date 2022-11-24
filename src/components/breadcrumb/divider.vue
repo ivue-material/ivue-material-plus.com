@@ -1,32 +1,32 @@
 <template>
     <div>
         <h3>通过插槽修改</h3>
-        <ivue-breadcrumbs>
+        <ivue-breadcrumb>
             <template #divider>
                 <ivue-icon>forward</ivue-icon>
             </template>
-            <ivue-breadcrumbs-item>
+            <ivue-breadcrumb-item>
                 <span>Home</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">
                 <span>Install</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>
                 <span>Breadcrumb</span>
-            </ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+            </ivue-breadcrumb-item>
+        </ivue-breadcrumb>
         <h3>通过pops修改</h3>
-        <ivue-breadcrumbs divider=">">
-            <ivue-breadcrumbs-item>
+        <ivue-breadcrumb divider=">">
+            <ivue-breadcrumb-item>
                 <span>Home</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item to="/docs/install">
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item to="/docs/install">
                 <span>Install</span>
-            </ivue-breadcrumbs-item>
-            <ivue-breadcrumbs-item>
+            </ivue-breadcrumb-item>
+            <ivue-breadcrumb-item>
                 <span>Breadcrumb</span>
-            </ivue-breadcrumbs-item>
-        </ivue-breadcrumbs>
+            </ivue-breadcrumb-item>
+        </ivue-breadcrumb>
     </div>
 </template>
 
