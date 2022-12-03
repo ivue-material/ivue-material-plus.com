@@ -154,6 +154,12 @@ const routes = [
         name: 'steps',
         component: lazyLoading('steps', 'index'),
       },
+       // Upload 上传
+       {
+        path: 'upload',
+        name: 'upload',
+        component: lazyLoading('upload', 'index'),
+      },
     ],
   },
 ];

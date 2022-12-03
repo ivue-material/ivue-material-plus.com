@@ -177,6 +177,10 @@ export default {
                                     name: 'Select 选择器',
                                     router: 'select',
                                 },
+                                {
+                                    name: 'Upload 上传',
+                                    router: 'upload',
+                                },
                             ],
                         },
                         {
@@ -335,6 +339,7 @@ export default {
 
         p {
             margin: 5px;
+            line-height: normal;
         }
 
         .table {
