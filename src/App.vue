@@ -199,6 +199,12 @@ export default {
             margin-bottom: 14px;
         }
     }
+
+    .illustrate {
+        a {
+            margin: 0;
+        }
+    }
 }
 
 .app {
