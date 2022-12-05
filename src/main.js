@@ -20,14 +20,10 @@ import IvueMaterial from '../dist/ivue-material-plus.min';
 // import 'ivue-material-plus/dist/styles/layout.css';
 // import 'ivue-material-plus/dist/styles/color.css';
 
-
-
 import '../dist/styles/index.css';
 import '../dist/styles/elevation.css';
 import '../dist/styles/layout.css';
 import '../dist/styles/color.css';
-
-
 
 import DocMarkdown from './components/doc-markdown.vue';
 import Example from './components/install/example.vue';

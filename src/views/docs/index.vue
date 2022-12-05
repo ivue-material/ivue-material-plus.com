@@ -7,13 +7,9 @@
                 <ul class="router-list" @click.stop>
                     <li class="router-list-li" v-for="item in routers" :key="item.name">
                         <!-- 父级导航 -->
-                        <router-link
-                            class="router-list-item"
-                            :to="{
-                                name: item.router
-                            }"
-                            v-if="item.router"
-                        >{{ item.name }}</router-link>
+                        <router-link class="router-list-item" :to="{
+                            name: item.router
+                        }" v-if="item.router">{{ item.name }}</router-link>
                         <!-- 子导航 -->
                         <div v-else>
                             <!-- 子导航名称 -->
@@ -21,23 +17,14 @@
                             <!-- child -->
                             <template v-if="item.child.length > 0">
                                 <!-- group -->
-                                <div
-                                    class="router-list--child-group"
-                                    v-for="child in item.child"
-                                    :key="child.name"
-                                >
+                                <div class="router-list--child-group" v-for="child in item.child" :key="child.name">
                                     <!-- child -->
                                     <p class="router-list--child">{{child.name}}</p>
                                     <!-- router-link -->
                                     <ul class="ul">
-                                        <router-link
-                                            class="router-list--child-item"
-                                            v-for="menu in child.menu"
-                                            :to="{
-                                                name: menu.router
-                                            }"
-                                            :key="menu.name"
-                                        >{{ menu.name }}</router-link>
+                                        <router-link class="router-list--child-item" v-for="menu in child.menu" :to="{
+                                            name: menu.router
+                                        }" :key="menu.name">{{ menu.name }}</router-link>
                                     </ul>
                                 </div>
                             </template>
@@ -65,7 +52,7 @@ import IvueFooter from '@/components/footer';
 
 export default {
     name: 'docs',
-    data() {
+    data () {
         return {
             /**
              * 路由导航
@@ -142,6 +129,10 @@ export default {
                                     name: 'Breadcrumb 面包屑',
                                     router: 'breadcrumb',
                                 },
+                                {
+                                    name: 'Steps 步骤条',
+                                    router: 'steps',
+                                },
                             ],
                         },
 
@@ -204,7 +195,7 @@ export default {
     },
     methods: {
         // 隐藏菜单
-        handleHideMenu() {
+        handleHideMenu () {
             this.setHideMenu(false);
         },
         ...mapActions({
@@ -213,7 +204,7 @@ export default {
     },
     watch: {
         // 监听路由
-        $route() {
+        $route () {
             window.scrollTo(0, 0);
 
             this.setHideMenu(false);

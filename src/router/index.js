@@ -3,7 +3,7 @@ import {
   createWebHistory,
 } from 'vue-router';
 
-function lazyLoading (path, name) {
+function lazyLoading(path, name) {
   return function () {
     return import(`@/views/${path}/${name}.vue`);
   };
@@ -154,8 +154,8 @@ const routes = [
         name: 'steps',
         component: lazyLoading('steps', 'index'),
       },
-       // Upload 上传
-       {
+      // Upload 上传
+      {
         path: 'upload',
         name: 'upload',
         component: lazyLoading('upload', 'index'),
