@@ -7,9 +7,13 @@
                 <ul class="router-list" @click.stop>
                     <li class="router-list-li" v-for="item in routers" :key="item.name">
                         <!-- 父级导航 -->
-                        <router-link class="router-list-item" :to="{
+                        <router-link
+                            class="router-list-item"
+                            :to="{
                             name: item.router
-                        }" v-if="item.router">{{ item.name }}</router-link>
+                        }"
+                            v-if="item.router"
+                        >{{ item.name }}</router-link>
                         <!-- 子导航 -->
                         <div v-else>
                             <!-- 子导航名称 -->
@@ -17,14 +21,23 @@
                             <!-- child -->
                             <template v-if="item.child.length > 0">
                                 <!-- group -->
-                                <div class="router-list--child-group" v-for="child in item.child" :key="child.name">
+                                <div
+                                    class="router-list--child-group"
+                                    v-for="child in item.child"
+                                    :key="child.name"
+                                >
                                     <!-- child -->
                                     <p class="router-list--child">{{child.name}}</p>
                                     <!-- router-link -->
                                     <ul class="ul">
-                                        <router-link class="router-list--child-item" v-for="menu in child.menu" :to="{
+                                        <router-link
+                                            class="router-list--child-item"
+                                            v-for="menu in child.menu"
+                                            :to="{
                                             name: menu.router
-                                        }" :key="menu.name">{{ menu.name }}</router-link>
+                                        }"
+                                            :key="menu.name"
+                                        >{{ menu.name }}</router-link>
                                     </ul>
                                 </div>
                             </template>
@@ -52,7 +65,7 @@ import IvueFooter from '@/components/footer';
 
 export default {
     name: 'docs',
-    data () {
+    data() {
         return {
             /**
              * 路由导航
@@ -129,10 +142,6 @@ export default {
                                     name: 'Breadcrumb 面包屑',
                                     router: 'breadcrumb',
                                 },
-                                {
-                                    name: 'Steps 步骤条',
-                                    router: 'steps',
-                                },
                             ],
                         },
 
@@ -140,8 +149,8 @@ export default {
                             name: '视图',
                             menu: [
                                 {
-                                    name: 'Avatar 头像',
-                                    router: 'avatar',
+                                    name: 'Input 输入框',
+                                    router: 'input',
                                 },
                                 {
                                     name: 'Carousel 走马灯',
@@ -156,6 +165,10 @@ export default {
                         {
                             name: '表单',
                             menu: [
+                                {
+                                    name: 'Upload 上传',
+                                    router: 'upload',
+                                },
                                 {
                                     name: 'AutoComplete 自动完成',
                                     router: 'auto-complete',
@@ -195,7 +208,7 @@ export default {
     },
     methods: {
         // 隐藏菜单
-        handleHideMenu () {
+        handleHideMenu() {
             this.setHideMenu(false);
         },
         ...mapActions({
@@ -204,7 +217,7 @@ export default {
     },
     watch: {
         // 监听路由
-        $route () {
+        $route() {
             window.scrollTo(0, 0);
 
             this.setHideMenu(false);

@@ -112,12 +112,6 @@ const routes = [
         name: 'card',
         component: lazyLoading('card', 'index'),
       },
-      // List 列表
-      {
-        path: 'list',
-        name: 'list',
-        component: lazyLoading('list', 'index'),
-      },
       // Carousel 走马灯
       {
         path: 'carousel',
@@ -159,6 +153,12 @@ const routes = [
         path: 'upload',
         name: 'upload',
         component: lazyLoading('upload', 'index'),
+      },
+      // Input 输入框
+      {
+        path: 'input',
+        name: 'input',
+        component: lazyLoading('input', 'index'),
       },
     ],
   },
