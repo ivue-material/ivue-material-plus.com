@@ -38,7 +38,7 @@
         <h3>Breadcrumb Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -49,7 +49,7 @@
         <h3>Breadcrumb Slots</h3>
         <ivue-table :data="slotsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -58,7 +58,7 @@
         <h3>Breadcrumb Item Slots</h3>
         <ivue-table :data="itemData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>

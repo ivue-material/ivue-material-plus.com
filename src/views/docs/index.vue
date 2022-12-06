@@ -1,5 +1,5 @@
 <template>
-    <div class="docs">
+    <div :class="['docs', !hideMenu && 'docs-navigations-hide']">
         <!-- 导航 -->
         <transition name="docs-transition">
             <div class="docs-navigations" @click="handleHideMenu" v-show="hideMenu">
@@ -60,9 +60,10 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { onBeforeMount, onMounted, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
+import { useEventListener } from '@vueuse/core';
 
 import storeHook from '@/hook/store-hook';
 
@@ -212,11 +213,29 @@ const routers = ref([
     },
 ]);
 
+// onBeforeMount
+onBeforeMount(() => {
+    if (window.innerWidth <= 800) {
+        store.dispatch('setHideMenu', false);
+    }
+});
+
+// onMounted
+onMounted(() => {
+    useEventListener(window, 'resize', () => {
+        if (window.innerWidth <= 800) {
+            store.dispatch('setHideMenu', false);
+        }
+    });
+});
+
 // methods
 
 // 隐藏菜单
 const handleHideMenu = () => {
-    store.dispatch('setHideMenu', false);
+    if (window.innerWidth <= 800) {
+        store.dispatch('setHideMenu', false);
+    }
 };
 
 // 监听路由
@@ -225,7 +244,9 @@ watch(
     () => {
         window.scrollTo(0, 0);
 
-        store.dispatch('setHideMenu', false);
+        if (window.innerWidth <= 800) {
+            store.dispatch('setHideMenu', false);
+        }
     }
 );
 </script>
@@ -240,7 +261,9 @@ watch(
     z-index: 50;
     overflow: hidden;
     background: #f5f5f5;
-    padding-left: 17%;
+    padding-left: calc(17% + 20px);
+    padding-right: 20px;
+    transition: all 0.3s ease-in-out;
 
     // 导航
     &-navigations {
@@ -261,13 +284,17 @@ watch(
         z-index: 100;
         background: #fff;
 
+        &-hide {
+            padding-left: 20px;
+        }
+
         .router-list {
             display: flex;
             flex-direction: column;
             padding: 24px 26px;
             min-height: 100%;
             margin: 0;
-            transition: transform 0.4s;
+            transition: transform 0.3s ease-in-out;
 
             &-li {
                 display: block;
@@ -338,7 +365,7 @@ watch(
         position: relative;
         display: block;
         border-radius: 10px;
-        margin: 0 20px 50px 20px;
+        margin: 0 0 50px 0;
         text-align: left;
         padding: 20px 20px 100px 20px;
         flex: 1;
@@ -383,12 +410,6 @@ watch(
         }
     }
 
-    @media screen and (min-width: 800px) {
-        &-navigations {
-            display: block !important;
-        }
-    }
-
     @media screen and (max-width: 800px) {
         &-navigations {
             position: fixed;
@@ -404,7 +425,7 @@ watch(
                 top: 0;
                 bottom: 0;
                 left: 0;
-                width: 50%;
+                width: 60%;
                 margin-right: 30%;
                 overflow-y: scroll;
                 background: #fff;
@@ -414,6 +435,7 @@ watch(
         &-content {
             overflow: hidden;
             width: 100%;
+            border-radius: 0;
         }
     }
 }
@@ -422,20 +444,29 @@ watch(
     .docs {
         padding: 0;
     }
+
+    .app-footer {
+        margin-left: 0;
+    }
 }
 
 .docs-transition-enter-active,
 .docs-transition-leave-active {
-    transition: opacity 0.4s;
+    transition: all 0.3s ease-in-out;
 }
 
 .docs-transition-enter-from,
 .docs-transition-leave-to {
     opacity: 0;
+    transform: translate3d(-100%, 0, 0);
 
-    .router-list {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
+    @media screen and (max-width: 800px) {
+        transform: none;
+
+        .router-list {
+            position: relative;
+            transform: translate3d(-100%, 0, 0);
+        }
     }
 }
 </style>

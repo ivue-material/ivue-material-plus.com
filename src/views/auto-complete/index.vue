@@ -59,7 +59,7 @@
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -75,7 +75,7 @@
         <h3>Events</h3>
         <ivue-table :data="eventsData" border>
             <ivue-table-column prop="name" label="事件名" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>

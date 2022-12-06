@@ -30,20 +30,20 @@
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
         <h3>Class</h3>
         <ivue-table :data="classData" border>
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="default" label="例子"></ivue-table-column>
         </ivue-table>
         <h3>Event</h3>
         <ivue-table :data="eventData" border>
             <ivue-table-column prop="name" label="事件名"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="default" label="返回值"></ivue-table-column>
         </ivue-table>
         <h2>所有图标</h2>

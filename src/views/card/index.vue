@@ -68,14 +68,14 @@
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
             <ivue-table-column prop="default" label="默认" width="150"></ivue-table-column>
         </ivue-table>
         <h3>Slots</h3>
         <ivue-table :data="slotsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
         </ivue-table>
     </div>
 </template>

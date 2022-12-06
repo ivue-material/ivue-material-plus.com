@@ -98,7 +98,7 @@
         <p>以下类可以应用于任何HTML元素：</p>
         <ivue-table :data="layoutData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -113,7 +113,7 @@
         <h4>Class</h4>
         <ivue-table :data="itemData" border>
             <ivue-table-column prop="name" label="名称" width="250"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -128,7 +128,7 @@
         <h4>Class</h4>
         <ivue-table :data="hideData" border>
             <ivue-table-column prop="name" label="名称" width="300"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>

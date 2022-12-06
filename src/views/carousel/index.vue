@@ -89,7 +89,7 @@
         <h3>Carousel Props</h3>
         <ivue-table :data="carouselPropsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值">
                 <template #default="props">
@@ -101,7 +101,7 @@
         <h3>Carousel Events</h3>
         <ivue-table :data="carouselEventsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="value" label="参数">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
@@ -111,7 +111,7 @@
         <h3>Carousel Methods</h3>
         <ivue-table :data="carouselMethodsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="value" label="参数">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
@@ -121,13 +121,13 @@
         <h3>Carousel Slots</h3>
         <ivue-table :data="carouselSlotsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
             <ivue-table-column prop="value" label="子标签" width="200"></ivue-table-column>
         </ivue-table>
         <h3>Carousel Item Props</h3>
         <ivue-table :data="carouselItemPropsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -138,7 +138,7 @@
         <h3>Carousel Item Slots</h3>
         <ivue-table :data="carouselItemSlotsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
         </ivue-table>
     </div>
 </template>

@@ -12,7 +12,7 @@ export default createStore({
      *
      * @type {Boolean}
      */
-    hideMenu: false,
+    hideMenu: true,
   },
   mutations: {
     // 是否显示菜单导航

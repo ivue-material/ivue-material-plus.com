@@ -80,40 +80,40 @@
         </doc-markdown>
         <h3>Steps Props</h3>
         <ivue-table :data="propsStepsData" border>
-            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明" min-width="200">
+            <ivue-table-column prop="name" label="名称" width="150"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="3200">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值" width="200">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="100"></ivue-table-column>
         </ivue-table>
         <h3>Step Props</h3>
         <ivue-table :data="propsStepData" border>
-            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明" min-width="200">
+            <ivue-table-column prop="name" label="名称" width="100"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="100"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值" width="200">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="100"></ivue-table-column>
         </ivue-table>
         <h3>Step Slots</h3>
         <ivue-table :data="slotsStepData" border>
-            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明" min-width="200">
+            <ivue-table-column prop="name" label="名称" width="100"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -122,8 +122,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/steps';
+
 import Default from '@/components/steps/default.vue';
 import Icon from '@/components/steps/icon.vue';
 import NextSwitch from '@/components/steps/next-switch.vue';
@@ -132,105 +135,96 @@ import Direction from '@/components/steps/direction.vue';
 import Space from '@/components/steps/space.vue';
 import TextDirection from '@/components/steps/text-direction.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsStepsData: [
-                {
-                    name: 'current-step',
-                    illustrate: '当前步骤，从 0 开始计数',
-                    type: 'Number',
-                    value: '-',
-                    default: '0',
-                },
-                {
-                    name: 'direction',
-                    illustrate:
-                        '步骤条的方向，可选值为 <code>horizontal</code>（水平）或 <code>vertical</code>（垂直)',
-                    type: 'String',
-                    value: '<code>horizontal</code> | <code>vertical</code>',
-                    default: 'horizontal',
-                },
-                {
-                    name: 'status',
-                    illustrate: '当前步骤的状态',
-                    type: 'String',
-                    value: '<code>wait</code> | <code>process</code> | <code>finish</code> | <code>error</code>',
-                    default: 'process',
-                },
-                {
-                    name: 'space',
-                    illustrate:
-                        '每个 step 的间距，不填写将自适应间距。支持百分比，如：<code>flex-basis: 10%</code>',
-                    type: 'Number | String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'text-direction',
-                    illustrate: '文字方向',
-                    type: 'String',
-                    value: '<code>right</code> | <code>bottom-center</code> | <code>bottom</code>',
-                    default: '-',
-                },
-            ],
-            propsStepData: [
-                {
-                    name: 'status',
-                    illustrate: '当前步骤的状态',
-                    type: 'String',
-                    value: '<code>wait</code> | <code>process</code> | <code>finish</code> | <code>error</code>',
-                    default: 'process',
-                },
-                {
-                    name: 'title',
-                    illustrate: '标题',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'content',
-                    illustrate: '步骤的详细描述，可选',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'icon',
-                    illustrate: '步骤的图标，可选',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-            ],
-            slotsStepData: [
-                {
-                    name: 'title',
-                    illustrate: '自定义 title',
-                },
-                {
-                    name: 'content',
-                    illustrate: '自定义 content',
-                },
-                {
-                    name: 'icon',
-                    illustrate: '自定义 icon',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsStepsData
+const propsStepsData = ref([
+    {
+        name: 'current-step',
+        illustrate: '当前步骤，从 0 开始计数',
+        type: 'Number',
+        value: '-',
+        default: '0',
     },
-    components: {
-        Default,
-        Icon,
-        NextSwitch,
-        Status,
-        Direction,
-        Space,
-        TextDirection,
+    {
+        name: 'direction',
+        illustrate:
+            '步骤条的方向，可选值为 <code>horizontal</code>（水平）或 <code>vertical</code>（垂直)',
+        type: 'String',
+        value: '<code>horizontal</code> | <code>vertical</code>',
+        default: 'horizontal',
     },
-};
+    {
+        name: 'status',
+        illustrate: '当前步骤的状态',
+        type: 'String',
+        value: '<code>wait</code> | <code>process</code> | <code>finish</code> | <code>error</code>',
+        default: 'process',
+    },
+    {
+        name: 'space',
+        illustrate:
+            '每个 step 的间距，不填写将自适应间距。支持百分比，如：<code>flex-basis: 10%</code>',
+        type: 'Number | String',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'text-direction',
+        illustrate: '文字方向',
+        type: 'String',
+        value: '<code>right</code> | <code>bottom-center</code> | <code>bottom</code>',
+        default: '-',
+    },
+]);
+
+// propsStepData
+const propsStepData = ref([
+    {
+        name: 'status',
+        illustrate: '当前步骤的状态',
+        type: 'String',
+        value: '<code>wait</code> | <code>process</code> | <code>finish</code> | <code>error</code>',
+        default: 'process',
+    },
+    {
+        name: 'title',
+        illustrate: '标题',
+        type: 'String',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'content',
+        illustrate: '步骤的详细描述，可选',
+        type: 'String',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'icon',
+        illustrate: '步骤的图标，可选',
+        type: 'String',
+        value: '-',
+        default: '-',
+    },
+]);
+
+// slotsStepData
+const slotsStepData = ref([
+    {
+        name: 'title',
+        illustrate: '自定义 title',
+    },
+    {
+        name: 'content',
+        illustrate: '自定义 content',
+    },
+    {
+        name: 'icon',
+        illustrate: '自定义 icon',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

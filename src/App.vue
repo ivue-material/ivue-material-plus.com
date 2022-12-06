@@ -3,17 +3,17 @@
         <div class="app-header">
             <!-- 头部 -->
             <div class="app-header-wrapper">
-                <div class="app-header-menu">
-                    <ivue-button flat icon @click="handleMenu">
-                        <ivue-icon>menu</ivue-icon>
-                    </ivue-button>
-                </div>
                 <router-link to="/">
                     <div class="app-header-img">
                         <img src="./static/logo.png" />
                         <p class="text">IVue</p>
                     </div>
                 </router-link>
+                <div class="app-header-menu">
+                    <ivue-button flat icon @click="handleMenu">
+                        <ivue-icon class="icon">menu_open</ivue-icon>
+                    </ivue-button>
+                </div>
                 <!-- 生态系统 -->
                 <div class="app-header-github">
                     <div class="app-header-ecology">
@@ -240,6 +240,7 @@ watch(
         &-img {
             display: flex;
             align-items: center;
+            margin-right: 10px;
 
             img {
                 height: 40px;
@@ -259,7 +260,9 @@ watch(
         }
 
         &-menu {
-            display: none;
+            .ivue-button--icon .ivue-icon {
+                font-size: 30px !important;
+            }
         }
 
         /* 生态 */
@@ -327,7 +330,11 @@ watch(
     // 底部
     &-footer {
         position: absolute;
+        margin-left: -20px;
+        left: 0;
+        right: 0;
         bottom: 0;
+        padding-left: calc(17% + 20px);
         width: 100%;
         line-height: 30px;
         text-align: center;

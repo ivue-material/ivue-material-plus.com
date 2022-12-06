@@ -76,8 +76,8 @@
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称" width="150"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
-            <ivue-table-column prop="type" label="类型"  width="150"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
