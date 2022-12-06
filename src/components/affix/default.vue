@@ -6,13 +6,7 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'affix-default',
-};
-</script>
-
-<style lang="scss" scoped>
+<style scoped>
 .demo-affix {
     width: 100px;
     height: 30px;

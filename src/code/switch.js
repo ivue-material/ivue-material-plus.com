@@ -15,21 +15,19 @@ code.default = `<template>
         :false-color="'#F41D74'"
     />
 </template>
-<script>
-export default {
-    data() {
-        return {
-            value1: false,
-            value2: false,
-        };
-    },
-    methods: {
-        handleChange(status) {
-            this.$message.info({
-                content: \`开关状态：\${status}\`,
-            });
-        },
-    },
+
+<script setup>
+import { ref, getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const value1 = ref(false);
+const value2 = ref(false);
+
+const handleChange = (status) => {
+    proxy.$message.info({
+        content: \`开关状态：\${status}\`,
+    });
 };
 </script>
 
@@ -45,9 +43,6 @@ code.size = `<template>
     <ivue-switch class="switch"></ivue-switch>
     <ivue-switch class="switch" size="small"></ivue-switch>
 </template>
-<script>
-export default {};
-</script>
 
 <style scoped>
 .switch {
@@ -102,10 +97,6 @@ code.icon = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .switch {
     margin-right: 20px;
@@ -128,14 +119,10 @@ code.disabled = `<template>
     <ivue-button type="primary" @click="disabled = !disabled">Toggle Disabled</ivue-button>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            disabled: true,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const disabled = ref(true);
 </script>
 
 <style scoped>
@@ -162,10 +149,6 @@ code.loading = `<template>
         <ivue-switch loading class="switch" emboss color="#5B8EFF" embossLoadingColor="#000"></ivue-switch>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .switch {
@@ -198,10 +181,6 @@ code.color = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .switch {
     margin-right: 20px;
@@ -212,21 +191,22 @@ export default {};
 code.beforeChange = `<template>
     <ivue-switch :before-change="handleBeforeChange" />
 </template>
-<script>
-export default {
-    methods: {
-        handleBeforeChange() {
-            return new Promise((resolve) => {
-                this.$IvueModal.confirm({
-                    title: '切换确认',
-                    content: '您确认要切换开关状态吗？',
-                    onConfirm: () => {
-                        resolve();
-                    },
-                });
-            });
-        },
-    },
+
+<script setup>
+import { getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const handleBeforeChange = () => {
+    return new Promise((resolve) => {
+        proxy.$IvueModal.confirm({
+            title: '切换确认',
+            content: '您确认要切换开关状态吗？',
+            onConfirm: () => {
+                resolve();
+            },
+        });
+    });
 };
 </script>
 `;

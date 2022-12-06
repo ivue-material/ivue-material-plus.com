@@ -8,10 +8,6 @@ code.default = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .content{
     height: 1000px;
@@ -36,10 +32,6 @@ code.offsetTop = `<template>
         </ivue-affix>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .content{
@@ -67,10 +59,6 @@ code.offsetBottom = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .content{
     height: 2000px;
@@ -97,15 +85,15 @@ code.callback = `<template>
     </div>
 </template>
 
-<script>
-export default {
-    methods: {
-        handleChange(status) {
-            this.$message.info({
-                content: \`status $\{status}\`
-            });
-        },
-    },
+<script setup>
+import { getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const handleChange = (status) => {
+    proxy.$message.info({
+        content: \`status: \${status}\`,
+    });
 };
 </script>
 

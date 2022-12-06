@@ -51,40 +51,39 @@
         </ivue-option-group>
     </ivue-select>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            cityList1: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-            ],
-            cityList2: [
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: '',
-        };
+
+<script setup>
+import { ref } from 'vue';
+
+const cityList1 = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+]);
+
+const cityList2 = ref([
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref('');
 </script>

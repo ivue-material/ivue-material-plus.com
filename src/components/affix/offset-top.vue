@@ -6,13 +6,7 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'affix-offset-top',
-};
-</script>
-
-<style lang="scss" scoped>
+<style scoped>
 .demo-affix {
     width: 200px;
     height: 30px;

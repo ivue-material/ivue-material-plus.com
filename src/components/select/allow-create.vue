@@ -10,79 +10,77 @@
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            list1: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            list2: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model1: '',
-            model2: [],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const list1 = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-    methods: {
-        handleCreate1(val) {
-            this.list1.push({
-                value: val,
-                label: val,
-            });
-        },
-        handleCreate2(val) {
-            this.list2.push({
-                value: val,
-                label: val,
-            });
-        },
+    {
+        value: 'London',
+        label: 'London',
     },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const list2 = ref([
+    {
+        value: 'New York',
+        label: 'New York',
+    },
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model1 = ref('');
+const model2 = ref([]);
+
+const handleCreate1 = (val) => {
+    list1.value.push({
+        value: val,
+        label: val,
+    });
+};
+
+const handleCreate2 = (val) => {
+    list2.value.push({
+        value: val,
+        label: val,
+    });
 };
 </script>

@@ -15,44 +15,40 @@
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model1: [],
-            model2: [],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-    methods: {
-        maxTagPlaceholder(num) {
-            return 'more ' + num;
-        },
+    {
+        value: 'London',
+        label: 'London',
     },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model1 = ref([]);
+const model2 = ref([]);
+
+const maxTagPlaceholder = (num) => {
+    return `more ${num}`;
 };
 </script>

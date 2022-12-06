@@ -47,134 +47,131 @@
         >{{option.label}}</ivue-option>
     </ivue-select>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            model1: '',
-            loading1: false,
-            options1: [],
 
-            model2: [],
-            loading2: false,
-            options2: [],
+<script setup>
+import { ref, watch } from 'vue';
 
-            list: [
-                'Alabama',
-                'Alaska',
-                'Arizona',
-                'Arkansas',
-                'California',
-                'Colorado',
-                'Connecticut',
-                'Delaware',
-                'Florida',
-                'Georgia',
-                'Hawaii',
-                'Idaho',
-                'Illinois',
-                'Indiana',
-                'Iowa',
-                'Kansas',
-                'Kentucky',
-                'Louisiana',
-                'Maine',
-                'Maryland',
-                'Massachusetts',
-                'Michigan',
-                'Minnesota',
-                'Mississippi',
-                'Missouri',
-                'Montana',
-                'Nebraska',
-                'Nevada',
-                'New hampshire',
-                'New jersey',
-                'New mexico',
-                'New york',
-                'North carolina',
-                'North dakota',
-                'Ohio',
-                'Oklahoma',
-                'Oregon',
-                'Pennsylvania',
-                'Rhode island',
-                'South carolina',
-                'South dakota',
-                'Tennessee',
-                'Texas',
-                'Utah',
-                'Vermont',
-                'Virginia',
-                'Washington',
-                'West virginia',
-                'Wisconsin',
-                'Wyoming',
-            ],
-            searchEnd: false,
-        };
-    },
-    methods: {
-        searchMethod1(query) {
-            if (query !== '') {
-                if (!this.searchEnd) {
-                    this.loading1 = true;
-                }
+const model1 = ref('');
+const loading1 = ref(false);
+const options1 = ref([]);
 
-                setTimeout(() => {
-                    this.loading1 = false;
+const model2 = ref('');
+const loading2 = ref(false);
+const options2 = ref([]);
 
-                    const list = this.list.map((item) => {
-                        return {
-                            value: item,
-                            label: item,
-                        };
-                    });
+const list = ref([
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+    'Hawaii',
+    'Idaho',
+    'Illinois',
+    'Indiana',
+    'Iowa',
+    'Kansas',
+    'Kentucky',
+    'Louisiana',
+    'Maine',
+    'Maryland',
+    'Massachusetts',
+    'Michigan',
+    'Minnesota',
+    'Mississippi',
+    'Missouri',
+    'Montana',
+    'Nebraska',
+    'Nevada',
+    'New hampshire',
+    'New jersey',
+    'New mexico',
+    'New york',
+    'North carolina',
+    'North dakota',
+    'Ohio',
+    'Oklahoma',
+    'Oregon',
+    'Pennsylvania',
+    'Rhode island',
+    'South carolina',
+    'South dakota',
+    'Tennessee',
+    'Texas',
+    'Utah',
+    'Vermont',
+    'Virginia',
+    'Washington',
+    'West virginia',
+    'Wisconsin',
+    'Wyoming',
+]);
 
-                    this.options1 = list.filter(
-                        (item) =>
-                            item.label
-                                .toLowerCase()
-                                .indexOf(query.toLowerCase()) > -1
-                    );
-                }, 2000);
-            } else {
-                this.options1 = [];
-            }
-        },
-        searchMethod2(query) {
-            const list = this.list.map((item) => {
+const searchEnd = ref(false);
+
+const searchMethod1 = (query) => {
+    if (query !== '') {
+        if (!searchEnd.value) {
+            loading1.value = true;
+        }
+
+        setTimeout(() => {
+            loading1.value = false;
+
+            const _list = list.value.map((item) => {
                 return {
                     value: item,
                     label: item,
                 };
             });
 
-            if (query !== '') {
-                this.loading2 = true;
-                setTimeout(() => {
-                    this.loading2 = false;
-
-                    this.options2 = list.filter(
-                        (item) =>
-                            item.label
-                                .toLowerCase()
-                                .indexOf(query.toLowerCase()) > -1
-                    );
-                }, 200);
-            } else {
-                this.options2 = list;
-            }
-        },
-    },
-    watch: {
-        model1() {
-            this.searchEnd = true;
-
-            setTimeout(() => {
-                this.searchEnd = false;
-            });
-        },
-    },
+            options1.value = _list.filter(
+                (item) =>
+                    item.label.toLowerCase().indexOf(query.toLowerCase()) > -1
+            );
+        }, 2000);
+    } else {
+        options1.value = [];
+    }
 };
+
+const searchMethod2 = (query) => {
+    const _list = list.value.map((item) => {
+        return {
+            value: item,
+            label: item,
+        };
+    });
+
+    if (query !== '') {
+        loading2.value = true;
+
+        setTimeout(() => {
+            loading2.value = false;
+
+            options2.value = _list.filter(
+                (item) =>
+                    item.label.toLowerCase().indexOf(query.toLowerCase()) > -1
+            );
+        }, 200);
+    } else {
+        options2.value = _list;
+    }
+};
+
+watch(
+    () => model1.value,
+    () => {
+        searchEnd.value = true;
+
+        setTimeout(() => {
+            searchEnd.value = false;
+        });
+    }
+);
 </script>

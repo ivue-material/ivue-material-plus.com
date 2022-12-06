@@ -8,19 +8,14 @@
     ></ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList: [],
-        };
-    },
-    methods: {
-        // 上传错误
-        handleUploadError(file) {
-            // eslint-disable-next-line no-console
-            console.log('上传错误', file);
-        },
-    },
+<script setup>
+import { ref } from 'vue';
+
+const fileList = ref([]);
+
+// 上传错误
+const handleUploadError = (file) => {
+    // eslint-disable-next-line no-console
+    console.log('上传错误', file);
 };
 </script>
