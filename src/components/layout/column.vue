@@ -18,10 +18,6 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .ivue-layout-item {
     height: 72px;

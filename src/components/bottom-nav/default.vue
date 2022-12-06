@@ -11,19 +11,16 @@
     </ivue-bottom-nav>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-        };
-    },
-    methods: {
-        handleChange(value) {
-            this.$message.info({
-                content: `当前激活导航：${value}`,
-            });
-        },
-    },
+<script setup>
+import { getCurrentInstance, ref } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const value = ref('home');
+
+const handleChange = (value) => {
+    proxy.$message.info({
+        content: `当前激活导航：${value}`,
+    });
 };
 </script>

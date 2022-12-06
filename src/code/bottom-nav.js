@@ -13,20 +13,17 @@ code.default = `<template>
     </ivue-bottom-nav>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-        };
-    },
-    methods: {
-        handleChange(value) {
-            this.$message.info({
-                content: \`当前激活导航：\${value}\`,
-            });
-        },
-    },
+<script setup>
+import { getCurrentInstance, ref } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const value = ref('home');
+
+const handleChange = (value) => {
+    proxy.$message.info({
+        content: \`当前激活导航：\${value}\`,
+    });
 };
 </script>
 `;
@@ -44,14 +41,10 @@ code.shift = `<template>
     </ivue-bottom-nav>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('home');
 </script>
 `;
 
@@ -68,14 +61,10 @@ code.scale = `<template>
     </ivue-bottom-nav>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('home');
 </script>
 `;
 
@@ -96,15 +85,11 @@ code.visible = `<template>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-            showNav: true,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('home');
+const showNav = ref(true);
 </script>
 
 <style scoped>
@@ -144,14 +129,10 @@ code.height = `<template>
     </ivue-bottom-nav>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('home');
 </script>
 `;
 

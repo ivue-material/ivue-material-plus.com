@@ -15,18 +15,14 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
+<style scoped>
 .card {
     display: flex;
     justify-content: center;
 }
 
 .dis-hover {
-    margin:0 20px;
+    margin: 0 20px;
 }
 
 .not-dis-hover {

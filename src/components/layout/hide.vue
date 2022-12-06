@@ -25,10 +25,6 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .hide .ivue-layout-item {
     height: 40px;

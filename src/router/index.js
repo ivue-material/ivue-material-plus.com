@@ -160,6 +160,12 @@ const routes = [
         name: 'input',
         component: lazyLoading('input', 'index'),
       },
+       // Circle 进度环
+       {
+        path: 'circle',
+        name: 'circle',
+        component: lazyLoading('circle', 'index'),
+      },
     ],
   },
 ];

@@ -24,17 +24,12 @@
     </ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-            select1: 'http',
-            select2: 'com',
-            select3: 'day',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
+const select1 = ref('http');
+const select2 = ref('com');
 </script>
 
 <style>

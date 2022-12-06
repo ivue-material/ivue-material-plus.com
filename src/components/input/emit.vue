@@ -6,30 +6,31 @@
         <ivue-button class="button" @click="handleFocus('preventScroll')">Focus prevent scroll</ivue-button>
     </div>
     <div>
-        <ivue-input v-model="value" placeholder="Enter something..." style="width: 300px" ref="input"></ivue-input>
+        <ivue-input
+            v-model="value"
+            placeholder="Enter something..."
+            style="width: 300px"
+            ref="input"
+        ></ivue-input>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'View UI’s birthday is July 28',
-        };
-    },
-    methods: {
-        handleFocus(type) {
-            if (type === 'preventScroll') {
-                this.$refs.input.focus({
-                    preventScroll: true,
-                });
-            } else {
-                this.$refs.input.focus({
-                    cursor: type,
-                });
-            }
-        },
-    },
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('View UI’s birthday is July 28');
+const input = ref();
+
+const handleFocus = (type) => {
+    if (type === 'preventScroll') {
+        input.value.focus({
+            preventScroll: true,
+        });
+    } else {
+        input.value.focus({
+            cursor: type,
+        });
+    }
 };
 </script>
 

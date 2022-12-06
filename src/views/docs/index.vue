@@ -144,7 +144,6 @@ export default {
                                 },
                             ],
                         },
-
                         {
                             name: '视图',
                             menu: [
@@ -181,9 +180,14 @@ export default {
                                     name: 'Select 选择器',
                                     router: 'select',
                                 },
+                            ],
+                        },
+                        {
+                            name: '图表',
+                            menu: [
                                 {
-                                    name: 'Upload 上传',
-                                    router: 'upload',
+                                    name: 'Circle 进度环',
+                                    router: 'circle',
                                 },
                             ],
                         },

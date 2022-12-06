@@ -27,10 +27,6 @@
     </ivue-carousel>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .demo-carousel {
     height: 100%;

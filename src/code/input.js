@@ -3,15 +3,13 @@ const code = {};
 code.default = `<template>
     <ivue-input v-model="value" placeholder="Enter something..." style="width: 300px"></ivue-input>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
+
 `;
 
 code.size = `<template>
@@ -23,14 +21,10 @@ code.size = `<template>
     <ivue-input v-model="value" placeholder="Enter something..." size="large"></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
 `;
 
@@ -38,15 +32,12 @@ code.clearable = `<template>
     <ivue-input v-model="value" placeholder="Enter something..." clearable style="width: 300px"></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'Hello World',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('Hello World');
 </script>
+
 `;
 
 code.textarea = `<template>
@@ -56,15 +47,11 @@ code.textarea = `<template>
     <ivue-input v-model="value2" :rows="4" type="textarea" placeholder="Enter something..."></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value1: '',
-            value2: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value1 = ref('');
+const value2 = ref('');
 </script>
 `;
 
@@ -80,38 +67,30 @@ code.autosize = `<template>
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
 `;
 
 code.showWordLimit = `<template>
     <h4>文本框</h4>
-    <ivue-input v-model="value" placeholder="Enter something..." maxlength="100" show-word-limit></ivue-input>
+    <ivue-input v-model="value" placeholder="Enter something..." :maxlength="100" show-word-limit></ivue-input>
     <h4>文本域</h4>
     <ivue-input
         v-model="value"
         placeholder="Enter something..."
         type="textarea"
-        maxlength="100"
+        :maxlength="100"
         show-word-limit
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
 `;
 
@@ -127,14 +106,10 @@ code.password = `
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
 `;
 
@@ -177,15 +152,11 @@ code.prefixSuffix = `<template>
     </ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value1: '',
-            value2: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value1 = ref('');
+const value2 = ref('');
 </script>
 
 <style>
@@ -207,16 +178,11 @@ code.search = `<template>
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
-</script>
+<script setup>
+import { ref } from 'vue';
 
+const value = ref('');
+</script>
 
 <style>
 .input {
@@ -237,14 +203,10 @@ code.disabled = `<template>
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
 
 <style>
@@ -264,14 +226,10 @@ code.noBorder = `<template>
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
 </script>
 `;
 
@@ -302,17 +260,12 @@ code.compound = `<template>
     </ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-            select1: 'http',
-            select2: 'com',
-            select3: 'day',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
+const select1 = ref('http');
+const select2 = ref('com');
 </script>
 
 <style>
@@ -334,26 +287,22 @@ code.emit = `<template>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'View UI’s birthday is July 28',
-        };
-    },
-    methods: {
-        handleFocus(type) {
-            if (type === 'preventScroll') {
-                this.$refs.input.focus({
-                    preventScroll: true,
-                });
-            } else {
-                this.$refs.input.focus({
-                    cursor: type,
-                });
-            }
-        },
-    },
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('View UI’s birthday is July 28');
+const input = ref();
+
+const handleFocus = (type) => {
+    if (type === 'preventScroll') {
+        input.value.focus({
+            preventScroll: true,
+        });
+    } else {
+        input.value.focus({
+            cursor: type,
+        });
+    }
 };
 </script>
 

@@ -8,14 +8,10 @@
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            length: 25,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const length = ref(25);
 </script>
 
 <style lang="scss" scoped>

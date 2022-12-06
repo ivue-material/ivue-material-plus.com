@@ -11,12 +11,7 @@ code.default = `<template>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {};
-    },
-};
+<script setup>
 </script>
 
 <style scoped>
@@ -46,8 +41,7 @@ code.gutter = `<template>
     </div>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style scoped>
@@ -86,8 +80,7 @@ code.column = `<template>
     </div>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style scoped>
@@ -165,8 +158,7 @@ code.alignment = `<template>
     </div>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style scoped>
@@ -205,8 +197,7 @@ code.size = `<template>
     </div>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style scoped>
@@ -237,8 +228,7 @@ code.response = `<template>
     </div>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style scoped>
@@ -285,10 +275,6 @@ code.hide = `<template>
         </div>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .hide .ivue-layout-item {

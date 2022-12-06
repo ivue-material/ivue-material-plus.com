@@ -27,10 +27,6 @@ code.default = `<template>
     </ivue-carousel>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .demo-carousel {
     height: 200px;
@@ -67,10 +63,6 @@ code.dots = `<template>
     </ivue-carousel>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .demo-carousel {
     height: 200px;
@@ -106,10 +98,6 @@ code.arrow = `<template>
         </ivue-carousel-item>
     </ivue-carousel>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .demo-carousel {
@@ -160,10 +148,6 @@ code.heightAuto = `<template>
     </ivue-carousel>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .demo-carousel {
     height: 100%;
@@ -198,10 +182,6 @@ code.card = `<template>
         </ivue-carousel-item>
     </ivue-carousel>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .demo-carousel {
@@ -255,10 +235,6 @@ code.vertical = `<template>
         </ivue-carousel-item>
     </ivue-carousel>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .demo-carousel {

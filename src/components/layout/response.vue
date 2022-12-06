@@ -9,10 +9,6 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .response .ivue-layout-item {
     height: 40px;

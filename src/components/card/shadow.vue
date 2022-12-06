@@ -20,19 +20,15 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
+<style scoped>
 .card {
     display: flex;
     justify-content: center;
     background-color: #ccc;
     padding: 20px;
+}
 
-    &-content {
-        margin: 20px;
-    }
+.card-content {
+    margin: 20px;
 }
 </style>

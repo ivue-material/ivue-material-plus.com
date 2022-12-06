@@ -1,16 +1,11 @@
 const code = {};
 
 code.base = `<template>
-  <div>
+    <div>
         <div class="red">example</div>
         <div class="red--text">example</div>
-  </div>
+    </div>
 </template>
-
-<script>
-export default {
-}
-</script>
 `;
 
 code.import = `import 'ivue-material-plus/dist/styles/color.css';

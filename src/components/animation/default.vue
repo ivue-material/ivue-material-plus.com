@@ -121,25 +121,20 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'animation-default',
-    data() {
-        return {
-            anim1: true,
-            anim2: true,
-            anim3: true,
-            anim4: true,
-            anim5: true,
-            anim6: true,
-            anim7: true,
-            anim8: true,
-            anim9: true,
-            anim10: true,
-            anim11: true,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const anim1 = ref(true);
+const anim2 = ref(true);
+const anim3 = ref(true);
+const anim4 = ref(true);
+const anim5 = ref(true);
+const anim6 = ref(true);
+const anim7 = ref(true);
+const anim8 = ref(true);
+const anim9 = ref(true);
+const anim10 = ref(true);
+const anim11 = ref(true);
 </script>
 
 <style lang="scss" scoped>

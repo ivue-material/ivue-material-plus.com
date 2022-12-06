@@ -12,10 +12,6 @@ code.default = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .button {
     margin: 10px;
@@ -33,10 +29,6 @@ code.flat = `<template>
         <ivue-button class="button" status="error" flat>Error</ivue-button>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .button {
@@ -56,10 +48,6 @@ code.depressed = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .button {
     margin: 10px;
@@ -78,10 +66,6 @@ code.outline = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .button {
     margin: 10px;
@@ -98,10 +82,6 @@ code.href = `<template>
         >Link Github</ivue-button>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .button {
@@ -133,10 +113,6 @@ code.icon = `<template>
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .button {
     margin: 10px;
@@ -153,10 +129,6 @@ code.color = `<template>
         <ivue-button class="button" disabled>禁用</ivue-button>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .button {

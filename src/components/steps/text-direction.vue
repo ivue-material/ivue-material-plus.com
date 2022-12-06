@@ -26,12 +26,8 @@
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            currentStep: 0,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const currentStep = ref(0);
 </script>

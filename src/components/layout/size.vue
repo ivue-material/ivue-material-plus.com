@@ -7,10 +7,6 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .size {
     height: 40px;

@@ -15,15 +15,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-            showNav: true,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('home');
+const showNav = ref(true);
 </script>
 
 <style scoped>

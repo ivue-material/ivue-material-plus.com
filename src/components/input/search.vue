@@ -10,16 +10,11 @@
     ></ivue-input>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: '',
-        };
-    },
-};
-</script>
+<script setup>
+import { ref } from 'vue';
 
+const value= ref('');
+</script>
 
 <style>
 .input {

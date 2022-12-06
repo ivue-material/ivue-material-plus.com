@@ -23,12 +23,8 @@
     </ivue-bottom-nav>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            value: 'home',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('home');
 </script>

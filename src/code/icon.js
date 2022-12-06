@@ -15,12 +15,6 @@ code.default = `<template>
         <ivue-icon class="ivue-size-5x">home</ivue-icon>
     </div>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
-</style>`;
+`;
 
 export default code;
