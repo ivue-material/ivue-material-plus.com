@@ -196,8 +196,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/input';
+
 import Default from '@/components/input/default.vue';
 import Size from '@/components/input/size.vue';
 import Clearable from '@/components/input/clearable.vue';
@@ -212,286 +215,268 @@ import NoBorder from '@/components/input/no-border.vue';
 import Compound from '@/components/input/compound.vue';
 import Emit from '@/components/input/emit.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'model-value',
-                    illustrate: '绑定的值，可使用 v-model 双向绑定',
-                    type: 'String | Number',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'type',
-                    illustrate: '输入框类型',
-                    type: 'String',
-                    value: '-',
-                    default: 'text',
-                },
-                {
-                    name: 'size',
-                    illustrate: '输入框尺寸，可选值为',
-                    type: 'String',
-                    value: '<code>large</code> | <code>small</code> | <code>default</code>',
-                    default: 'default',
-                },
-                {
-                    name: 'placeholder',
-                    illustrate: '占位文本',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'clearable',
-                    illustrate: '是否显示清空按钮',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'border',
-                    illustrate: '是否显示边框',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'disabled',
-                    illustrate: '设置输入框为禁用状态',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'readonly',
-                    illustrate: '设置输入框为只读',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'maxlength',
-                    illustrate: '最大输入长度',
-                    type: 'Number',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'show-word-limit',
-                    illustrate:
-                        '是否显示输入字数统计，可以配合 <code>maxlength</code> 使用',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'password',
-                    illustrate: '是否显示切换密码图标',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'prefix',
-                    illustrate: '输入框头部图标',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'suffix',
-                    illustrate: '输入框尾部图标',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'search',
-                    illustrate: '是否显示为搜索型输入框',
-                    type: 'Boolean',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'enter-button',
-                    illustrate:
-                        '开启 <code>search</code> 时可用，是否有确认按钮，可设为按钮文字',
-                    type: 'Boolean | String',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'rows',
-                    illustrate:
-                        '文本域默认行数，仅在 <code>textarea</code> 类型下有效',
-                    type: 'Number',
-                    value: '-',
-                    default: '2',
-                },
-                {
-                    name: 'auto-height',
-                    illustrate:
-                        '自适应内容高度，仅在 <code>textarea</code> 类型下有效，可传入对象，如 <code>{ minRows: 2, maxRows: 6 }</code>',
-                    type: 'Boolean | Object',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'number',
-                    illustrate: '只允许用户输入number',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'input-function',
-                    illustrate:
-                        '自定义输入方法,可以自定义过滤输入值内容等,如:只允许输入数字',
-                    type: 'Function',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'autofocus',
-                    illustrate: '自动获取焦点',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'autocomplete',
-                    illustrate: '原生的自动完成功能',
-                    type: 'String',
-                    value: '-',
-                    default: 'off',
-                },
-                {
-                    name: 'spellcheck',
-                    illustrate: '原生的 <code>spellcheck</code> 属性',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'wrap',
-                    illustrate:
-                        '原生的 <code>wrap</code> 属性，仅在 <code>textarea</code> 下生效',
-                    type: 'String',
-                    value: '<code>hard</code> | <code>soft</code>',
-                    default: 'soft',
-                },
-            ],
-            eventsData: [
-                {
-                    name: 'on-change',
-                    illustrate: '数据改变时触发',
-                    value: 'value',
-                },
-                {
-                    name: 'on-clear',
-                    illustrate:
-                        '开启 <code>clearable</code> 时可用，点击清空按钮时触发',
-                    value: '-',
-                },
-                {
-                    name: 'on-focus',
-                    illustrate: '输入框聚焦时触发',
-                    value: 'event',
-                },
-                {
-                    name: 'on-blur',
-                    illustrate: '输入框聚焦时触发',
-                    value: 'event',
-                },
-                {
-                    name: 'on-enter',
-                    illustrate: '按下回车键时触发',
-                    value: 'event',
-                },
-                {
-                    name: 'on-keyup',
-                    illustrate: '原生的 <code>keyup</code> 事件',
-                    value: 'event',
-                },
-                {
-                    name: 'on-keypress',
-                    illustrate: '原生的 <code>keypress</code> 事件',
-                    value: 'event',
-                },
-                {
-                    name: 'on-keydown',
-                    illustrate: '原生的 <code>keydown</code> 事件',
-                    value: 'event',
-                },
-                {
-                    name: 'on-suffix',
-                    illustrate: '尾部图标点击事件',
-                    value: 'event',
-                },
-                {
-                    name: 'on-search',
-                    illustrate:
-                        '开启 <code>search</code> 时可用，点击搜索时触发',
-                    value: 'value',
-                },
-            ],
-            slotsData: [
-                {
-                    name: 'prepend',
-                    illustrate: '前置内容，仅在 <code>text</code> 类型下有效',
-                },
-                {
-                    name: 'append',
-                    illustrate: '后置内容，仅在 <code>text</code> 类型下有效',
-                },
-                {
-                    name: 'prefix',
-                    illustrate: '输入框头部图标',
-                },
-                {
-                    name: 'suffix',
-                    illustrate: '输入框尾部图标',
-                },
-                {
-                    name: 'password-on',
-                    illustrate:
-                        '显示明文密码图标，仅在 <code>password</code> 类型下有效',
-                },
-                {
-                    name: 'password-off',
-                    illustrate:
-                        '显示密文密码图标，仅在 <code>password</code> 类型下有效',
-                },
-            ],
-            methodsData: [
-                {
-                    name: 'focus',
-                    illustrate: '手动聚焦输入框',
-                    value: '{preventScroll?: boolean,cursor?: start | end | all}'
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'model-value',
+        illustrate: '绑定的值，可使用 v-model 双向绑定',
+        type: 'String | Number',
+        value: '-',
+        default: '-',
     },
-    components: {
-        Default,
-        Size,
-        Clearable,
-        IsTextarea,
-        ShowWordLimit,
-        Password,
-        PrefixSuffix,
-        Search,
-        Autosize,
-        Disabled,
-        NoBorder,
-        Compound,
-        Emit,
+    {
+        name: 'type',
+        illustrate: '输入框类型',
+        type: 'String',
+        value: '-',
+        default: 'text',
     },
-};
+    {
+        name: 'size',
+        illustrate: '输入框尺寸，可选值为',
+        type: 'String',
+        value: '<code>large</code> | <code>small</code> | <code>default</code>',
+        default: 'default',
+    },
+    {
+        name: 'placeholder',
+        illustrate: '占位文本',
+        type: 'String',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'clearable',
+        illustrate: '是否显示清空按钮',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'border',
+        illustrate: '是否显示边框',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'disabled',
+        illustrate: '设置输入框为禁用状态',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'readonly',
+        illustrate: '设置输入框为只读',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'maxlength',
+        illustrate: '最大输入长度',
+        type: 'Number',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'show-word-limit',
+        illustrate:
+            '是否显示输入字数统计，可以配合 <code>maxlength</code> 使用',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'password',
+        illustrate: '是否显示切换密码图标',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'prefix',
+        illustrate: '输入框头部图标',
+        type: 'String',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'suffix',
+        illustrate: '输入框尾部图标',
+        type: 'String',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'search',
+        illustrate: '是否显示为搜索型输入框',
+        type: 'Boolean',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'enter-button',
+        illustrate:
+            '开启 <code>search</code> 时可用，是否有确认按钮，可设为按钮文字',
+        type: 'Boolean | String',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'rows',
+        illustrate: '文本域默认行数，仅在 <code>textarea</code> 类型下有效',
+        type: 'Number',
+        value: '-',
+        default: '2',
+    },
+    {
+        name: 'auto-height',
+        illustrate:
+            '自适应内容高度，仅在 <code>textarea</code> 类型下有效，可传入对象，如 <code>{ minRows: 2, maxRows: 6 }</code>',
+        type: 'Boolean | Object',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'number',
+        illustrate: '只允许用户输入number',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'input-function',
+        illustrate:
+            '自定义输入方法,可以自定义过滤输入值内容等,如:只允许输入数字',
+        type: 'Function',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'autofocus',
+        illustrate: '自动获取焦点',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'autocomplete',
+        illustrate: '原生的自动完成功能',
+        type: 'String',
+        value: '-',
+        default: 'off',
+    },
+    {
+        name: 'spellcheck',
+        illustrate: '原生的 <code>spellcheck</code> 属性',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'wrap',
+        illustrate:
+            '原生的 <code>wrap</code> 属性，仅在 <code>textarea</code> 下生效',
+        type: 'String',
+        value: '<code>hard</code> | <code>soft</code>',
+        default: 'soft',
+    },
+]);
+
+// eventsData
+const eventsData = ref([
+    {
+        name: 'on-change',
+        illustrate: '数据改变时触发',
+        value: 'value',
+    },
+    {
+        name: 'on-clear',
+        illustrate: '开启 <code>clearable</code> 时可用，点击清空按钮时触发',
+        value: '-',
+    },
+    {
+        name: 'on-focus',
+        illustrate: '输入框聚焦时触发',
+        value: 'event',
+    },
+    {
+        name: 'on-blur',
+        illustrate: '输入框聚焦时触发',
+        value: 'event',
+    },
+    {
+        name: 'on-enter',
+        illustrate: '按下回车键时触发',
+        value: 'event',
+    },
+    {
+        name: 'on-keyup',
+        illustrate: '原生的 <code>keyup</code> 事件',
+        value: 'event',
+    },
+    {
+        name: 'on-keypress',
+        illustrate: '原生的 <code>keypress</code> 事件',
+        value: 'event',
+    },
+    {
+        name: 'on-keydown',
+        illustrate: '原生的 <code>keydown</code> 事件',
+        value: 'event',
+    },
+    {
+        name: 'on-suffix',
+        illustrate: '尾部图标点击事件',
+        value: 'event',
+    },
+    {
+        name: 'on-search',
+        illustrate: '开启 <code>search</code> 时可用，点击搜索时触发',
+        value: 'value',
+    },
+]);
+
+// slotsData
+const slotsData = ref([
+    {
+        name: 'prepend',
+        illustrate: '前置内容，仅在 <code>text</code> 类型下有效',
+    },
+    {
+        name: 'append',
+        illustrate: '后置内容，仅在 <code>text</code> 类型下有效',
+    },
+    {
+        name: 'prefix',
+        illustrate: '输入框头部图标',
+    },
+    {
+        name: 'suffix',
+        illustrate: '输入框尾部图标',
+    },
+    {
+        name: 'password-on',
+        illustrate: '显示明文密码图标，仅在 <code>password</code> 类型下有效',
+    },
+    {
+        name: 'password-off',
+        illustrate: '显示密文密码图标，仅在 <code>password</code> 类型下有效',
+    },
+]);
+
+// methodsData
+const methodsData = ref([
+    {
+        name: 'focus',
+        illustrate: '手动聚焦输入框',
+        value: '{preventScroll?: boolean,cursor?: start | end | all}',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

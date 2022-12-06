@@ -37,18 +37,18 @@
         <h2>API</h2>
         <h3>Breadcrumb Props</h3>
         <ivue-table :data="propsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
-            <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="150"></ivue-table-column>
         </ivue-table>
         <h3>Breadcrumb Slots</h3>
         <ivue-table :data="slotsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
@@ -57,76 +57,75 @@
         </ivue-table>
         <h3>Breadcrumb Item Slots</h3>
         <ivue-table :data="itemData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
-            <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="150"></ivue-table-column>
         </ivue-table>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/breadcrumb';
+
 import Default from '@/components/breadcrumb/default.vue';
 import Divider from '@/components/breadcrumb/divider.vue';
 import Direction from '@/components/breadcrumb/direction.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'divider',
-                    illustrate: '分隔符',
-                    type: 'String',
-                    default: '/',
-                },
-                {
-                    name: 'justify-center',
-                    illustrate: '中间对齐',
-                    type: 'Boolean',
-                    default: 'false',
-                },
-                {
-                    name: 'justify-end',
-                    illustrate: '尾部对齐',
-                    type: 'Boolean',
-                    default: 'false',
-                },
-            ],
-            slotsData: [
-                {
-                    name: 'divider',
-                    illustrate: '设置分隔符',
-                },
-            ],
-            itemData: [
-                {
-                    name: 'to',
-                    illustrate: '路由跳转对象，同 vue-router 的 to',
-                    type: 'String | Object',
-                    default: '-',
-                },
-                {
-                    name: 'replace',
-                    illustrate: '在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录',
-                    type: 'Boolean',
-                    default: 'false',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'divider',
+        illustrate: '分隔符',
+        type: 'String',
+        default: '/',
     },
-    components: {
-        Default,
-        Divider,
-        Direction,
+    {
+        name: 'justify-center',
+        illustrate: '中间对齐',
+        type: 'Boolean',
+        default: 'false',
     },
-};
+    {
+        name: 'justify-end',
+        illustrate: '尾部对齐',
+        type: 'Boolean',
+        default: 'false',
+    },
+]);
+
+// slotsData
+const slotsData = ref([
+    {
+        name: 'divider',
+        illustrate: '设置分隔符',
+    },
+]);
+
+// itemData
+const itemData = ref([
+    {
+        name: 'to',
+        illustrate: '路由跳转对象，同 vue-router 的 to',
+        type: 'String | Object',
+        default: '-',
+    },
+    {
+        name: 'replace',
+        illustrate:
+            '在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录',
+        type: 'Boolean',
+        default: 'false',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

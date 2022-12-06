@@ -84,4 +84,36 @@ const handleMinus = () => {
 </style>
 `;
 
+code.slots = `<template>
+    <ivue-circular
+        :size="250"
+        :trail-width="4"
+        :stroke-width="5"
+        :percent="75"
+        stroke-linecap="square"
+        stroke-color="#FB858C"
+    >
+        <div class="demo-Circle-custom">
+            <h1>10,000,000</h1>
+        </div>
+    </ivue-circular>
+</template>
+`;
+
+code.dashboard = `<template>
+  <ivue-circular
+      :size="250"
+      :trail-width="4"
+      :stroke-width="5"
+      :percent="75"
+      dashboard
+      stroke-color="#B6E471"
+  >
+      <div class="demo-Circle-custom">
+          <h1>75%</h1>
+      </div>
+  </ivue-circular>
+</template>
+`;
+
 export default code;

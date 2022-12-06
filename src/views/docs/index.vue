@@ -59,178 +59,175 @@
     </div>
 </template>
 
-<script>
-import { mapState, mapActions } from 'vuex';
+<script setup>
+import { ref, watch } from 'vue';
+import { useStore } from 'vuex';
+import { useRoute } from 'vue-router';
+
+import storeHook from '@/hook/store-hook';
+
 import IvueFooter from '@/components/footer';
 
-export default {
-    name: 'docs',
-    data() {
-        return {
-            /**
-             * 路由导航
-             *
-             * @type {Array}
-             */
-            routers: [
-                {
-                    name: '安装',
-                    router: 'install',
-                    child: [],
-                },
-                {
-                    name: '快速开始',
-                    router: 'start-use',
-                    child: [],
-                },
-                {
-                    name: '全局配置',
-                    router: 'global',
-                    child: [],
-                },
-                {
-                    name: '色彩',
-                    router: 'color',
-                    child: [],
-                },
-                {
-                    name: '基础动画',
-                    router: 'animation',
-                    child: [],
-                },
-                {
-                    name: '组件',
-                    child: [
-                        {
-                            name: '基础',
-                            menu: [
-                                {
-                                    name: 'Icon 图标',
-                                    router: 'icon',
-                                },
-                                {
-                                    name: 'Button 按钮',
-                                    router: 'button',
-                                },
-                            ],
-                        },
-                        {
-                            name: '布局',
-                            menu: [
-                                {
-                                    name: 'Elevation 海拔',
-                                    router: 'elevation',
-                                },
-                                {
-                                    name: 'Layout 布局',
-                                    router: 'layout',
-                                },
-                                {
-                                    name: 'Card 卡片',
-                                    router: 'card',
-                                },
-                            ],
-                        },
-                        {
-                            name: '导航',
-                            menu: [
-                                {
-                                    name: 'Steps 步骤条',
-                                    router: 'steps',
-                                },
-                                {
-                                    name: 'Breadcrumb 面包屑',
-                                    router: 'breadcrumb',
-                                },
-                            ],
-                        },
-                        {
-                            name: '视图',
-                            menu: [
-                                {
-                                    name: 'Input 输入框',
-                                    router: 'input',
-                                },
-                                {
-                                    name: 'Carousel 走马灯',
-                                    router: 'carousel',
-                                },
-                                {
-                                    name: 'BottomNav 底部导航',
-                                    router: 'bottom-nav',
-                                },
-                            ],
-                        },
-                        {
-                            name: '表单',
-                            menu: [
-                                {
-                                    name: 'Upload 上传',
-                                    router: 'upload',
-                                },
-                                {
-                                    name: 'AutoComplete 自动完成',
-                                    router: 'auto-complete',
-                                },
-                                {
-                                    name: 'Switch 开关',
-                                    router: 'switch',
-                                },
-                                {
-                                    name: 'Select 选择器',
-                                    router: 'select',
-                                },
-                            ],
-                        },
-                        {
-                            name: '图表',
-                            menu: [
-                                {
-                                    name: 'Circle 进度环',
-                                    router: 'circle',
-                                },
-                            ],
-                        },
-                        {
-                            name: '其他',
-                            menu: [
-                                {
-                                    name: 'Affix 图钉',
-                                    router: 'affix',
-                                },
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-    },
-    computed: {
-        ...mapState({
-            hideMenu: 'hideMenu',
-        }),
-    },
-    methods: {
-        // 隐藏菜单
-        handleHideMenu() {
-            this.setHideMenu(false);
-        },
-        ...mapActions({
-            setHideMenu: 'setHideMenu',
-        }),
-    },
-    watch: {
-        // 监听路由
-        $route() {
-            window.scrollTo(0, 0);
+// vuex
+const store = useStore();
+const { hideMenu } = storeHook();
 
-            this.setHideMenu(false);
-        },
+// route
+const route = useRoute();
+
+// 路由导航
+const routers = ref([
+    {
+        name: '安装',
+        router: 'install',
+        child: [],
     },
-    components: {
-        IvueFooter,
+    {
+        name: '快速开始',
+        router: 'start-use',
+        child: [],
     },
+    {
+        name: '全局配置',
+        router: 'global',
+        child: [],
+    },
+    {
+        name: '色彩',
+        router: 'color',
+        child: [],
+    },
+    {
+        name: '基础动画',
+        router: 'animation',
+        child: [],
+    },
+    {
+        name: '组件',
+        child: [
+            {
+                name: '基础',
+                menu: [
+                    {
+                        name: 'Icon 图标',
+                        router: 'icon',
+                    },
+                    {
+                        name: 'Button 按钮',
+                        router: 'button',
+                    },
+                ],
+            },
+            {
+                name: '布局',
+                menu: [
+                    {
+                        name: 'Elevation 海拔',
+                        router: 'elevation',
+                    },
+                    {
+                        name: 'Layout 布局',
+                        router: 'layout',
+                    },
+                    {
+                        name: 'Card 卡片',
+                        router: 'card',
+                    },
+                ],
+            },
+            {
+                name: '导航',
+                menu: [
+                    {
+                        name: 'Steps 步骤条',
+                        router: 'steps',
+                    },
+                    {
+                        name: 'Breadcrumb 面包屑',
+                        router: 'breadcrumb',
+                    },
+                ],
+            },
+            {
+                name: '视图',
+                menu: [
+                    {
+                        name: 'Input 输入框',
+                        router: 'input',
+                    },
+                    {
+                        name: 'Carousel 走马灯',
+                        router: 'carousel',
+                    },
+                    {
+                        name: 'BottomNav 底部导航',
+                        router: 'bottom-nav',
+                    },
+                    {
+                        name: 'Avatar 头像',
+                        router: 'avatar',
+                    },
+                ],
+            },
+            {
+                name: '表单',
+                menu: [
+                    {
+                        name: 'Upload 上传',
+                        router: 'upload',
+                    },
+                    {
+                        name: 'AutoComplete 自动完成',
+                        router: 'auto-complete',
+                    },
+                    {
+                        name: 'Switch 开关',
+                        router: 'switch',
+                    },
+                    {
+                        name: 'Select 选择器',
+                        router: 'select',
+                    },
+                ],
+            },
+            {
+                name: '图表',
+                menu: [
+                    {
+                        name: 'Circle 进度环',
+                        router: 'circle',
+                    },
+                ],
+            },
+            {
+                name: '其他',
+                menu: [
+                    {
+                        name: 'Affix 图钉',
+                        router: 'affix',
+                    },
+                ],
+            },
+        ],
+    },
+]);
+
+// methods
+
+// 隐藏菜单
+const handleHideMenu = () => {
+    store.dispatch('setHideMenu', false);
 };
+
+// 监听路由
+watch(
+    () => route.params,
+    () => {
+        window.scrollTo(0, 0);
+
+        store.dispatch('setHideMenu', false);
+    }
+);
 </script>
 
 <style lang="scss">
@@ -241,27 +238,34 @@ export default {
     zoom: 1;
     display: flex;
     z-index: 50;
-    background: #fff;
+    overflow: hidden;
+    background: #f5f5f5;
+    padding-left: 17%;
 
     // 导航
     &-navigations {
-        position: relative;
-        width: 16.66666667%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-top: 60px;
+        width: 17%;
         float: left;
         flex: 0 0 auto;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
         border-right: 1px solid #e4e7e9;
-        overflow: hidden;
+        overflow: scroll;
         text-overflow: ellipsis;
         white-space: nowrap;
         font-size: 14px;
+        z-index: 100;
         background: #fff;
 
         .router-list {
             display: flex;
             flex-direction: column;
             padding: 24px 26px;
-            height: 100%;
+            min-height: 100%;
             margin: 0;
             transition: transform 0.4s;
 
@@ -332,12 +336,13 @@ export default {
     // 内容
     &-content {
         position: relative;
+        display: block;
+        border-radius: 10px;
+        margin: 0 20px 50px 20px;
         text-align: left;
         padding: 20px 20px 100px 20px;
-        float: left;
-        flex: 0 0 auto;
-        display: block;
-        width: 83.33333333%;
+        flex: 1;
+        width: 100%;
         background-color: #fff;
         font-size: 14px;
 
@@ -348,6 +353,10 @@ export default {
         p {
             margin: 5px;
             line-height: normal;
+        }
+
+        table p {
+            line-height: 2;
         }
 
         .table {
@@ -384,14 +393,20 @@ export default {
         &-navigations {
             position: fixed;
             top: 0;
+            bottom: 0;
             width: 100%;
-            height: 100vh;
-            overflow-y: scroll;
+            overflow: hidden;
             z-index: 100;
             background: rgba(0, 0, 0, 0.8);
 
             .router-list {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 50%;
                 margin-right: 30%;
+                overflow-y: scroll;
                 background: #fff;
             }
         }
@@ -400,6 +415,12 @@ export default {
             overflow: hidden;
             width: 100%;
         }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .docs {
+        padding: 0;
     }
 }
 

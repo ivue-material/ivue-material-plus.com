@@ -278,59 +278,66 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { getCurrentInstance, ref } from 'vue';
+
 import Clipboard from 'clipboard';
 
 import Code from '@/code/icon';
 import Default from '@/components/icon/default.vue';
 import Font from './font';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            component: '<ivue-icon></ivue-icon>',
-            propsData: [
-                {
-                    name: 'svg-src',
-                    illustrate:
-                        'svg图标的来源。请注意，对于外部domais上的图标，cors可能会影响其功能。',
-                    type: 'string',
-                    default: '-',
-                },
-            ],
-            classData: [
-                {
-                    name: 'ivue-size-[dimension]',
-                    illustrate: '增加图标的大小。它接受 2x，3x，4x 或 5x',
-                    default: 'ivue-size-2x',
-                },
-            ],
-            eventData: [
-                {
-                    name: 'on-svg-loaded',
-                    illustrate: '在获取SVG图标后立即触发',
-                    default: '-',
-                },
-            ],
-            font: Font,
-        };
-    },
-    methods: {
-        // 复制
-        handleCopy(item) {
-            const clipboard = new Clipboard(`.icon-${item}`);
+// vm
+const { proxy } = getCurrentInstance();
 
-            clipboard.on('success', (event) => {
-                this.$message.success(`copy success ${item}`);
+const code = ref(Code);
 
-                event.clearSelection();
-            });
-        },
+// component
+const component = ref('<ivue-icon></ivue-icon>');
+
+// propsData
+const propsData = ref([
+    {
+        name: 'svg-src',
+        illustrate:
+            'svg图标的来源。请注意，对于外部domais上的图标，cors可能会影响其功能。',
+        type: 'string',
+        default: '-',
     },
-    components: {
-        Default,
+]);
+
+// classData
+const classData = ref([
+    {
+        name: 'ivue-size-[dimension]',
+        illustrate: '增加图标的大小。它接受 2x，3x，4x 或 5x',
+        default: 'ivue-size-2x',
     },
+]);
+
+// eventData
+const eventData = ref([
+    {
+        name: 'on-svg-loaded',
+        illustrate: '在获取SVG图标后立即触发',
+        default: '-',
+    },
+]);
+
+// 字体
+const font = ref(Font);
+
+// methods
+
+// 复制
+const handleCopy = (item) => {
+    const clipboard = new Clipboard(`.icon-${item}`);
+
+    clipboard.on('success', (event) => {
+        proxy.$message.success(`copy success ${item}`);
+
+        event.clearSelection();
+    });
 };
 </script>
 

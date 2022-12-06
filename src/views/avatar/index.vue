@@ -37,84 +37,79 @@
         <h2>API</h2>
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="type" label="类型"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值"></ivue-table-column>
-            <ivue-table-column prop="default" label="默认"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值" width="200">
+                <template #default="props">
+                    <p v-html="props.row.value || '-'"></p>
+                </template>
+            </ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="100"></ivue-table-column>
         </ivue-table>
         <h3>Events</h3>
         <ivue-table :data="eventsData" border>
             <ivue-table-column prop="name" label="事件名"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
-            <ivue-table-column prop="default" label="返回值"></ivue-table-column>
+            <ivue-table-column prop="default" label="返回值" width="150"></ivue-table-column>
         </ivue-table>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/avatar';
+
 import Default from '@/components/avatar/default.vue';
 import Type from '@/components/avatar/type.vue';
 import Badge from '@/components/avatar/badge.vue';
 import Size from '@/components/avatar/size.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'shape',
-                    illustrate: '指定头像的形状',
-                    type: 'String',
-                    value: 'circle | square',
-                    default: 'circle',
-                },
-                {
-                    name: 'src',
-                    illustrate: '图片类头像的资源地址',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'icon',
-                    illustrate:
-                        '设置头像的图标类型，参考 <code>ivue-icon</code> 组件',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'size',
-                    illustrate:
-                        '设置组件的大小，该属性同时接受带 px、 rem、 em等单位的字符串，如：12px、12rem、12em',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-            ],
-            eventsData: [
-                {
-                    name: 'on-error',
-                    illustrate: '在设置 src 且图片加载不成功时触发',
-                    default: 'event',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = [
+    {
+        name: 'shape',
+        illustrate: '指定头像的形状',
+        type: 'String',
+        value: '<code>circle</code> | <code>square</code>',
+        default: 'circle',
     },
-    components: {
-        Default,
-        Type,
-        Badge,
-        Size,
+    {
+        name: 'src',
+        illustrate: '图片类头像的资源地址',
+        type: 'String',
+        default: '-',
     },
-};
+    {
+        name: 'icon',
+        illustrate: '设置头像的图标类型，参考 <code>ivue-icon</code> 组件',
+        type: 'String',
+        default: '-',
+    },
+    {
+        name: 'size',
+        illustrate:
+            '设置组件的大小，该属性同时接受带 px、 rem、 em等单位的字符串，如：12px、12rem、12em',
+        type: 'String',
+        default: '-',
+    },
+];
+
+// eventsData
+const eventsData = [
+    {
+        name: 'on-error',
+        illustrate: '在设置 src 且图片加载不成功时触发',
+        default: 'event',
+    },
+];
 </script>
 
 <style lang="scss" scoped>
