@@ -78,7 +78,11 @@
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
     </div>
@@ -103,7 +107,7 @@ export default {
                     name: 'status',
                     illustrate: '按钮状态',
                     type: 'String',
-                    value: 'primary | light-primary | dark-primary | success | warning | error',
+                    value: '<code>primary</code> | <code>light-primary</code> | <code>dark-primary</code> | <code>success</code> | <code>warning</code> | <code>error</code>',
                     default: '-',
                 },
                 {

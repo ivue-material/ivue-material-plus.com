@@ -68,6 +68,29 @@ export default {
 </script>
 `;
 
+code.autosize = `<template>
+    <h4>Autosize 为 true</h4>
+    <ivue-input v-model="value" type="textarea" :autoHeight="true" placeholder="Enter something..."></ivue-input>
+    <h4>Autosize 指定最小行数和最大行数</h4>
+    <ivue-input
+        v-model="value"
+        type="textarea"
+        :autoHeight="{minRows: 3,maxRows: 5}"
+        placeholder="Enter something..."
+    ></ivue-input>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            value: '',
+        };
+    },
+};
+</script>
+`;
+
 code.showWordLimit = `<template>
     <h4>文本框</h4>
     <ivue-input v-model="value" placeholder="Enter something..." maxlength="100" show-word-limit></ivue-input>
@@ -253,6 +276,96 @@ export default {
 `;
 
 
-code.compound = '';
+code.compound = `<template>
+    <ivue-input class="input" v-model="value" placeholder="Enter something...">
+        <template #prepend>
+            <span>http://</span>
+        </template>
+        <template #append>
+            <span>.com</span>
+        </template>
+    </ivue-input>
+    <ivue-input class="input" v-model="value" placeholder="Enter something...">
+        <template #prepend>
+            <ivue-select v-model="select1" style="width: 80px">
+                <ivue-option value="http">http://</ivue-option>
+                <ivue-option value="https">https://</ivue-option>
+            </ivue-select>
+        </template>
+        <template #append>
+            <ivue-select v-model="select2" style="width: 70px">
+                <ivue-option value="com">.com</ivue-option>
+                <ivue-option value="org">.org</ivue-option>
+                <ivue-option value="io">.io</ivue-option>
+            </ivue-select>
+        </template>
+    </ivue-input>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            value: '',
+            select1: 'http',
+            select2: 'com',
+            select3: 'day',
+        };
+    },
+};
+</script>
+
+<style>
+.input {
+    margin-bottom: 10px;
+}
+</style>
+`;
+
+code.emit = `<template>
+    <div class="button-wrapper">
+        <ivue-button class="button" @click="handleFocus('start')">Focus at first</ivue-button>
+        <ivue-button class="button" @click="handleFocus('end')">Focus at last</ivue-button>
+        <ivue-button class="button" @click="handleFocus('all')">Focus to select all</ivue-button>
+        <ivue-button class="button" @click="handleFocus('preventScroll')">Focus prevent scroll</ivue-button>
+    </div>
+    <div>
+        <ivue-input v-model="value" placeholder="Enter something..." style="width: 300px" ref="input"></ivue-input>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            value: 'View UI’s birthday is July 28',
+        };
+    },
+    methods: {
+        handleFocus(type) {
+            if (type === 'preventScroll') {
+                this.$refs.input.focus({
+                    preventScroll: true,
+                });
+            } else {
+                this.$refs.input.focus({
+                    cursor: type,
+                });
+            }
+        },
+    },
+};
+</script>
+
+<style>
+.button-wrapper {
+    margin-bottom: 10px;
+}
+
+.button {
+    margin-right: 10px;
+}
+</style>
+`;
 
 export default code;

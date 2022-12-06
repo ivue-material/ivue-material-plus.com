@@ -61,7 +61,11 @@
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值" width="200"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值" width="200">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
             <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
         </ivue-table>
         <h3>BottomNav Event</h3>
@@ -118,7 +122,7 @@ export default {
                     name: 'position',
                     illustrate: '导航栏固定位置',
                     type: 'String',
-                    value: 'fixed | absolute',
+                    value: '<code>fixed</code> | <code>absolute</code>',
                     default: '-',
                 },
                 {

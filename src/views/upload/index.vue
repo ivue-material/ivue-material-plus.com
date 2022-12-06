@@ -150,7 +150,11 @@
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值" width="100"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值" width="200">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
             <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
         </ivue-table>
         <ivue-card
@@ -460,7 +464,7 @@ export default {
                     name: 'image-fit',
                     illustrate: '预览图裁剪模式',
                     type: 'String',
-                    value: 'contain | cover | fill | none | scale-down',
+                    value: '<code>contain</code> | <code>cover</code> | <code>fill</code> | <code>none</code> | <code>scale-down</code>',
                     default: 'cover',
                 },
                 {

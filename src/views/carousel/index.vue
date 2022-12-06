@@ -91,7 +91,11 @@
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
             <ivue-table-column prop="type" label="类型"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值"></ivue-table-column>
+            <ivue-table-column prop="value" label="可选值">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
             <ivue-table-column prop="default" label="默认"></ivue-table-column>
         </ivue-table>
     </div>
@@ -150,21 +154,21 @@ export default {
                     name: 'arrow',
                     illustrate: '切换箭头显示时机',
                     type: 'String',
-                    value: 'always | hover | never',
+                    value: '<code>always</code> | <code>hover</code> | <code>never</code>',
                     default: 'always',
                 },
                 {
                     name: 'trigger',
                     illustrate: '指示器的触发方式',
                     type: 'String',
-                    value: 'hover | click',
+                    value: '<code>hover</code> | <code>click</code>',
                     default: 'click',
                 },
                 {
                     name: 'dots',
                     illustrate: '指示器的位置',
                     type: 'String',
-                    value: 'inside | outside | none',
+                    value: '<code>inside</code> | <code>outside</code> | <code>none</code>',
                     default: 'inside',
                 },
                 {
@@ -185,21 +189,21 @@ export default {
                     name: 'direction',
                     illustrate: '展示的方向',
                     type: 'String',
-                    value: 'horizontal | vertical',
+                    value: '<code>horizontal</code> | <code>vertical</code>',
                     default: 'horizontal',
                 },
                 {
                     name: 'vertical-dots-direction',
                     illustrate: '导航器竖向方向',
                     type: 'String',
-                    value: 'left/right',
+                    value: '<code>left</code> | <code>right</code>',
                     default: 'left',
                 },
                 {
                     name: 'type',
                     illustrate: 'carousel 的类型',
                     type: 'String',
-                    value: 'card',
+                    value: '<code>card</code>',
                     default: '-',
                 },
                 {

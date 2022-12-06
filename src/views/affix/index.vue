@@ -54,7 +54,11 @@
         <h3>Events</h3>
         <ivue-table :data="eventsData" border>
             <ivue-table-column prop="name" label="事件名"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
             <ivue-table-column prop="default" label="返回值"></ivue-table-column>
         </ivue-table>
     </div>
@@ -96,7 +100,7 @@ export default {
                 {
                     name: 'on-change',
                     illustrate: '在固定状态发生改变时触发',
-                    default: 'true | false',
+                    default: '<code>true</code> | <code>false</code>',
                 },
             ],
         };

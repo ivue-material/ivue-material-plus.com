@@ -149,14 +149,14 @@ export default {
                     illustrate:
                         '步骤条的方向，可选值为 <code>horizontal</code>（水平）或 <code>vertical</code>（垂直)',
                     type: 'String',
-                    value: 'horizontal | vertical',
+                    value: '<code>horizontal</code> | <code>vertical</code>',
                     default: 'horizontal',
                 },
                 {
                     name: 'status',
                     illustrate: '当前步骤的状态',
                     type: 'String',
-                    value: 'wait | process | finish | error',
+                    value: '<code>wait</code> | <code>process</code> | <code>finish</code> | <code>error</code>',
                     default: 'process',
                 },
                 {
@@ -171,7 +171,7 @@ export default {
                     name: 'text-direction',
                     illustrate: '文字方向',
                     type: 'String',
-                    value: 'right | bottom-center | bottom',
+                    value: '<code>right</code> | <code>bottom-center</code> | <code>bottom</code>',
                     default: '-',
                 },
             ],
@@ -180,7 +180,7 @@ export default {
                     name: 'status',
                     illustrate: '当前步骤的状态',
                     type: 'String',
-                    value: 'wait | process | finish | error',
+                    value: '<code>wait</code> | <code>process</code> | <code>finish</code> | <code>error</code>',
                     default: 'process',
                 },
                 {
