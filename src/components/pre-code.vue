@@ -4,15 +4,14 @@
     </pre>
 </template>
 
-<script>
+<script setup>
+import { onMounted } from 'vue';
 import Hljs from 'highlight.js';
 
-export default {
-    name: 'pre-code',
-    mounted() {
-        Hljs.highlightAll();
-    },
-};
+// onMounted
+onMounted(() => {
+    Hljs.highlightAll();
+});
 </script>
 
 <style lang="scss" scoped>

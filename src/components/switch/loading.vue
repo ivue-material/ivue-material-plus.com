@@ -16,10 +16,6 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .switch {
     margin: 20px;

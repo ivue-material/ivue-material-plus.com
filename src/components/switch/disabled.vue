@@ -7,14 +7,10 @@
     <ivue-button type="primary" @click="disabled = !disabled">Toggle Disabled</ivue-button>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            disabled: true,
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const disabled = ref(true);
 </script>
 
 <style scoped>

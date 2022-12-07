@@ -75,31 +75,34 @@
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="type" label="类型"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值" width="200"></ivue-table-column>
-            <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="100"></ivue-table-column>
         </ivue-table>
         <h3>Event</h3>
         <ivue-table :data="eventData" border>
-            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
-            <ivue-table-column prop="default" label="返回值" width="200"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="100"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="default" label="返回值" width="100"></ivue-table-column>
         </ivue-table>
         <h3>Slots</h3>
         <ivue-table :data="slotsData" border>
-            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="100"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
         </ivue-table>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/switch';
+
 import Default from '@/components/switch/default.vue';
 import Size from '@/components/switch/size.vue';
 import Icon from '@/components/switch/icon.vue';
@@ -108,138 +111,129 @@ import Loading from '@/components/switch/loading.vue';
 import Color from '@/components/switch/color.vue';
 import BeforeChange from '@/components/switch/before-change.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'model-value',
-                    illustrate:
-                        '指定当前是否选中，可以使用 <code>v-model</code> 双向绑定数据',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'size',
-                    illustrate:
-                        '开关的尺寸。建议开关如果使用了2个汉字的文字，使用 <code>large</code>',
-                    type: 'String',
-                    value: 'large | small | default',
-                    default: '-',
-                },
-                {
-                    name: 'disabled',
-                    illustrate: '禁用开关',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'disabled',
-                    illustrate: '禁用开关',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'true-value',
-                    illustrate:
-                        '选中时的值，当使用类似 <code>1</code> 和 <code>0</code> 来判断是否选中时会很有用',
-                    type: 'String | Number | Boolean',
-                    value: '-',
-                    default: 'true',
-                },
-                {
-                    name: 'false-value',
-                    illustrate:
-                        '没有选中时的值，当使用类似 <code>1</code> 和 <code>0</code> 来判断是否选中时会很有用',
-                    type: 'String | Number | Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'color',
-                    illustrate: '自定义打开时的背景色',
-                    type: 'String | Array',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'false-color',
-                    illustrate: '自定义关闭时的背景色',
-                    type: 'String | Array',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'before-change',
-                    illustrate: '返回 Promise 可以阻止切换',
-                    type: 'Function',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'loading',
-                    illustrate: '加载中的开关',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'emboss',
-                    illustrate: '浮雕按钮',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'emboss-loading-color',
-                    illustrate: '浮雕按钮',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'ripple-disabled',
-                    illustrate: '禁用浮雕水波纹效果',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-            ],
-            eventData: [
-                {
-                    name: 'on-change',
-                    illustrate: '开关变化时触发，返回当前的状态',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'true | false',
-                },
-            ],
-            slotsData: [
-                {
-                    name: 'open',
-                    illustrate: '自定义显示打开时的内容',
-                },
-                {
-                    name: 'close',
-                    illustrate: '自定义显示关闭时的内容',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'model-value',
+        illustrate:
+            '指定当前是否选中，可以使用 <code>v-model</code> 双向绑定数据',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
     },
-    components: {
-        Default,
-        Size,
-        Icon,
-        Disabled,
-        Loading,
-        Color,
-        BeforeChange,
+    {
+        name: 'size',
+        illustrate:
+            '开关的尺寸。建议开关如果使用了2个汉字的文字，使用 <code>large</code>',
+        type: 'String',
+        value: 'large | small | default',
+        default: '-',
     },
-};
+    {
+        name: 'disabled',
+        illustrate: '禁用开关',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'disabled',
+        illustrate: '禁用开关',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'true-value',
+        illustrate:
+            '选中时的值，当使用类似 <code>1</code> 和 <code>0</code> 来判断是否选中时会很有用',
+        type: 'String | Number | Boolean',
+        value: '-',
+        default: 'true',
+    },
+    {
+        name: 'false-value',
+        illustrate:
+            '没有选中时的值，当使用类似 <code>1</code> 和 <code>0</code> 来判断是否选中时会很有用',
+        type: 'String | Number | Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'color',
+        illustrate: '自定义打开时的背景色',
+        type: 'String | Array',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'false-color',
+        illustrate: '自定义关闭时的背景色',
+        type: 'String | Array',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'before-change',
+        illustrate: '返回 Promise 可以阻止切换',
+        type: 'Function',
+        value: '-',
+        default: '-',
+    },
+    {
+        name: 'loading',
+        illustrate: '加载中的开关',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'emboss',
+        illustrate: '浮雕按钮',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'emboss-loading-color',
+        illustrate: '浮雕按钮',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'ripple-disabled',
+        illustrate: '禁用浮雕水波纹效果',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+]);
+
+// eventData
+const eventData = ref([
+    {
+        name: 'on-change',
+        illustrate: '开关变化时触发，返回当前的状态',
+        type: 'Boolean',
+        value: '-',
+        default: 'true | false',
+    },
+]);
+
+// slotsData
+const slotsData = ref([
+    {
+        name: 'open',
+        illustrate: '自定义显示打开时的内容',
+    },
+    {
+        name: 'close',
+        illustrate: '自定义显示关闭时的内容',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

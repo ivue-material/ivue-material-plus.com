@@ -1,19 +1,19 @@
 <template>
     <div class="app">
-        <div class="app-header" :style="{'z-index': hideMenu ? '1' : '100'}">
+        <div class="app-header">
             <!-- 头部 -->
             <div class="app-header-wrapper">
-                <div class="app-header-menu">
-                    <ivue-button flat icon @click="handleMenu()">
-                        <ivue-icon>menu</ivue-icon>
-                    </ivue-button>
-                </div>
                 <router-link to="/">
                     <div class="app-header-img">
                         <img src="./static/logo.png" />
                         <p class="text">IVue</p>
                     </div>
                 </router-link>
+                <div class="app-header-menu">
+                    <ivue-button flat icon @click="handleMenu">
+                        <ivue-icon class="icon">menu_open</ivue-icon>
+                    </ivue-button>
+                </div>
                 <!-- 生态系统 -->
                 <div class="app-header-github">
                     <div class="app-header-ecology">
@@ -57,52 +57,55 @@
     </div>
 </template>
 
-<script>
-import { mapState, mapActions } from 'vuex';
+<script setup>
+import { getCurrentInstance, ref, watch } from 'vue';
+import { useStore } from 'vuex';
+import { useRoute, useRouter } from 'vue-router';
 
-export default {
-    name: 'app',
-    mounted() {
-        // 初始化
-        this.initial = true;
-    },
-    computed: {
-        ...mapState({
-            hideMenu: 'hideMenu',
-        }),
-    },
-    methods: {
-        // 显示菜单
-        handleMenu() {
-            this.setHideMenu(!this.hideMenu);
-        },
-        ...mapActions({
-            setHideMenu: 'setHideMenu',
-        }),
-    },
-    watch: {
-        // 监听路由
-        $route(route) {
-            if (route.path === '/docs/') {
-                this.$router.replace({
-                    name: 'error',
-                    params: '/',
-                });
-            }
+import storeHook from '@/hook/store-hook';
 
-            // 移动端
-            if (this.isMobile && !this.initial) {
-                this.setHideMenu(!this.hideMenu);
-            }
+// vm
+const { proxy } = getCurrentInstance();
 
-            // 初始化
-            this.initial = false;
+// 初始化
+const initial = ref(true);
 
-            // 返回顶部
-            window.scrollTo(0, 0);
-        },
-    },
+// route
+const route = useRoute();
+const router = useRouter();
+
+// vuex
+const store = useStore();
+const { hideMenu } = storeHook();
+
+// methods
+const handleMenu = () => {
+    store.dispatch('setHideMenu', !hideMenu.value);
 };
+
+// 监听路由
+watch(
+    () => route.params,
+    () => {
+        if (route.path === '/docs/') {
+            router.replace({
+                name: 'error',
+                params: '/',
+            });
+        }
+
+        // 移动端
+        if (proxy.isMobile && !initial.value) {
+            store.dispatch('setHideMenu', !hideMenu.value);
+        }
+
+        // 初始化
+        initial.value = false;
+
+        // 返回顶部
+        window.scrollTo(0, 0);
+    }
+);
 </script>
 
 <style lang="scss">
@@ -225,6 +228,7 @@ export default {
         background-color: #fff;
         box-shadow: 0 0 5px rgba(57, 70, 78, 0.2);
         opacity: 0.9;
+        z-index: 100;
 
         &-wrapper {
             display: flex;
@@ -237,6 +241,7 @@ export default {
         &-img {
             display: flex;
             align-items: center;
+            margin-right: 10px;
 
             img {
                 height: 40px;
@@ -256,7 +261,9 @@ export default {
         }
 
         &-menu {
-            display: none;
+            .ivue-button--icon .ivue-icon {
+                font-size: 30px !important;
+            }
         }
 
         /* 生态 */
@@ -324,6 +331,8 @@ export default {
     // 底部
     &-footer {
         position: absolute;
+        left: 0;
+        right: 20px;
         bottom: 0;
         width: 100%;
         line-height: 30px;
@@ -332,6 +341,7 @@ export default {
         background: #000;
 
         a {
+            margin-left: calc(17% + 20px);
             color: #7d7d7d;
         }
     }

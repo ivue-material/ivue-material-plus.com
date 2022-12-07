@@ -6,28 +6,21 @@
         :false-color="['#FFA82D', '#FFBD3C']"
         @on-change="handleChange"
     />
-    <ivue-switch
-        class="switch"
-        v-model="value2"
-        :color="'#FFC009'"
-        :false-color="'#F41D74'"
-    />
+    <ivue-switch class="switch" v-model="value2" :color="'#FFC009'" :false-color="'#F41D74'" />
 </template>
-<script>
-export default {
-    data() {
-        return {
-            value1: false,
-            value2: false,
-        };
-    },
-    methods: {
-        handleChange(status) {
-            this.$message.info({
-                content: `开关状态：${status}`,
-            });
-        },
-    },
+
+<script setup>
+import { ref, getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const value1 = ref(false);
+const value2 = ref(false);
+
+const handleChange = (status) => {
+    proxy.$message.info({
+        content: `开关状态：${status}`,
+    });
 };
 </script>
 

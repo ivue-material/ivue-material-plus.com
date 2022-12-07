@@ -44,10 +44,6 @@
     </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .switch {
     margin-right: 20px;

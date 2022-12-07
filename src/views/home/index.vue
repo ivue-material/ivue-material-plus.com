@@ -19,23 +19,21 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { useRouter } from 'vue-router';
+
 import IvueFooter from '@/components/footer';
 
-export default {
-    methods: {
-        // 跳转安装页面
-        handleStartUse() {
-            this.$router.push('/docs/install');
-        },
-        // 跳转github
-        handleGitHub() {
-            window.open('https://github.com/qq282126990/ivue-ui-vue3');
-        },
-    },
-    components: {
-        IvueFooter,
-    },
+const router = useRouter();
+
+// 跳转安装页面
+const handleStartUse = () => {
+    router.push('/docs/install');
+};
+
+// 跳转github
+const handleGitHub = () => {
+    window.open('https://github.com/qq282126990/ivue-ui-plus');
 };
 </script>
 

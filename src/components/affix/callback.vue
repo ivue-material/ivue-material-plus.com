@@ -6,20 +6,19 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'affix-callback',
-    methods: {
-        handleChange(status) {
-            this.$message.info({
-                content: `status: ${status}`,
-            });
-        },
-    },
+<script setup>
+import { getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const handleChange = (status) => {
+    proxy.$message.info({
+        content: `status: ${status}`,
+    });
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .demo-affix {
     width: 300px;
     height: 30px;

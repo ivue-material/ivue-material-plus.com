@@ -88,21 +88,66 @@
         <h2>API</h2>
         <h3>Carousel Props</h3>
         <ivue-table :data="carouselPropsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
-            <ivue-table-column prop="type" label="类型"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="默认"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
+        </ivue-table>
+        <h3>Carousel Events</h3>
+        <ivue-table :data="carouselEventsData" border>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="value" label="参数">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
+        </ivue-table>
+        <h3>Carousel Methods</h3>
+        <ivue-table :data="carouselMethodsData" border>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="value" label="参数">
+                <template #default="props">
+                    <p v-html="props.row.value"></p>
+                </template>
+            </ivue-table-column>
+        </ivue-table>
+        <h3>Carousel Slots</h3>
+        <ivue-table :data="carouselSlotsData" border>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="value" label="子标签" width="200"></ivue-table-column>
+        </ivue-table>
+        <h3>Carousel Item Props</h3>
+        <ivue-table :data="carouselItemPropsData" border>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
+                <template #default="props">
+                    <p v-html="props.row.illustrate"></p>
+                </template>
+            </ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="150"></ivue-table-column>
+        </ivue-table>
+        <h3>Carousel Item Slots</h3>
+        <ivue-table :data="carouselItemSlotsData" border>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
         </ivue-table>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/carousel';
+
 import Default from '@/components/carousel/default.vue';
 import Dots from '@/components/carousel/dots.vue';
 import Arrow from '@/components/carousel/arrow.vue';
@@ -110,143 +155,191 @@ import Card from '@/components/carousel/card.vue';
 import HeightAuto from '@/components/carousel/height-auto.vue';
 import Vertical from '@/components/carousel/vertical.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            carouselPropsData: [
-                {
-                    name: 'height',
-                    illustrate: 'carousel 的高度,设置为 auto 将自适应高度',
-                    type: 'String',
-                    value: '-',
-                    default: '-',
-                },
-                {
-                    name: 'loop',
-                    illustrate: '是否循环显示',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'true',
-                },
-                {
-                    name: 'autoplay',
-                    illustrate: '是否自动切换',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'pause-on-hover',
-                    illustrate: '鼠标悬浮时暂停自动切换',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'interval',
-                    illustrate: '自动切换的时间间隔，单位为毫秒',
-                    type: 'Number',
-                    value: '-',
-                    default: '3000',
-                },
-                {
-                    name: 'arrow',
-                    illustrate: '切换箭头显示时机',
-                    type: 'String',
-                    value: '<code>always</code> | <code>hover</code> | <code>never</code>',
-                    default: 'always',
-                },
-                {
-                    name: 'trigger',
-                    illustrate: '指示器的触发方式',
-                    type: 'String',
-                    value: '<code>hover</code> | <code>click</code>',
-                    default: 'click',
-                },
-                {
-                    name: 'dots',
-                    illustrate: '指示器的位置',
-                    type: 'String',
-                    value: '<code>inside</code> | <code>outside</code> | <code>none</code>',
-                    default: 'inside',
-                },
-                {
-                    name: 'radius-dot',
-                    illustrate: '是否显示圆形指示器',
-                    type: 'Boolean',
-                    value: '-',
-                    default: 'false',
-                },
-                {
-                    name: 'initial-index',
-                    illustrate: '初始状态激活的幻灯片的索引，从 0 开始',
-                    type: 'Number',
-                    value: '-',
-                    default: '0',
-                },
-                {
-                    name: 'direction',
-                    illustrate: '展示的方向',
-                    type: 'String',
-                    value: '<code>horizontal</code> | <code>vertical</code>',
-                    default: 'horizontal',
-                },
-                {
-                    name: 'vertical-dots-direction',
-                    illustrate: '导航器竖向方向',
-                    type: 'String',
-                    value: '<code>left</code> | <code>right</code>',
-                    default: 'left',
-                },
-                {
-                    name: 'type',
-                    illustrate: 'carousel 的类型',
-                    type: 'String',
-                    value: '<code>card</code>',
-                    default: '-',
-                },
-                {
-                    name: 'card-scale',
-                    illustrate: '卡片缩放大,当 type 为 card 时有效',
-                    type: 'Number',
-                    value: '-',
-                    default: '0.83',
-                },
-                {
-                    name: 'throttle-time',
-                    illustrate:
-                        '节流时间 (作用于 prev,next,handleArrowClick 方法 )',
-                    type: 'Number',
-                    value: '-',
-                    default: '300',
-                },
-                {
-                    name: 'leftArrow',
-                    illustrate: '左箭头图标',
-                    type: 'String',
-                    value: '-',
-                    default: 'keyboard_arrow_left',
-                },
-                {
-                    name: 'rightArrow',
-                    illustrate: '右箭头图标',
-                    type: 'String',
-                    value: '-',
-                    default: 'keyboard_arrow_right',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// carouselPropsData
+const carouselPropsData = ref([
+    {
+        name: 'height',
+        illustrate: 'carousel 的高度,设置为 auto 将自适应高度',
+        type: 'String',
+        value: '-',
+        default: '-',
     },
-    components: {
-        Default,
-        Dots,
-        Arrow,
-        Card,
-        HeightAuto,
-        Vertical,
+    {
+        name: 'loop',
+        illustrate: '是否循环显示',
+        type: 'Boolean',
+        value: '-',
+        default: 'true',
     },
-};
+    {
+        name: 'autoplay',
+        illustrate: '是否自动切换',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'pause-on-hover',
+        illustrate: '鼠标悬浮时暂停自动切换',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'interval',
+        illustrate: '自动切换的时间间隔，单位为毫秒',
+        type: 'Number',
+        value: '-',
+        default: '3000',
+    },
+    {
+        name: 'arrow',
+        illustrate: '切换箭头显示时机',
+        type: 'String',
+        value: '<code>always</code> | <code>hover</code> | <code>never</code>',
+        default: 'always',
+    },
+    {
+        name: 'trigger',
+        illustrate: '指示器的触发方式',
+        type: 'String',
+        value: '<code>hover</code> | <code>click</code>',
+        default: 'click',
+    },
+    {
+        name: 'dots',
+        illustrate: '指示器的位置',
+        type: 'String',
+        value: '<code>inside</code> | <code>outside</code> | <code>none</code>',
+        default: 'inside',
+    },
+    {
+        name: 'radius-dot',
+        illustrate: '是否显示圆形指示器',
+        type: 'Boolean',
+        value: '-',
+        default: 'false',
+    },
+    {
+        name: 'initial-index',
+        illustrate: '初始状态激活的幻灯片的索引，从 0 开始',
+        type: 'Number',
+        value: '-',
+        default: '0',
+    },
+    {
+        name: 'direction',
+        illustrate: '展示的方向',
+        type: 'String',
+        value: '<code>horizontal</code> | <code>vertical</code>',
+        default: 'horizontal',
+    },
+    {
+        name: 'vertical-dots-direction',
+        illustrate: '导航器竖向方向',
+        type: 'String',
+        value: '<code>left</code> | <code>right</code>',
+        default: 'left',
+    },
+    {
+        name: 'type',
+        illustrate: 'carousel 的类型',
+        type: 'String',
+        value: '<code>card</code>',
+        default: '-',
+    },
+    {
+        name: 'card-scale',
+        illustrate: '卡片缩放大,当 type 为 card 时有效',
+        type: 'Number',
+        value: '-',
+        default: '0.83',
+    },
+    {
+        name: 'throttle-time',
+        illustrate: '节流时间 (作用于 prev,next,handleArrowClick 方法 )',
+        type: 'Number',
+        value: '-',
+        default: '300',
+    },
+    {
+        name: 'left-arrow',
+        illustrate: '左箭头图标',
+        type: 'String',
+        value: '-',
+        default: 'keyboard_arrow_left',
+    },
+    {
+        name: 'right-arrow',
+        illustrate: '右箭头图标',
+        type: 'String',
+        value: '-',
+        default: 'keyboard_arrow_right',
+    },
+]);
+
+// carouselEventsData
+const carouselEventsData = ref([
+    {
+        name: 'on-change',
+        illustrate: '幻灯片切换时触发',
+        value: '<code>current</code>(目前激活的幻灯片的索引)，<code>prev</code>(原幻灯片的索引)',
+    },
+]);
+
+// carouselMethodsData
+const carouselMethodsData = ref([
+    {
+        name: 'setActiveItem',
+        illustrate: '手动切换幻灯片',
+        value: '需要切换的幻灯片的索引，从 <code>0</code> 开始，或相应 <code>ivue-carousel-item</code> 的 <code>name</code> 属性值',
+    },
+    {
+        name: 'prev',
+        illustrate: '切换至上一张幻灯片',
+        value: '可通过<code>props</code>的<code>throttle-time</code>属性设置节流时间',
+    },
+    {
+        name: 'next',
+        illustrate: '切换至下一张幻灯片',
+        value: '可通过<code>props</code>的<code>throttle-time</code>属性设置节流时间',
+    },
+]);
+
+// carouselSlotsData
+const carouselSlotsData = ref([
+    {
+        name: 'default',
+        illustrate: '自定义默认内容',
+        value: 'ivue-carousel-item',
+    },
+]);
+
+// carouselItemPropsData
+const carouselItemPropsData = ref([
+    {
+        name: 'name',
+        illustrate: '幻灯片的名字，可用作 <code>setActiveItem</code> 的参数',
+        type: 'String',
+        default: '-',
+    },
+    {
+        name: 'label',
+        illustrate: '该幻灯片所对应指示器的文本',
+        type: 'String',
+        default: '-',
+    },
+]);
+
+// carouselItemSlotsData
+const carouselItemSlotsData = ref([
+    {
+        name: 'default',
+        illustrate: '自定义默认内容',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

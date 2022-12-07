@@ -11,7 +11,6 @@ const fileList = ref([]);
 
 // 此时可以自行将文件上传至服务器
 const handleAfterRead = (file) => {
-    // eslint-disable-next-line no-console
     console.log(file);
 };
 </script>
@@ -142,7 +141,6 @@ const fileList = ref([]);
 
 // 此时可以自行将文件上传至服务器
 const handleAfterRead = (file) => {
-    // eslint-disable-next-line no-console
     console.log(file);
 };
 </script>
@@ -156,35 +154,30 @@ code.previewCover = `<template>
     </ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList: [
-                {
-                    url: 'https://pica.zhimg.com/80/v2-af54c81674d7580b47988bc6cfae896c_720w.webp',
-                    status: 'done',
-                    name: '记忆面包',
-                },
-                {
-                    url: 'https://picx.zhimg.com/80/v2-9b27fcc905788bf1a86dc52cc6dc04df_720w.webp',
-                    status: 'done',
-                    name: '百宝袋',
-                },
-                {
-                    url: 'https://pic1.zhimg.com/80/v2-210691412707bfd60afd05c18aa99c12_720w.webp',
-                    status: 'done',
-                    name: '竹蜻蜓',
-                },
-            ],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const fileList = ref([
+    {
+        url: 'https://pica.zhimg.com/80/v2-af54c81674d7580b47988bc6cfae896c_720w.webp',
+        status: 'done',
+        name: '记忆面包',
     },
-    methods: {
-        // 此时可以自行将文件上传至服务器
-        handleAfterRead(file) {
-            console.log(file);
-        },
+    {
+        url: 'https://picx.zhimg.com/80/v2-9b27fcc905788bf1a86dc52cc6dc04df_720w.webp',
+        status: 'done',
+        name: '百宝袋',
     },
+    {
+        url: 'https://pic1.zhimg.com/80/v2-210691412707bfd60afd05c18aa99c12_720w.webp',
+        status: 'done',
+        name: '竹蜻蜓',
+    },
+]);
+
+// 此时可以自行将文件上传至服务器
+const handleAfterRead = (file) => {
+    console.log(file);
 };
 </script>
 
@@ -211,36 +204,33 @@ code.beforeRead = `<template>
     <ivue-upload v-model="fileList2" :before-read="asyncHandleBeforeRead"></ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList1: [],
-            fileList2: [],
-        };
-    },
-    methods: {
-        handleBeforeRead(file) {
-            if (file.type !== 'image/jpeg') {
-                this.$message.warning('请上传 jpeg 格式图片');
+<script setup>
+import { ref } from 'vue';
 
-                return false;
-            }
-            return true;
-        },
-        // 返回 Promise
-        asyncHandleBeforeRead(file) {
-            return new Promise((resolve, reject) => {
-                if (file.type !== 'image/jpeg') {
-                    this.$message.warning('请上传 jpeg 格式图片');
+const fileList1 = ref([]);
+const fileList2 = ref([]);
 
-                    reject();
-                } else {
-                    resolve(file);
-                }
-            });
-        },
-    },
+// 文件读取前的回调函数
+const handleBeforeRead = (file) => {
+    if (file.type !== 'image/jpeg') {
+        this.$message.warning('请上传 jpeg 格式图片');
+
+        return false;
+    }
+    return true;
+};
+
+// 文件读取前的回调函数 返回 Promise
+const asyncHandleBeforeRead = (file) => {
+    return new Promise((resolve, reject) => {
+        if (file.type !== 'image/jpeg') {
+            this.$message.warning('请上传 jpeg 格式图片');
+
+            reject();
+        } else {
+            resolve(file);
+        }
+    });
 };
 </script>
 `;
@@ -249,24 +239,20 @@ code.disabled = `<template>
     <ivue-upload v-model="fileList" disabled></ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList: [
-                {
-                    url: 'https://pica.zhimg.com/80/v2-af54c81674d7580b47988bc6cfae896c_720w.webp',
-                },
-                {
-                    url: 'https://picx.zhimg.com/80/v2-9b27fcc905788bf1a86dc52cc6dc04df_720w.webp',
-                },
-                {
-                    url: 'https://pic1.zhimg.com/80/v2-210691412707bfd60afd05c18aa99c12_720w.webp',
-                },
-            ],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const fileList = ref([
+    {
+        url: 'https://pica.zhimg.com/80/v2-af54c81674d7580b47988bc6cfae896c_720w.webp',
     },
-};
+    {
+        url: 'https://picx.zhimg.com/80/v2-9b27fcc905788bf1a86dc52cc6dc04df_720w.webp',
+    },
+    {
+        url: 'https://pic1.zhimg.com/80/v2-210691412707bfd60afd05c18aa99c12_720w.webp',
+    },
+]);
 </script>
 `;
 
@@ -274,33 +260,29 @@ code.customSingleImage = `<template>
     <ivue-upload v-model="fileList"></ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList: [
-                {
-                    url: 'https://pica.zhimg.com/80/v2-af54c81674d7580b47988bc6cfae896c_720w.webp',
-                },
-                {
-                    url: 'https://picx.zhimg.com/80/v2-9b27fcc905788bf1a86dc52cc6dc04df_720w.webp',
-                    deletable: true,
-                    beforeDelete: () => {
-                        this.$message.success('自定义单个预览图片删除事件');
+<script setup>
+import { ref } from 'vue';
 
-                        return true;
-                    },
-                },
-                {
-                    url: 'https://pic1.zhimg.com/80/v2-210691412707bfd60afd05c18aa99c12_720w.webp',
-                    deletable: true,
-                    imageFit: 'none',
-                    previewSize: 120,
-                },
-            ],
-        };
+const fileList = ref([
+    {
+        url: 'https://pica.zhimg.com/80/v2-af54c81674d7580b47988bc6cfae896c_720w.webp',
     },
-};
+    {
+        url: 'https://picx.zhimg.com/80/v2-9b27fcc905788bf1a86dc52cc6dc04df_720w.webp',
+        deletable: true,
+        beforeDelete: () => {
+            this.$message.success('自定义单个预览图片删除事件');
+
+            return true;
+        },
+    },
+    {
+        url: 'https://pic1.zhimg.com/80/v2-210691412707bfd60afd05c18aa99c12_720w.webp',
+        deletable: true,
+        imageFit: 'none',
+        previewSize: 120,
+    },
+]);
 </script>
 `;
 
@@ -315,20 +297,15 @@ code.drag = `<template>
     ></ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList: [],
-        };
-    },
-    methods: {
-        // 上传错误
-        handleUploadError(file) {
-            // eslint-disable-next-line no-console
-            console.log('上传错误', file);
-        },
-    },
+<script setup>
+import { ref } from 'vue';
+
+const fileList = ref([]);
+
+// 上传错误
+const handleUploadError = (file) => {
+    // eslint-disable-next-line no-console
+    console.log('上传错误', file);
 };
 </script>
 `;

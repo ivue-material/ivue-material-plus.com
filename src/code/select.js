@@ -16,40 +16,37 @@ code.default = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: '',
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref('');
 </script>
 `;
 
@@ -67,41 +64,38 @@ code.disabled = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: '',
-            model1: '',
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref('');
+const model1 = ref('');
 </script>
 `;
 
@@ -111,40 +105,37 @@ code.clearable = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: '',
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref('');
 </script>
 `;
 
@@ -201,45 +192,43 @@ code.group = `<template>
         </ivue-option-group>
     </ivue-select>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            cityList1: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-            ],
-            cityList2: [
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: '',
-        };
+
+<script setup>
+import { ref } from 'vue';
+
+const cityList1 = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+]);
+
+const cityList2 = ref([
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref('');
 </script>
 `;
-
 
 code.custom = `<template>
     <ivue-select v-model="model" style="width:200px">
@@ -264,14 +253,10 @@ code.custom = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            model: '',
-        };
-    },
-};
+<script setup>
+import { ref } from 'vue';
+
+const model = ref('');
 </script>
 
 <style scoped>
@@ -283,47 +268,43 @@ export default {
 </style>
 `;
 
-
 code.multiple = `<template>
     <ivue-select v-model="model" multiple style="width:260px">
         <ivue-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</ivue-option>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: [],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref([]);
 </script>
 `;
 
@@ -338,41 +319,38 @@ code.prefix = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model1: '',
-            model2: '',
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model1 = ref('');
+const model2 = ref('');
 </script>
 
 <style scoped>
@@ -400,45 +378,41 @@ code.tag = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model1: [],
-            model2: [],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-    methods: {
-        maxTagPlaceholder(num) {
-            return 'more ' + num;
-        },
+    {
+        value: 'London',
+        label: 'London',
     },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model1 = ref([]);
+const model2 = ref([]);
+
+const maxTagPlaceholder = (num) => {
+    return \`more \${num}\`;
 };
 </script>
 `;
@@ -454,41 +428,38 @@ code.filterable = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model1: '',
-            model2: [],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model1 = ref('');
+const model2 = ref([]);
 </script>
 `;
 
@@ -542,136 +513,132 @@ code.search = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            model1: '',
-            loading1: false,
-            options1: [],
+<script setup>
+import { ref, watch } from 'vue';
 
-            model2: [],
-            loading2: false,
-            options2: [],
+const model1 = ref('');
+const loading1 = ref(false);
+const options1 = ref([]);
 
-            list: [
-                'Alabama',
-                'Alaska',
-                'Arizona',
-                'Arkansas',
-                'California',
-                'Colorado',
-                'Connecticut',
-                'Delaware',
-                'Florida',
-                'Georgia',
-                'Hawaii',
-                'Idaho',
-                'Illinois',
-                'Indiana',
-                'Iowa',
-                'Kansas',
-                'Kentucky',
-                'Louisiana',
-                'Maine',
-                'Maryland',
-                'Massachusetts',
-                'Michigan',
-                'Minnesota',
-                'Mississippi',
-                'Missouri',
-                'Montana',
-                'Nebraska',
-                'Nevada',
-                'New hampshire',
-                'New jersey',
-                'New mexico',
-                'New york',
-                'North carolina',
-                'North dakota',
-                'Ohio',
-                'Oklahoma',
-                'Oregon',
-                'Pennsylvania',
-                'Rhode island',
-                'South carolina',
-                'South dakota',
-                'Tennessee',
-                'Texas',
-                'Utah',
-                'Vermont',
-                'Virginia',
-                'Washington',
-                'West virginia',
-                'Wisconsin',
-                'Wyoming',
-            ],
-            searchEnd: false,
-        };
-    },
-    methods: {
-        searchMethod1(query) {
-            if (query !== '') {
-                if (!this.searchEnd) {
-                    this.loading1 = true;
-                }
+const model2 = ref('');
+const loading2 = ref(false);
+const options2 = ref([]);
 
-                setTimeout(() => {
-                    this.loading1 = false;
+const list = ref([
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+    'Hawaii',
+    'Idaho',
+    'Illinois',
+    'Indiana',
+    'Iowa',
+    'Kansas',
+    'Kentucky',
+    'Louisiana',
+    'Maine',
+    'Maryland',
+    'Massachusetts',
+    'Michigan',
+    'Minnesota',
+    'Mississippi',
+    'Missouri',
+    'Montana',
+    'Nebraska',
+    'Nevada',
+    'New hampshire',
+    'New jersey',
+    'New mexico',
+    'New york',
+    'North carolina',
+    'North dakota',
+    'Ohio',
+    'Oklahoma',
+    'Oregon',
+    'Pennsylvania',
+    'Rhode island',
+    'South carolina',
+    'South dakota',
+    'Tennessee',
+    'Texas',
+    'Utah',
+    'Vermont',
+    'Virginia',
+    'Washington',
+    'West virginia',
+    'Wisconsin',
+    'Wyoming',
+]);
 
-                    const list = this.list.map((item) => {
-                        return {
-                            value: item,
-                            label: item,
-                        };
-                    });
+const searchEnd = ref(false);
 
-                    this.options1 = list.filter(
-                        (item) =>
-                            item.label
-                                .toLowerCase()
-                                .indexOf(query.toLowerCase()) > -1
-                    );
-                }, 2000);
-            } else {
-                this.options1 = [];
-            }
-        },
-        searchMethod2(query) {
-            const list = this.list.map((item) => {
+const searchMethod1 = (query) => {
+    if (query !== '') {
+        if (!searchEnd.value) {
+            loading1.value = true;
+        }
+
+        setTimeout(() => {
+            loading1.value = false;
+
+            const _list = list.value.map((item) => {
                 return {
                     value: item,
                     label: item,
                 };
             });
 
-            if (query !== '') {
-                this.loading2 = true;
-                setTimeout(() => {
-                    this.loading2 = false;
-
-                    this.options2 = list.filter(
-                        (item) =>
-                            item.label
-                                .toLowerCase()
-                                .indexOf(query.toLowerCase()) > -1
-                    );
-                }, 200);
-            } else {
-                this.options2 = list;
-            }
-        },
-    },
-    watch: {
-        model1() {
-            this.searchEnd = true;
-
-            setTimeout(() => {
-                this.searchEnd = false;
-            });
-        },
-    },
+            options1.value = _list.filter(
+                (item) =>
+                    item.label.toLowerCase().indexOf(query.toLowerCase()) > -1
+            );
+        }, 2000);
+    } else {
+        options1.value = [];
+    }
 };
+
+const searchMethod2 = (query) => {
+    const _list = list.value.map((item) => {
+        return {
+            value: item,
+            label: item,
+        };
+    });
+
+    if (query !== '') {
+        loading2.value = true;
+
+        setTimeout(() => {
+            loading2.value = false;
+
+            options2.value = _list.filter(
+                (item) =>
+                    item.label.toLowerCase().indexOf(query.toLowerCase()) > -1
+            );
+        }, 200);
+    } else {
+        options2.value = _list;
+    }
+};
+
+watch(
+    () => model1.value,
+    () => {
+        searchEnd.value = true;
+
+        setTimeout(() => {
+            searchEnd.value = false;
+        });
+    }
+);
 </script>
 `;
 
@@ -710,80 +677,74 @@ code.defaultLabel = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            model1: 'beijing',
-            options1: [],
-            loading1: false,
+<script setup>
+import { ref } from 'vue';
 
-            model2: ['beijing', 'shenzhen'],
-            options2: [],
-            loading2: false,
+const model1 = ref('beijing');
+const options1 = ref([]);
+const loading1 = ref(false);
 
-            list: [
-                {
-                    value: 'beijing',
-                    label: '北京',
-                },
-                {
-                    value: 'shanghai',
-                    label: '上海',
-                },
-                {
-                    value: 'shenzhen',
-                    label: '深圳',
-                },
-                {
-                    value: 'hangzhou',
-                    label: '杭州',
-                },
-                {
-                    value: 'guangzhou',
-                    label: '广州',
-                },
-            ],
-        };
+const model2 = ref(['beijing', 'shenzhen']);
+const options2 = ref([]);
+const loading2 = ref(false);
+
+const list = ref([
+    {
+        value: 'beijing',
+        label: '北京',
     },
-    methods: {
-        searchMethod1(query) {
-            if (query !== '') {
-                this.loading1 = true;
-
-                setTimeout(() => {
-                    this.loading1 = false;
-
-                    this.options1 = this.list.filter(
-                        (item) => item.label.indexOf(query) > -1
-                    );
-
-                }, 200);
-            } else {
-                this.options1 = this.list;
-            }
-        },
-        searchMethod2(query) {
-            if (query !== '') {
-                this.loading2 = true;
-
-                setTimeout(() => {
-                    this.loading2 = false;
-
-                    this.options2 = this.list.filter(
-                        (item) => item.label.indexOf(query) > -1
-                    );
-
-
-                }, 200);
-            } else {
-                this.options2 = this.list;
-            }
-        },
-        setDefaultOptions(options) {
-            this.options2 = options;
-        },
+    {
+        value: 'shanghai',
+        label: '上海',
     },
+    {
+        value: 'shenzhen',
+        label: '深圳',
+    },
+    {
+        value: 'hangzhou',
+        label: '杭州',
+    },
+    {
+        value: 'guangzhou',
+        label: '广州',
+    },
+]);
+
+const searchMethod1 = (query) => {
+    if (query !== '') {
+        loading1.value = true;
+
+        setTimeout(() => {
+            loading1.value = false;
+
+            options1.value = list.value.filter(
+                (item) => item.label.indexOf(query) > -1
+            );
+        }, 200);
+    } else {
+        options1.value = list.value;
+    }
+};
+
+const searchMethod2 = (query) => {
+    if (query !== '') {
+        loading2.value = true;
+
+        setTimeout(() => {
+            loading2.value = false;
+
+            options2.value = list.value.filter(
+                (item) => item.label.indexOf(query) > -1
+            );
+        }, 200);
+    } else {
+        options2.value = list.value;
+    }
+};
+
+const setDefaultOptions = (options) => {
+    options2.value = options;
 };
 </script>
 `;
@@ -800,80 +761,78 @@ code.allowCreate = `<template>
     </ivue-select>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            list1: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            list2: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model1: '',
-            model2: [],
-        };
+<script setup>
+import { ref } from 'vue';
+
+const list1 = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-    methods: {
-        handleCreate1(val) {
-            this.list1.push({
-                value: val,
-                label: val,
-            });
-        },
-        handleCreate2(val) {
-            this.list2.push({
-                value: val,
-                label: val,
-            });
-        },
+    {
+        value: 'London',
+        label: 'London',
     },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const list2 = ref([
+    {
+        value: 'New York',
+        label: 'New York',
+    },
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model1 = ref('');
+const model2 = ref([]);
+
+const handleCreate1 = (val) => {
+    list1.value.push({
+        value: val,
+        label: val,
+    });
+};
+
+const handleCreate2 = (val) => {
+    list2.value.push({
+        value: val,
+        label: val,
+    });
 };
 </script>
 `;

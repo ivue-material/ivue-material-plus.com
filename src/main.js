@@ -32,7 +32,8 @@ import PreCode from './components/pre-code.vue';
 const app = createApp(App);
 
 // 识别为javascript
-Hljs.registerLanguage('javascript', javascript);
+// Hljs.registerLanguage('javascript', javascript);
+Hljs.getLanguage('javascript', javascript);
 Hljs.configure({ ignoreUnescapedHTML: true });
 
 app.component('DocMarkdown', DocMarkdown);

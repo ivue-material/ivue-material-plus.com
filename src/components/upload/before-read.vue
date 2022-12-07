@@ -5,35 +5,32 @@
     <ivue-upload v-model="fileList2" :before-read="asyncHandleBeforeRead"></ivue-upload>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            fileList1: [],
-            fileList2: [],
-        };
-    },
-    methods: {
-        handleBeforeRead(file) {
-            if (file.type !== 'image/jpeg') {
-                this.$message.warning('请上传 jpeg 格式图片');
+<script setup>
+import { ref } from 'vue';
 
-                return false;
-            }
-            return true;
-        },
-        // 返回 Promise
-        asyncHandleBeforeRead(file) {
-            return new Promise((resolve, reject) => {
-                if (file.type !== 'image/jpeg') {
-                    this.$message.warning('请上传 jpeg 格式图片');
+const fileList1 = ref([]);
+const fileList2 = ref([]);
 
-                    reject();
-                } else {
-                    resolve(file);
-                }
-            });
-        },
-    },
+// 文件读取前的回调函数
+const handleBeforeRead = (file) => {
+    if (file.type !== 'image/jpeg') {
+        this.$message.warning('请上传 jpeg 格式图片');
+
+        return false;
+    }
+    return true;
+};
+
+// 文件读取前的回调函数 返回 Promise
+const asyncHandleBeforeRead = (file) => {
+    return new Promise((resolve, reject) => {
+        if (file.type !== 'image/jpeg') {
+            this.$message.warning('请上传 jpeg 格式图片');
+
+            reject();
+        } else {
+            resolve(file);
+        }
+    });
 };
 </script>

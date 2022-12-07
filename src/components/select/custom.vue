@@ -20,14 +20,11 @@
         </ivue-option>
     </ivue-select>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            model: '',
-        };
-    },
-};
+
+<script setup>
+import { ref } from 'vue';
+
+const model = ref('');
 </script>
 
 <style scoped>

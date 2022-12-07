@@ -1,19 +1,19 @@
 <template>
-    <div>
-        <ivue-auto-complete
-            v-model="value"
-            filterable
-            :remoteMethod="remoteMethod1"
-            :loading="loading"
-            placeholder="请输入"
-            @on-select="handleSelect"
-        >
-            <ivue-option v-for="item in data" :value="item.value" :key="item.value">{{ item.value }}</ivue-option>
-        </ivue-auto-complete>
-    </div>
+    <ivue-auto-complete
+        v-model="value"
+        filterable
+        :remoteMethod="remoteMethod1"
+        :loading="loading"
+        placeholder="请输入"
+        @on-select="handleSelect"
+    >
+        <ivue-option v-for="item in data" :value="item.value" :key="item.value">{{ item.value }}</ivue-option>
+    </ivue-auto-complete>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 const loadAll = [
     { value: 'vue', link: 'https://github.com/vuejs/vue' },
     { value: 'element', link: 'https://github.com/ElemeFE/element' },
@@ -24,42 +24,34 @@ const loadAll = [
     { value: 'babel', link: 'https://github.com/babel/babel' },
 ];
 
-export default {
-    data() {
-        return {
-            value: '',
-            data: loadAll,
-            loading: false,
-            select: '',
-        };
-    },
-    methods: {
-        remoteMethod1(queryString) {
-            if (this.select === queryString) {
-                return;
-            }
+const value = ref('');
+const data = ref(loadAll);
+const loading = ref(false);
+const select = ref('');
 
-            const results = queryString
-                ? loadAll.filter((item) => (
-                    item.value
-                        .toLowerCase()
-                        .indexOf(queryString.toLowerCase()) === 0
-                ))
-                : loadAll;
+const remoteMethod1 = (queryString) => {
+    if (select.value === queryString) {
+        return;
+    }
 
-            this.loading = true;
+    const results = queryString
+        ? loadAll.filter(
+              (item) =>
+                  item.value
+                      .toLowerCase()
+                      .indexOf(queryString.toLowerCase()) === 0
+          )
+        : loadAll;
 
-            setTimeout(() => {
-                this.loading = false;
-                this.data = results;
-            }, 3000);
-        },
-        handleSelect(value) {
-            this.select = value;
-        },
-    },
+    loading.value = true;
+
+    setTimeout(() => {
+        loading.value = false;
+        data.value = results;
+    }, 3000);
+};
+
+const handleSelect = (value) => {
+    select.value = value;
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

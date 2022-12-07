@@ -63,21 +63,18 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted, ref } from 'vue';
 import Hljs from 'highlight.js';
 import Code from '@/code/start-use';
 
-export default {
-    name: 'start-use',
-    data() {
-        return {
-            code: Code,
-        };
-    },
-    mounted() {
-        Hljs.highlightAll();
-    },
-};
+// data
+const code = ref(Code);
+
+// onMounted
+onMounted(() => {
+    Hljs.highlightAll();
+});
 </script>
 
 <style lang="scss" scoped>

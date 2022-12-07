@@ -98,7 +98,7 @@
         <p>以下类可以应用于任何HTML元素：</p>
         <ivue-table :data="layoutData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -113,7 +113,7 @@
         <h4>Class</h4>
         <ivue-table :data="itemData" border>
             <ivue-table-column prop="name" label="名称" width="250"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -128,7 +128,7 @@
         <h4>Class</h4>
         <ivue-table :data="hideData" border>
             <ivue-table-column prop="name" label="名称" width="300"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -142,8 +142,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/layout';
+
 import Default from '@/components/layout/default';
 import Gutter from '@/components/layout/gutter';
 import Column from '@/components/layout/column';
@@ -152,111 +155,106 @@ import Size from '@/components/layout/size';
 import Response from '@/components/layout/response';
 import Hide from '@/components/layout/hide';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'xsmall',
-                    illustrate:
-                        '适用于宽度最大为600px的屏幕。适用于肖像中的小型，中型和大型手机',
-                    size: '<600px',
-                },
-                {
-                    name: 'small',
-                    illustrate: '适用于宽度介于600px和960px之间的屏幕	',
-                    size: '960px',
-                },
-                {
-                    name: 'medium',
-                    illustrate: '适用于宽度介于960px和1280px之间的屏幕	',
-                    size: '1280px',
-                },
-                {
-                    name: 'large',
-                    illustrate: '适用于宽度介于1280像素到1920像素之间的屏幕	',
-                    size: '1920px',
-                },
-                {
-                    name: 'xlarge',
-                    illustrate: '适用于宽度超过1920px的屏幕',
-                    size: '>1920px',
-                },
-            ],
-            rowData: [
-                {
-                    name: 'xsmall',
-                    interval: '8px',
-                },
-                {
-                    name: 'small',
-                    interval: '16px',
-                },
-                {
-                    name: 'medium',
-                    interval: '24px',
-                },
-                {
-                    name: 'large',
-                    interval: '48px',
-                },
-            ],
-            layoutData: [
-                {
-                    name: 'ivue-gutter',
-                    illustrate: '在布局项之间启用自动装订线空间',
-                    default: '-',
-                },
-                {
-                    name: 'ivue-layout-nowrap',
-                    illustrate:
-                        '默认情况下，布局项将始终包装在父布局下。如果要禁用此行为，请使用此类，但响应性将不起作用',
-                    default: '-',
-                },
-                {
-                    name: 'ivue-alignment-[x]-[y]',
-                    illustrate:
-                        '根据每个坐标的值设置所有子项的对齐方式。只有当x和y都存在时，对齐才有效, 例如:<code>ivue-alignment-top-center</code>',
-                    default:
-                        '<code>top</code> | <code>center</code> | <code>left</code> | <code>space-around</code> | <code>space-between</code>',
-                },
-            ],
-            itemData: [
-                {
-                    name: 'ivue-size-[amount]',
-                    illustrate:
-                        '设置特定item的大小。数量可以是五的倍数， 例如<code>ivue-size-25</code>。',
-                    default:
-                        '可以接受<code>33</code>,<code>66</code>和<code>100</code>以便于原型设计',
-                },
-                {
-                    name: 'ivue-[breakpoint]-size-[amount]',
-                    illustrate: '将大小设置为特定 breakpoint 上的特定项。',
-                    default: `<code>breakpoint</code> : <code>xsmall</code> | <code>small</code></code> | <code>medium</code> | <code>large</code> | <code>xlarge</code>
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'xsmall',
+        illustrate:
+            '适用于宽度最大为600px的屏幕。适用于肖像中的小型，中型和大型手机',
+        size: '<600px',
+    },
+    {
+        name: 'small',
+        illustrate: '适用于宽度介于600px和960px之间的屏幕	',
+        size: '960px',
+    },
+    {
+        name: 'medium',
+        illustrate: '适用于宽度介于960px和1280px之间的屏幕	',
+        size: '1280px',
+    },
+    {
+        name: 'large',
+        illustrate: '适用于宽度介于1280像素到1920像素之间的屏幕	',
+        size: '1920px',
+    },
+    {
+        name: 'xlarge',
+        illustrate: '适用于宽度超过1920px的屏幕',
+        size: '>1920px',
+    },
+]);
+
+// rowData
+const rowData = ref([
+    {
+        name: 'xsmall',
+        interval: '8px',
+    },
+    {
+        name: 'small',
+        interval: '16px',
+    },
+    {
+        name: 'medium',
+        interval: '24px',
+    },
+    {
+        name: 'large',
+        interval: '48px',
+    },
+]);
+
+// layoutData
+const layoutData = ref([
+    {
+        name: 'ivue-gutter',
+        illustrate: '在布局项之间启用自动装订线空间',
+        default: '-',
+    },
+    {
+        name: 'ivue-layout-nowrap',
+        illustrate:
+            '默认情况下，布局项将始终包装在父布局下。如果要禁用此行为，请使用此类，但响应性将不起作用',
+        default: '-',
+    },
+    {
+        name: 'ivue-alignment-[x]-[y]',
+        illustrate:
+            '根据每个坐标的值设置所有子项的对齐方式。只有当x和y都存在时，对齐才有效, 例如:<code>ivue-alignment-top-center</code>',
+        default:
+            '<code>top</code> | <code>center</code> | <code>left</code> | <code>space-around</code> | <code>space-between</code>',
+    },
+]);
+
+// itemData
+const itemData = ref([
+    {
+        name: 'ivue-size-[amount]',
+        illustrate:
+            '设置特定item的大小。数量可以是五的倍数， 例如<code>ivue-size-25</code>。',
+        default:
+            '可以接受<code>33</code>,<code>66</code>和<code>100</code>以便于原型设计',
+    },
+    {
+        name: 'ivue-[breakpoint]-size-[amount]',
+        illustrate: '将大小设置为特定 breakpoint 上的特定项。',
+        default: `<code>breakpoint</code> : <code>xsmall</code> | <code>small</code></code> | <code>medium</code> | <code>large</code> | <code>xlarge</code>
                         </br><code>amount</code> : 可以接受<code>33</code>,<code>66</code>和<code>100</code>以便于原型设计`,
-                },
-            ],
-            hideData: [
-                {
-                    name: 'ivue-[breakpoint]-hide',
-                    illustrate: '隐藏特定断点上的特定元素',
-                    default:
-                        '<code>xsmall</code> | <code>small</code> | <code>medium</code> | <code>large</code> | <code>xlarge</code>',
-                },
-            ],
-        };
     },
-    components: {
-        Default,
-        Gutter,
-        Column,
-        Alignment,
-        Size,
-        Response,
-        Hide,
+]);
+
+// hideData
+const hideData = ref([
+    {
+        name: 'ivue-[breakpoint]-hide',
+        illustrate: '隐藏特定断点上的特定元素',
+        default:
+            '<code>xsmall</code> | <code>small</code> | <code>medium</code> | <code>large</code> | <code>xlarge</code>',
     },
-};
+]);
 </script>
 
 <style lang="scss" scoped>

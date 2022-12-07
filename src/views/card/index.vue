@@ -67,21 +67,24 @@
         <h2>API</h2>
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
-            <ivue-table-column prop="name" label="名称" :width="200"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
-            <ivue-table-column prop="type" label="类型" :width="150"></ivue-table-column>
-            <ivue-table-column prop="default" label="默认" :width="150"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="150"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="150"></ivue-table-column>
         </ivue-table>
         <h3>Slots</h3>
         <ivue-table :data="slotsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
         </ivue-table>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/card';
+
 import Default from '@/components/card/default';
 import NotBorder from '@/components/card/not-border';
 import Umbra from '@/components/card/umbra';
@@ -89,105 +92,94 @@ import Simple from '@/components/card/simple';
 import Padding from '@/components/card/padding';
 import CardShadow from '@/components/card/shadow';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'title',
-                    illustrate: '标题',
-                    type: 'String',
-                    default: '-',
-                },
-                {
-                    name: 'border',
-                    illustrate: '是否显示边框，建议在灰色背景下使用',
-                    type: 'Boolean',
-                    default: 'true',
-                },
-                {
-                    name: 'shadow',
-                    illustrate: '卡片阴影，建议在灰色背景下使用',
-                    type: 'Boolean',
-                    default: 'false',
-                },
-                {
-                    name: 'dis-hover',
-                    illustrate: '禁用鼠标悬停显示阴影',
-                    type: 'Boolean',
-                    default: 'false',
-                },
-                {
-                    name: 'padding',
-                    illustrate: '卡片内部间距,(可自定义单位，如：1rem)',
-                    type: 'Number | String',
-                    default: '-',
-                },
-                {
-                    name: 'title-padding',
-                    illustrate:
-                        '标题内部间距(padding-styles-linkage开启该属性将不生效),(可自定义单位，如：1rem)',
-                    type: 'Number | String',
-                    default: '-',
-                },
-                {
-                    name: 'radius',
-                    illustrate: '圆角大小',
-                    type: 'Number',
-                    default: '-',
-                },
-                {
-                    name: 'padding-styles-linkage',
-                    illustrate: '样式联动(联动标题和内容的padding)',
-                    type: 'Boolean',
-                    default: 'true',
-                },
-                {
-                    name: 'to',
-                    illustrate: '跳转的链接，支持 vue-router 对象',
-                    type: 'Object | String',
-                    default: '-',
-                },
-                {
-                    name: 'target',
-                    illustrate: '相当于 a 链接的 target 属性',
-                    type: 'String',
-                    default: '_self',
-                },
-                {
-                    name: 'replace',
-                    illustrate:
-                        '路由跳转时，开启 replace 将不会向 history 添加新记录',
-                    type: 'Boolean',
-                    default: 'false',
-                },
-            ],
-            slotsData: [
-                {
-                    name: 'title',
-                    illustrate: '自定义卡片标题',
-                },
-                {
-                    name: 'extra',
-                    illustrate: '额外显示的内容，默认位置在右上角',
-                },
-                {
-                    name: 'default',
-                    illustrate: '卡片主体内容',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'title',
+        illustrate: '标题',
+        type: 'String',
+        default: '-',
     },
-    components: {
-        Default,
-        NotBorder,
-        Umbra,
-        Simple,
-        CardShadow,
-        Padding,
+    {
+        name: 'border',
+        illustrate: '是否显示边框，建议在灰色背景下使用',
+        type: 'Boolean',
+        default: 'true',
     },
-};
+    {
+        name: 'shadow',
+        illustrate: '卡片阴影，建议在灰色背景下使用',
+        type: 'Boolean',
+        default: 'false',
+    },
+    {
+        name: 'dis-hover',
+        illustrate: '禁用鼠标悬停显示阴影',
+        type: 'Boolean',
+        default: 'false',
+    },
+    {
+        name: 'padding',
+        illustrate: '卡片内部间距,(可自定义单位，如：1rem)',
+        type: 'Number | String',
+        default: '-',
+    },
+    {
+        name: 'title-padding',
+        illustrate:
+            '标题内部间距(padding-styles-linkage开启该属性将不生效),(可自定义单位，如：1rem)',
+        type: 'Number | String',
+        default: '-',
+    },
+    {
+        name: 'radius',
+        illustrate: '圆角大小',
+        type: 'Number',
+        default: '-',
+    },
+    {
+        name: 'padding-styles-linkage',
+        illustrate: '样式联动(联动标题和内容的padding)',
+        type: 'Boolean',
+        default: 'true',
+    },
+    {
+        name: 'to',
+        illustrate: '跳转的链接，支持 vue-router 对象',
+        type: 'Object | String',
+        default: '-',
+    },
+    {
+        name: 'target',
+        illustrate: '相当于 a 链接的 target 属性',
+        type: 'String',
+        default: '_self',
+    },
+    {
+        name: 'replace',
+        illustrate: '路由跳转时，开启 replace 将不会向 history 添加新记录',
+        type: 'Boolean',
+        default: 'false',
+    },
+]);
+
+// slotsData
+const slotsData = ref([
+    {
+        name: 'title',
+        illustrate: '自定义卡片标题',
+    },
+    {
+        name: 'extra',
+        illustrate: '额外显示的内容，默认位置在右上角',
+    },
+    {
+        name: 'default',
+        illustrate: '卡片主体内容',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

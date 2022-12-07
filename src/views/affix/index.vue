@@ -42,76 +42,70 @@
         <h2>API</h2>
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="type" label="类型"></ivue-table-column>
-            <ivue-table-column prop="default" label="默认"></ivue-table-column>
+            <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
+            <ivue-table-column prop="default" label="默认" width="150"></ivue-table-column>
         </ivue-table>
         <h3>Events</h3>
         <ivue-table :data="eventsData" border>
-            <ivue-table-column prop="name" label="事件名"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="name" label="事件名" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300"></ivue-table-column>
+            <ivue-table-column prop="value" label="返回值" width="150">
                 <template #default="props">
                     <p v-html="props.row.value"></p>
                 </template>
             </ivue-table-column>
-            <ivue-table-column prop="default" label="返回值"></ivue-table-column>
         </ivue-table>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/affix';
+
 import Default from '@/components/affix/default.vue';
 import OffsetTop from '@/components/affix/offset-top.vue';
 import OffsetBottom from '@/components/affix/offset-bottom.vue';
 import Callback from '@/components/affix/callback.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'offset-top',
-                    illustrate: '距离窗口顶部达到指定偏移量后触发',
-                    type: 'number',
-                    default: '0',
-                },
-                {
-                    name: 'offset-bottom',
-                    illustrate: '距离窗口底部达到指定偏移量后触发',
-                    type: 'number',
-                    default: '-',
-                },
-                {
-                    name: 'use-capture',
-                    illustrate:
-                        'addEventListener 原生的 <code>useCapture</code> 选项',
-                    type: 'boolean',
-                    default: 'false',
-                },
-            ],
-            eventsData: [
-                {
-                    name: 'on-change',
-                    illustrate: '在固定状态发生改变时触发',
-                    default: '<code>true</code> | <code>false</code>',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'offset-top',
+        illustrate: '距离窗口顶部达到指定偏移量后触发',
+        type: 'number',
+        default: '0',
     },
-    components: {
-        Default,
-        OffsetTop,
-        OffsetBottom,
-        Callback,
+    {
+        name: 'offset-bottom',
+        illustrate: '距离窗口底部达到指定偏移量后触发',
+        type: 'number',
+        default: '-',
     },
-};
+    {
+        name: 'use-capture',
+        illustrate: 'addEventListener 原生的 <code>useCapture</code> 选项',
+        type: 'boolean',
+        default: 'false',
+    },
+]);
+
+// eventsData
+const eventsData = ref([
+    {
+        name: 'on-change',
+        illustrate: '在固定状态发生改变时触发',
+        value: '<code>true</code> | <code>false</code>',
+    },
+]);
 </script>
 
 <style lang="scss" scoped>

@@ -11,39 +11,37 @@
         <ivue-option value="shenzhen">Sydney</ivue-option>
     </ivue-select>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York',
-                },
-                {
-                    value: 'London',
-                    label: 'London',
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney',
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa',
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris',
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra',
-                },
-            ],
-            model: '',
-            model1: '',
-        };
+
+<script setup>
+import { ref } from 'vue';
+
+const cityList = ref([
+    {
+        value: 'New York',
+        label: 'New York',
     },
-};
+    {
+        value: 'London',
+        label: 'London',
+    },
+    {
+        value: 'Sydney',
+        label: 'Sydney',
+    },
+    {
+        value: 'Ottawa',
+        label: 'Ottawa',
+    },
+    {
+        value: 'Paris',
+        label: 'Paris',
+    },
+    {
+        value: 'Canberra',
+        label: 'Canberra',
+    },
+]);
+
+const model = ref('');
+const model1 = ref('');
 </script>

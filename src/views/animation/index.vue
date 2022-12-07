@@ -10,20 +10,13 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import Code from '@/code/animation';
+
 import Default from '@/components/animation/default.vue';
 
-export default {
-    data() {
-        return {
-            code: Code,
-        };
-    },
-    components: {
-        Default,
-    },
-};
+const code = ref(Code);
 </script>
 
 <style lang="scss" scoped>

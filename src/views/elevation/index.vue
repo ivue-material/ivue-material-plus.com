@@ -23,8 +23,8 @@
         <h2>API</h2>
         <h3>Class</h3>
         <ivue-table :data="propsData" border>
-            <ivue-table-column prop="name" label="名称"></ivue-table-column>
-            <ivue-table-column prop="illustrate" label="说明">
+            <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
+            <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
@@ -33,27 +33,23 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+
 import Code from '@/code/elevation';
+
 import Default from '@/components/elevation/default';
 
-export default {
-    data() {
-        return {
-            code: Code,
-            propsData: [
-                {
-                    name: 'ivue-elevation-[size]',
-                    illustrate:
-                        '向目标元素添加深度 ,大小可以是<code>0</code>到<code>24</code>.例如: <code>ivue-elevation-4</code>',
-                },
-            ],
-        };
+const code = ref(Code);
+
+// propsData
+const propsData = ref([
+    {
+        name: 'ivue-elevation-[size]',
+        illustrate:
+            '向目标元素添加深度 ,大小可以是<code>0</code>到<code>24</code>.例如: <code>ivue-elevation-4</code>',
     },
-    components: {
-        Default,
-    },
-};
+]);
 </script>
 
 <style lang="scss" scoped>
