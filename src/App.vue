@@ -330,11 +330,9 @@ watch(
     // 底部
     &-footer {
         position: absolute;
-        margin-left: -20px;
         left: 0;
-        right: 0;
+        right: 20px;
         bottom: 0;
-        padding-left: calc(17% + 20px);
         width: 100%;
         line-height: 30px;
         text-align: center;
@@ -342,6 +340,7 @@ watch(
         background: #000;
 
         a {
+            margin-left: calc(17% + 20px);
             color: #7d7d7d;
         }
     }

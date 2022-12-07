@@ -207,6 +207,10 @@ const routers = ref([
                         name: 'Affix 图钉',
                         router: 'affix',
                     },
+                    {
+                        name: 'Loading 加载',
+                        router: 'loading',
+                    },
                 ],
             },
         ],

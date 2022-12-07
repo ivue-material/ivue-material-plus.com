@@ -160,11 +160,17 @@ const routes = [
         name: 'input',
         component: lazyLoading('input', 'index'),
       },
-       // Circle 进度环
-       {
+      // Circle 进度环
+      {
         path: 'circle',
         name: 'circle',
         component: lazyLoading('circle', 'index'),
+      },
+      // Loading 加载
+      {
+        path: 'loading',
+        name: 'loading',
+        component: lazyLoading('loading', 'index'),
       },
     ],
   },

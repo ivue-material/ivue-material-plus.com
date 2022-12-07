@@ -138,7 +138,7 @@ export default {
             let url = '';
 
             if (!isProduction) {
-                url = `https://localhost:5173/#${this.playground}`;
+                url = `https://localhost:4173/#${this.playground}`;
             } else {
                 url = '';
             }
