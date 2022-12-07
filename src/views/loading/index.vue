@@ -120,6 +120,7 @@
 import { ref } from 'vue';
 
 import Code from '@/code/loading';
+
 import Default from '@/components/loading/default.vue';
 import Customize from '@/components/loading/customize.vue';
 import Fullscreen from '@/components/loading/fullscreen.vue';
@@ -193,7 +194,7 @@ const optionsData = ref([
     },
     {
         name: 'loading-spinner',
-        illustrate: '通过 <code>render</code> 方法，自定义旋转图标',
+        illustrate: '通过 <code>Render</code> 函数，自定义旋转图标',
         type: 'VNode',
         default: '-',
     },

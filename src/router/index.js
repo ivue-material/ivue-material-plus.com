@@ -172,6 +172,12 @@ const routes = [
         name: 'loading',
         component: lazyLoading('loading', 'index'),
       },
+      // Notice 通知提醒
+      {
+        path: 'notice',
+        name: 'notice',
+        component: lazyLoading('notice', 'index'),
+      },
     ],
   },
 ];

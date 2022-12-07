@@ -168,6 +168,10 @@ const routers = ref([
                         name: 'Avatar 头像',
                         router: 'avatar',
                     },
+                    {
+                        name: 'Notice 通知提醒',
+                        router: 'notice',
+                    },
                 ],
             },
             {

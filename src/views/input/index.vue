@@ -159,7 +159,7 @@
             <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
             <ivue-table-column prop="value" label="可选值" width="200">
                 <template #default="props">
-                    <p v-html="props.row.value"></p>
+                    <p v-html="props.row.value || '-'"></p>
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="default" label="默认" width="200"></ivue-table-column>
@@ -223,14 +223,12 @@ const propsData = ref([
         name: 'model-value',
         illustrate: '绑定的值，可使用 v-model 双向绑定',
         type: 'String | Number',
-        value: '-',
         default: '-',
     },
     {
         name: 'type',
         illustrate: '输入框类型',
         type: 'String',
-        value: '-',
         default: 'text',
     },
     {
@@ -244,42 +242,36 @@ const propsData = ref([
         name: 'placeholder',
         illustrate: '占位文本',
         type: 'String',
-        value: '-',
         default: '-',
     },
     {
         name: 'clearable',
         illustrate: '是否显示清空按钮',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'border',
         illustrate: '是否显示边框',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'disabled',
         illustrate: '设置输入框为禁用状态',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'readonly',
         illustrate: '设置输入框为只读',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'maxlength',
         illustrate: '最大输入长度',
         type: 'Number',
-        value: '-',
         default: '-',
     },
     {
@@ -287,35 +279,30 @@ const propsData = ref([
         illustrate:
             '是否显示输入字数统计，可以配合 <code>maxlength</code> 使用',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'password',
         illustrate: '是否显示切换密码图标',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'prefix',
         illustrate: '输入框头部图标',
         type: 'String',
-        value: '-',
         default: '-',
     },
     {
         name: 'suffix',
         illustrate: '输入框尾部图标',
         type: 'String',
-        value: '-',
         default: '-',
     },
     {
         name: 'search',
         illustrate: '是否显示为搜索型输入框',
         type: 'Boolean',
-        value: '-',
         default: '-',
     },
     {
@@ -323,14 +310,12 @@ const propsData = ref([
         illustrate:
             '开启 <code>search</code> 时可用，是否有确认按钮，可设为按钮文字',
         type: 'Boolean | String',
-        value: '-',
         default: 'false',
     },
     {
         name: 'rows',
         illustrate: '文本域默认行数，仅在 <code>textarea</code> 类型下有效',
         type: 'Number',
-        value: '-',
         default: '2',
     },
     {
@@ -338,14 +323,12 @@ const propsData = ref([
         illustrate:
             '自适应内容高度，仅在 <code>textarea</code> 类型下有效，可传入对象，如 <code>{ minRows: 2, maxRows: 6 }</code>',
         type: 'Boolean | Object',
-        value: '-',
         default: 'false',
     },
     {
         name: 'number',
         illustrate: '只允许用户输入number',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
@@ -353,28 +336,24 @@ const propsData = ref([
         illustrate:
             '自定义输入方法,可以自定义过滤输入值内容等,如:只允许输入数字',
         type: 'Function',
-        value: '-',
         default: '-',
     },
     {
         name: 'autofocus',
         illustrate: '自动获取焦点',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
         name: 'autocomplete',
         illustrate: '原生的自动完成功能',
         type: 'String',
-        value: '-',
         default: 'off',
     },
     {
         name: 'spellcheck',
         illustrate: '原生的 <code>spellcheck</code> 属性',
         type: 'Boolean',
-        value: '-',
         default: 'false',
     },
     {
