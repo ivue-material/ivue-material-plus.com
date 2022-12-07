@@ -174,6 +174,7 @@ export default {
         color: black;
     }
 
+    h4 code,
     p code,
     li code {
         margin: 0 2px;

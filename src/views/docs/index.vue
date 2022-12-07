@@ -159,6 +159,10 @@ export default {
                                     name: 'BottomNav 底部导航',
                                     router: 'bottom-nav',
                                 },
+                                {
+                                    name: 'Progress 进度条',
+                                    router: 'progress',
+                                },
                             ],
                         },
                         {

@@ -130,6 +130,12 @@ const routes = [
         name: 'bottom-nav',
         component: lazyLoading('bottom-nav', 'index'),
       },
+      // Progress 进度条
+      {
+        path: 'progress',
+        name: 'progress',
+        component: lazyLoading('progress', 'index'),
+      },
       // Breadcrumb 面包屑
       {
         path: 'breadcrumb',
