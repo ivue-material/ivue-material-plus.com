@@ -184,6 +184,12 @@ const routes = [
         name: 'notice',
         component: lazyLoading('notice', 'index'),
       },
+       // Message 全局提示
+       {
+        path: 'message',
+        name: 'message',
+        component: lazyLoading('message', 'index'),
+      },
     ],
   },
 ];

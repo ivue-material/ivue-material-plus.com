@@ -9,7 +9,7 @@
                         <p class="text">IVue</p>
                     </div>
                 </router-link>
-                <div class="app-header-menu">
+                <div class="app-header-menu" v-show="route.name !== 'home'">
                     <ivue-button flat icon @click="handleMenu">
                         <ivue-icon class="icon">menu_open</ivue-icon>
                     </ivue-button>

@@ -1,57 +1,70 @@
 <template>
-    <div class="notice-wrapper">
-        <h1>Notice 通知提醒</h1>
-        <p>在界面右上角显示可关闭的全局通知，常用于以下场景:</p>
-        <p>1.通知内容带有描述信息</p>
-        <p>2.系统主动推送</p>
-        <h2>基础用法</h2>
-        <p>
-            基本用法，默认在
-            <code>4.5</code>秒后关闭。如果
-            <code>desc</code>参数为空或不填，则自动应用仅标题模式下的样式
-        </p>
+    <div class="message-wrapper">
+        <h1>Message 全局提示</h1>
+        <p>轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择</p>
+        <h2>普通提示</h2>
+        <p>最基本的提示，默认在1.5秒后消失</p>
         <doc-markdown :code="code.default">
             <template #demo>
                 <default></default>
             </template>
         </doc-markdown>
-        <h1>提醒类型</h1>
-        <p>带有状态图标的提醒</p>
-        <doc-markdown :code="code.status">
+        <h2>提示类型</h2>
+        <p>不同的提示状态：成功、警告、错误</p>
+        <doc-markdown :code="code.type">
             <template #demo>
-                <status></status>
+                <type></type>
             </template>
         </doc-markdown>
-        <h1>自定义时长</h1>
+        <h2>带背景色</h2>
         <p>
-            自定义时长，为
-            <code>0</code> 则不自动关闭。也可以在
-            <code>Notice.config</code>中全局配置，详见API
+            设置属性
+            <code>background</code>后，通知提示会显示背景色
         </p>
-        <doc-markdown :code="code.customDuration">
+        <doc-markdown :code="code.background">
             <template #demo>
-                <custom-duration></custom-duration>
+                <background></background>
             </template>
         </doc-markdown>
-        <h2>自定义弹出位置</h2>
+        <h2>加载中</h2>
         <p>
-            通过设置选项
-            <code>position</code>，可自定义弹出位置，默认右上角弹出
+            <code>Loading</code> 的状态，并异步在某个时机移除
         </p>
-        <doc-markdown :code="code.position">
+        <doc-markdown :code="code.loading">
             <template #demo>
-                <position></position>
+                <loading></loading>
             </template>
         </doc-markdown>
-        <h2>自定义通知提醒</h2>
+        <h2>自定义时长</h2>
+        <p>
+            自定义时长，也可以在
+            <code>Message.config()</code>中全局配置
+        </p>
+        <doc-markdown :code="code.duration">
+            <template #demo>
+                <duration></duration>
+            </template>
+        </doc-markdown>
+        <h2>可关闭</h2>
+        <p>
+            将参数设置为一个对象，并指定
+            <code>closable</code> 为
+            <code>true</code> 后可以手动关闭提示
+        </p>
+        <doc-markdown :code="code.closable">
+            <template #demo>
+                <closable></closable>
+            </template>
+        </doc-markdown>
+        <h2>自定义全局提示</h2>
         <p>
             你可以自定义
             <code>Render</code> 函数来替代
-            <code>desc</code>
+            <code>content</code>
         </p>
         <p>
             可以通过设置
-            <code>offset</code>，设置通知提醒偏移的位置
+            <code>top</code>，设置通知提醒距离顶部的位置
         </p>
         <p>
             可以通过设置
@@ -66,19 +79,19 @@
         <p>通过直接调用以下方法来使用组件:</p>
         <ul class="ul">
             <li class="li">
-                <code>this.$notice.open(options)</code>
+                <code>this.$message.info(options)</code>
             </li>
             <li class="li">
-                <code>this.$notice.info(options)</code>
+                <code>this.$message.success(options)</code>
             </li>
             <li class="li">
-                <code>this.$notice.success(options)</code>
+                <code>this.$message.warning(options)</code>
             </li>
             <li class="li">
-                <code>this.$notice.warning(options)</code>
+                <code>this.$message.error(options)</code>
             </li>
             <li class="li">
-                <code>this.$notice.error(options)</code>
+                <code>this.$message.loading(options)</code>
             </li>
         </ul>
         <p>
@@ -86,30 +99,24 @@
             <code>options</code> 为对象，具体说明如下
         </p>
         <ivue-table :data="optionsData" border>
-            <ivue-table-column prop="name" label="名称" width="100"></ivue-table-column>
+            <ivue-table-column prop="name" label="名称" width="150"></ivue-table-column>
             <ivue-table-column prop="illustrate" label="说明" min-width="300">
                 <template #default="props">
                     <p v-html="props.row.illustrate"></p>
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型" width="100"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值" width="200">
-                <template #default="props">
-                    <p v-html="props.row.value || '-'"></p>
-                </template>
-            </ivue-table-column>
             <ivue-table-column prop="default" label="默认值" width="100"></ivue-table-column>
         </ivue-table>
         <p>另外提供了全局配置、全局关闭某个通知和全局销毁的方法</p>
         <ul class="ul">
-            <li class="li">this.$notice.config(options)</li>
+            <li class="li">this.$message.config(options)</li>
             <li class="li">
-                this.$notice.close(
+                this.$message.close(
                 <code>id(通知id)</code>,
-                <code>position(通知定位策略)</code>,
                 <code>userOnClose(关闭时调用的回调)</code>)
             </li>
-            <li class="li">this.$notice.closeAll()</li>
+            <li class="li">this.$message.closeAll()</li>
         </ul>
         <pre-code>{{ code.config }}</pre-code>
         <ivue-table class="ivue-table" :data="configsData" border>
@@ -125,45 +132,47 @@
     </div>
 </template>
 
-<script setup>
+<script  setup>
 import { ref } from 'vue';
 
-import Code from '@/code/notice';
+import Code from '@/code/message';
 
-import Default from '@/components/notice/default.vue';
-import Status from '@/components/notice/status.vue';
-import CustomDuration from '@/components/notice/custom-duration.vue';
-import Position from '@/components/notice/position.vue';
-import Custom from '@/components/notice/custom.vue';
+import Default from '@/components/message/default.vue';
+import Type from '@/components/message/type.vue';
+import Background from '@/components/message/background.vue';
+import Loading from '@/components/message/loading.vue';
+import Duration from '@/components/message/duration.vue';
+import Closable from '@/components/message/closable.vue';
+import Custom from '@/components/message/custom.vue';
 
 const code = ref(Code);
 
 // optionsData
 const optionsData = ref([
     {
-        name: 'title',
-        illustrate: '通知提醒的标题',
-        type: 'String',
-        default: '-',
-    },
-    {
-        name: 'desc',
-        illustrate: '通知提醒的内容，为空或不填时，自动应用仅标题模式下的样式',
+        name: 'content',
+        illustrate: '提示内容',
         type: 'String',
         default: '-',
     },
     {
         name: 'render',
         illustrate:
-            '自定义描述内容，使用 <code>Vue</code> 的 <code>Render</code> 函数，如果同时设置了 <code>render</code> 和 <code>desc</code>，则只显示 <code>render</code> 的内容',
+            '自定义描述内容，使用 <code>Vue</code> 的 <code>Render</code> 函数，如果同时设置了 <code>render</code> 和 <code>content</code>，则只显示 <code>render</code> 的内容',
         type: 'Function',
         default: '-',
+    },
+    {
+        name: 'background',
+        illustrate: '是否显示背景色',
+        type: 'Boolean',
+        default: 'false',
     },
     {
         name: 'duration',
         illustrate: '自动关闭的延时，单位毫秒，不关闭可以写 0',
         type: 'Number',
-        default: '4500',
+        default: '1500',
     },
     {
         name: 'onClose',
@@ -184,17 +193,17 @@ const optionsData = ref([
         default: 'true',
     },
     {
-        name: 'offset',
+        name: 'top',
         illustrate: '通知提醒偏移位置，向下或向上',
         type: 'Number',
         default: '0',
     },
     {
-        name: 'position',
-        illustrate: '通知提醒弹出位置',
+        name: 'loadingIcon',
+        illustrate:
+            '自定义 <code>loading</code> 图标，内部通过 <code>class</code> 修改',
         type: 'String',
-        value: '<code>top-right</code> | <code>top-left</code> | <code>bottom-right</code> | <code>bottom-left</code>',
-        default: 'top-right',
+        default: '-',
     },
     {
         name: 'id',
@@ -206,7 +215,7 @@ const optionsData = ref([
 // configsData
 const configsData = ref([
     {
-        name: 'offset',
+        name: 'top',
         illustrate: '通知组件距离顶端的距离，单位像素',
         type: 'Number',
         default: '0',
@@ -215,13 +224,13 @@ const configsData = ref([
         name: 'duration',
         illustrate: '默认自动关闭的延时，单位秒',
         type: 'Number',
-        default: '4500',
+        default: '1500',
     },
 ]);
 </script>
 
 <style lang="scss" scoped>
-.notice-wrapper {
+.message-wrapper {
     .ivue-table {
         margin-top: 10px;
     }

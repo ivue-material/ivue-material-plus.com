@@ -1,8 +1,13 @@
 <template>
-    <div :class="['docs', !hideMenu && 'docs-navigations-hide']">
+    <div :class="['docs', !hideMenu && 'docs-navigations-hide']" :style="docsStyles">
         <!-- 导航 -->
         <transition name="docs-transition">
-            <div class="docs-navigations" @click="handleHideMenu" v-show="hideMenu">
+            <div
+                class="docs-navigations"
+                @click="handleHideMenu"
+                v-show="hideMenu"
+                ref="navigations"
+            >
                 <!-- router -->
                 <ul class="router-list" @click.stop>
                     <li class="router-list-li" v-for="item in routers" :key="item.name">
@@ -60,7 +65,7 @@
 </template>
 
 <script setup>
-import { onBeforeMount, onMounted, ref, watch } from 'vue';
+import { computed, onBeforeMount, onMounted, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
 import { useEventListener } from '@vueuse/core';
@@ -176,6 +181,10 @@ const routers = ref([
                         name: 'Notice 通知提醒',
                         router: 'notice',
                     },
+                    {
+                        name: 'Message 全局提示',
+                        router: 'message',
+                    },
                 ],
             },
             {
@@ -224,6 +233,24 @@ const routers = ref([
         ],
     },
 ]);
+
+// dom
+const navigations = ref();
+
+// computed
+
+// 导航栏宽度
+const navigationsWidth = computed(() => {
+    return navigations.value && navigations.value.clientWidth || 0;
+});
+
+// docsStyles
+const docsStyles = computed(() => {
+    return {
+        'padding-left': navigationsWidth.value ? `${navigationsWidth.value + 20}px` : 'calc(17% + 20px)'
+    };
+});
+
 
 // onBeforeMount
 onBeforeMount(() => {
@@ -285,6 +312,7 @@ watch(
         bottom: 0;
         margin-top: 60px;
         width: 17%;
+        max-width: 250px;
         float: left;
         flex: 0 0 auto;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
@@ -296,8 +324,9 @@ watch(
         z-index: 100;
         background: #fff;
 
+
         &-hide {
-            padding-left: 20px;
+            padding-left: 20px !important;
         }
 
         .router-list {
@@ -428,6 +457,7 @@ watch(
             top: 0;
             bottom: 0;
             width: 100%;
+            max-width: 100%;
             overflow: hidden;
             z-index: 100;
             background: rgba(0, 0, 0, 0.8);
@@ -454,7 +484,7 @@ watch(
 
 @media screen and (max-width: 800px) {
     .docs {
-        padding: 0;
+        padding: 0 !important;
     }
 
     .app-footer {
