@@ -39,9 +39,16 @@ const handleId = () => {
         duration: 0,
     });
 
-    timer.value && clearTimeout(timer.value);
+    if (timer.value) {
+        return;
+    }
+
     timer.value = setTimeout(() => {
-        info && info.close('id');
+        info.close('id');
+
+        clearTimeout(timer.value);
+
+        timer.value = null;
     }, 2000);
 };
 </script>

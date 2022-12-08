@@ -64,16 +64,23 @@ const handleOpen4 = () => {
 };
 
 const handleOpen5 = () => {
-    proxy.$notice.open({
+    const info = proxy.$notice.open({
         title: '右下角向下偏移',
         desc: '这是描述这是描述这是描述这是描述这是描述这是描述',
         id: 'id',
         duration: 0,
     });
 
-    timer.value && clearTimeout(timer.value);
+    if (timer.value) {
+        return;
+    }
+
     timer.value = setTimeout(() => {
-        proxy.$notice.close('id');
+        info.close('id');
+
+        clearTimeout(timer.value);
+
+        timer.value = null;
     }, 2000);
 };
 </script>
