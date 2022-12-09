@@ -184,18 +184,24 @@ const routes = [
         name: 'notice',
         component: lazyLoading('notice', 'index'),
       },
-       // Message 全局提示
-       {
+      // Message 全局提示
+      {
         path: 'message',
         name: 'message',
         component: lazyLoading('message', 'index'),
+      },
+      // LoadingBar 加载进度条
+      {
+        path: 'loading-bar',
+        name: 'loading-bar',
+        component: lazyLoading('loading-bar', 'index'),
       },
     ],
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory('/plus/'),
   routes,
 });
 

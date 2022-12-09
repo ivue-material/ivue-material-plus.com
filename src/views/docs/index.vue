@@ -152,6 +152,10 @@ const routers = ref([
                         name: 'Breadcrumb 面包屑',
                         router: 'breadcrumb',
                     },
+                    {
+                        name: 'LoadingBar 加载进度条',
+                        router: 'loading-bar',
+                    },
                 ],
             },
             {
