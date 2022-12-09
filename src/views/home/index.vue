@@ -3,7 +3,7 @@
         <div class="home-wrapper">
             <div class="home-title--wrapper">
                 <img class="home-image" src="@/static/logo.png" />
-                <h1 class="home-title">IVue</h1>
+                <h1 class="home-title">IVue Plus</h1>
             </div>
             <h2 class="home-text">一套基于 Material Design 规范</h2>
             <h2 class="home-text">UI组件库</h2>

@@ -138,7 +138,7 @@ export default {
             let url = '';
 
             if (!isProduction) {
-                url = `https://localhost:4173/#${this.playground}`;
+                url = `https://lovevuerk.com/playground/#${this.playground}`;
             } else {
                 url = '';
             }

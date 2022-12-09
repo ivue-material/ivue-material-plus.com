@@ -6,7 +6,7 @@
                 <router-link to="/">
                     <div class="app-header-img">
                         <img src="./static/logo.png" />
-                        <p class="text">IVue</p>
+                        <p class="text">IVue Plus</p>
                     </div>
                 </router-link>
                 <div class="app-header-menu" v-show="route.name !== 'home'">
@@ -248,6 +248,7 @@ watch(
             }
 
             .text {
+                white-space: nowrap;
                 font-size: 26px;
                 color: #000;
             }
