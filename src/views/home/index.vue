@@ -20,9 +20,12 @@
 </template>
 
 <script setup>
+import { onMounted, getCurrentInstance, h, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 
 import IvueFooter from '@/components/footer';
+
+const { proxy } = getCurrentInstance();
 
 const router = useRouter();
 
@@ -35,9 +38,47 @@ const handleStartUse = () => {
 const handleGitHub = () => {
     window.open('https://github.com/qq282126990/ivue-ui-plus');
 };
+
+// 跳转2.0版本
+const handleLinkUi = () => {
+    window.open(`${location.origin}/ui/`);
+};
+
+// onMounted
+onMounted(() => {
+    proxy.$notice.info({
+        title: 'IVue Material UI Plus 现已发布',
+        render: () => {
+            return h(
+                'div',
+                {
+                    class: 'notice-wrapper',
+                },
+                [
+                    h(
+                        'span',
+                        {
+                            class: 'notice-text',
+                            onClick: handleLinkUi,
+                        },
+                        '2.0版本请点击查看'
+                    ),
+                ]
+            );
+        },
+        position: 'top-left',
+        offset: 60,
+        duration: 0,
+    });
+});
+
+onBeforeUnmount(() => {
+    proxy.$notice.closeAll();
+});
+
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
     position: absolute;
     top: 0;
@@ -88,5 +129,23 @@ const handleGitHub = () => {
         width: 100px;
         border-radius: 50px;
     }
+}
+
+.notice {
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-text {
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--ivue-primary-color);
+    }
+}
+
+.notice-button {
+    width: 80px;
+    height: 30px;
 }
 </style>

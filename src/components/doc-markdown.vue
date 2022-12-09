@@ -133,15 +133,7 @@ export default {
         },
         // 跳转测试网站
         clickJsfiddle() {
-            const isProduction = process.env.NODE_ENV === 'production';
-
-            let url = '';
-
-            if (!isProduction) {
-                url = `https://lovevuerk.com/playground/#${this.playground}`;
-            } else {
-                url = '';
-            }
+            let url = `https://lovevuerk.com/playground/#${this.playground}`;
 
             window.open(url);
         },

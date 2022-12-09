@@ -65,11 +65,12 @@ function registerSPA(url, dirPath) {
 registerSPA('/ui', './ui');
 registerSPA('/plus', './plus');
 registerSPA('/playground', './playground');
+registerSPA('/', './plus');
 
-app.get('/', (req, res) => {
-      // res.redirect() 的可选第一个参数是数字 HTTP 状态。
-      res.redirect(301, '/plus')
-})
+// app.get('/', (req, res) => {
+//       // res.redirect() 的可选第一个参数是数字 HTTP 状态。
+//       res.redirect(301, '/ui')
+// })
 // let rewrites = [];
 
 // app.use(require('connect-history-api-fallback')({
