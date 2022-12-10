@@ -93,7 +93,7 @@ code.slots = `<template>
         stroke-linecap="square"
         stroke-color="#FB858C"
     >
-        <div class="demo-Circle-custom">
+        <div class="demo-circle-custom">
             <h1>10,000,000</h1>
         </div>
     </ivue-circular>
@@ -109,7 +109,7 @@ code.dashboard = `<template>
       dashboard
       stroke-color="#B6E471"
   >
-      <div class="demo-Circle-custom">
+      <div class="demo-circle-custom">
           <h1>75%</h1>
       </div>
   </ivue-circular>

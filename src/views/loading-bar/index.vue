@@ -1,13 +1,38 @@
 <template>
-  <div>
-
-  </div>
+    <div>
+        <h1>LoadingBar 加载进度条</h1>
+        <p>全局创建一个显示页面加载、异步请求、文件上传等的加载进度条</p>
+        <p>
+            <code>LoadingBar</code> 只会在全局创建一个，因此在任何位置调用的方法都会控制这同一个组件
+        </p>
+        <p>
+            当然也可以通过
+            <code>update()</code>方法来传入一个精确的进度
+        </p>
+        <h2>在路由中使用</h2>
+        <pre-code>{{ code.route }}</pre-code>
+        <h2>在异步请求中使用</h2>
+        <pre-code>{{ code.async }}</pre-code>
+        <h2>代码示例</h2>
+        <p>基本用法</p>
+        <p class="line-2">
+            点击
+            <code>Start</code> 开始进度，点击
+            <code>Finish</code> 结束。在调用
+            <code>start()</code>方法后，组件会自动模拟进度，当调用
+            <code>finish()</code>或
+            <code>error()</code>时，补全进度并自动消失。
+        </p>
+    </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+import Code from '@/code/loading-bar';
+
+const code = ref(Code);
 </script>
 
 <style lang="scss" scoped>
-
 </style>

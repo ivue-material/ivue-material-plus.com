@@ -9,14 +9,12 @@
                 ref="navigations"
             >
                 <!-- router -->
-                <ivue-menu accordion width="auto" :activeName="route.name">
+                <ivue-menu accordion width="auto" :activeName="route.path" :open-names="openNames">
                     <template v-for="(item, index) in routers" :key="index">
                         <!-- 父菜单 -->
                         <ivue-menu-item
                             :name="item.router"
-                            :to="{
-                                name: item.router
-                            }"
+                            :to="item.router"
                             v-if="!item.child && item.router"
                         >{{ item.name }}</ivue-menu-item>
                         <!-- 链接跳转 -->
@@ -27,12 +25,12 @@
                             v-if="!item.child && item.link"
                         >{{ item.name }}</a>
                         <!-- 子菜单 -->
-                        <ivue-submenu :name="item.name" v-else-if="item.child">
+                        <ivue-submenu disabled :name="item.name" v-else-if="item.child">
                             <template #title>{{ item.name }}</template>
                             <ivue-menu-item
                                 v-for="(child, childIndex) in item.child"
                                 :name="child.router"
-                                :to="{name: child.router}"
+                                :to="child.router"
                                 :key="childIndex"
                             >{{ child.name }}</ivue-menu-item>
                         </ivue-submenu>
@@ -75,15 +73,15 @@ const route = useRoute();
 const routers = ref([
     {
         name: '安装',
-        router: 'install',
+        router: '/docs/install',
     },
     {
         name: '快速开始',
-        router: 'start-use',
+        router: '/docs/start-use',
     },
     {
         name: '全局配置',
-        router: 'global',
+        router: '/docs/global',
     },
     {
         name: 'IVue Ui (Vue 2.0)',
@@ -91,22 +89,22 @@ const routers = ref([
     },
     {
         name: '色彩',
-        router: 'color',
+        router: '/docs/color',
     },
     {
         name: '基础动画',
-        router: 'animation',
+        router: '/docs/animation',
     },
     {
         name: '基础',
         child: [
             {
                 name: 'Icon 图标',
-                router: 'icon',
+                router: '/components/icon',
             },
             {
                 name: 'Button 按钮',
-                router: 'button',
+                router: '/components/button',
             },
         ],
     },
@@ -115,15 +113,15 @@ const routers = ref([
         child: [
             {
                 name: 'Elevation 海拔',
-                router: 'elevation',
+                router: '/components/elevation',
             },
             {
                 name: 'Layout 布局',
-                router: 'layout',
+                router: '/components/layout',
             },
             {
                 name: 'Card 卡片',
-                router: 'card',
+                router: '/components/card',
             },
         ],
     },
@@ -132,15 +130,15 @@ const routers = ref([
         child: [
             {
                 name: 'Steps 步骤条',
-                router: 'steps',
+                router: '/components/steps',
             },
             {
                 name: 'Breadcrumb 面包屑',
-                router: 'breadcrumb',
+                router: '/components/breadcrumb',
             },
             {
                 name: 'LoadingBar 加载进度条',
-                router: 'loading-bar',
+                router: '/components/loading-bar',
             },
         ],
     },
@@ -149,31 +147,31 @@ const routers = ref([
         child: [
             {
                 name: 'Input 输入框',
-                router: 'input',
+                router: '/components/input',
             },
             {
                 name: 'Carousel 走马灯',
-                router: 'carousel',
+                router: '/components/carousel',
             },
             {
                 name: 'BottomNav 底部导航',
-                router: 'bottom-nav',
+                router: '/components/bottom-nav',
             },
             {
                 name: 'Progress 进度条',
-                router: 'progress',
+                router: '/components/progress',
             },
             {
                 name: 'Avatar 头像',
-                router: 'avatar',
+                router: '/components/avatar',
             },
             {
                 name: 'Notice 通知提醒',
-                router: 'notice',
+                router: '/components/notice',
             },
             {
                 name: 'Message 全局提示',
-                router: 'message',
+                router: '/components/message',
             },
         ],
     },
@@ -182,19 +180,19 @@ const routers = ref([
         child: [
             {
                 name: 'Upload 上传',
-                router: 'upload',
+                router: '/components/upload',
             },
             {
                 name: 'AutoComplete 自动完成',
-                router: 'auto-complete',
+                router: '/components/auto-complete',
             },
             {
                 name: 'Switch 开关',
-                router: 'switch',
+                router: '/components/switch',
             },
             {
                 name: 'Select 选择器',
-                router: 'select',
+                router: '/components/select',
             },
         ],
     },
@@ -203,7 +201,7 @@ const routers = ref([
         child: [
             {
                 name: 'Circle 进度环',
-                router: 'circle',
+                router: '/components/circle',
             },
         ],
     },
@@ -212,11 +210,11 @@ const routers = ref([
         child: [
             {
                 name: 'Affix 图钉',
-                router: 'affix',
+                router: '/components/affix',
             },
             {
                 name: 'Loading 加载',
-                router: 'loading',
+                router: '/components/loading',
             },
         ],
     },
@@ -241,20 +239,24 @@ const docsStyles = computed(() => {
     };
 });
 
-// onBeforeMount
-onBeforeMount(() => {
-    if (window.innerWidth <= 800) {
-        store.dispatch('setHideMenu', false);
-    }
-});
+// computed
 
-// onMounted
-onMounted(() => {
-    useEventListener(window, 'resize', () => {
-        if (window.innerWidth <= 800) {
-            store.dispatch('setHideMenu', false);
+// 菜单打开列表
+const openNames = computed(() => {
+    let arr = [];
+
+    routers.value.forEach((item) => {
+        if (item.child) {
+            // item.child.forEach((child) => {
+            //     if (child.router === route.path) {
+            //         arr.push(item.name);
+            //     }
+            // });
+            arr.push(item.name);
         }
     });
+
+    return arr;
 });
 
 // methods
@@ -277,6 +279,22 @@ watch(
         }
     }
 );
+
+// onMounted
+onMounted(() => {
+    useEventListener(window, 'resize', () => {
+        if (window.innerWidth <= 800) {
+            store.dispatch('setHideMenu', false);
+        }
+    });
+});
+
+// onBeforeMount
+onBeforeMount(() => {
+    if (window.innerWidth <= 800) {
+        store.dispatch('setHideMenu', false);
+    }
+});
 </script>
 
 <style lang="scss">
@@ -304,7 +322,7 @@ watch(
         // max-width: 250px;
         float: left;
         flex: 0 0 auto;
-        overflow-y: scroll;
+        overflow-y: auto;
         text-overflow: ellipsis;
         white-space: nowrap;
         font-size: 14px;
@@ -318,6 +336,20 @@ watch(
         .ivue-menu {
             height: 100%;
             transition: transform 0.3s ease-in-out;
+        }
+
+        .ivue-menu-submenu {
+            &--title {
+                cursor: inherit;
+
+                &:hover {
+                    color: currentColor;
+                }
+            }
+
+            &--opened__icon {
+                display: none;
+            }
         }
 
         .ivue-menu-item {
@@ -345,7 +377,7 @@ watch(
 
         p {
             margin: 5px;
-            line-height: normal;
+            line-height: 2;
         }
 
         table p {
@@ -374,6 +406,12 @@ watch(
                 vertical-align: middle;
             }
         }
+
+        .demo-circle-custom {
+            h1 {
+                margin: auto !important;
+            }
+        }
     }
 
     @media screen and (max-width: 800px) {
@@ -389,7 +427,7 @@ watch(
 
             .ivue-menu-vertical {
                 width: 60% !important;
-                overflow-y: scroll;
+                overflow-y: auto;
             }
         }
 

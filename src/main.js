@@ -13,7 +13,7 @@ import 'highlight.js/styles/github.css';
 import javascript from 'highlight.js/lib/languages/javascript';
 
 // import IvueMaterial from 'ivue-material-plus';
-import IvueMaterial from '../dist/ivue-material-plus.min';
+import IvueMaterialPlus from '../dist/ivue-material-plus.min';
 
 // import 'ivue-material-plus/dist/styles/index.css';
 // import 'ivue-material-plus/dist/styles/elevation.css';
@@ -30,17 +30,31 @@ import Example from './components/install/example.vue';
 import PreCode from './components/pre-code.vue';
 
 const app = createApp(App);
+app.use(IvueMaterialPlus);
+
+const globalProperties = app.config.globalProperties
+
+router.beforeEach((to, from, next) => {
+  globalProperties.$LoadingBar.start();
+  next();
+});
+
+router.afterEach(route => {
+  globalProperties.$LoadingBar.finish();
+});
+
 
 // 识别为javascript
 // Hljs.registerLanguage('javascript', javascript);
 Hljs.getLanguage('javascript', javascript);
-Hljs.configure({ ignoreUnescapedHTML: true });
+Hljs.configure({
+  ignoreUnescapedHTML: true
+});
 
 app.component('DocMarkdown', DocMarkdown);
 app.component('Example', Example);
 app.component('PreCode', PreCode);
 
-app.use(IvueMaterial);
 
 // 判断移动设备
 const ua = navigator.userAgent;

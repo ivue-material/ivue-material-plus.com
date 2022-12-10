@@ -8,7 +8,7 @@
         stroke-color="#FB858C"
         trail-color="#CC82A2"
     >
-        <div class="demo-Circle-custom">
+        <div class="demo-circle-custom">
             <h1>10,000,000</h1>
         </div>
     </ivue-circular>

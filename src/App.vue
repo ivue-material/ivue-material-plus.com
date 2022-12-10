@@ -132,6 +132,10 @@ watch(
         color: #2c3e50;
     }
 
+    h1{
+        margin-top: 0;
+    }
+
     pre {
         margin-top: 10px;
     }

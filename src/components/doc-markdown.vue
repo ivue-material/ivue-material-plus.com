@@ -40,7 +40,13 @@
                     </svg>
                 </ivue-button>
                 <!-- 复制代码 -->
-                <ivue-button class="copy-code" icon flat :data-clipboard-text="code" @click="handleCopy(item)">
+                <ivue-button
+                    class="copy-code"
+                    icon
+                    flat
+                    :data-clipboard-text="code"
+                    @click="handleCopy(item)"
+                >
                     <ivue-icon class="icon">content_copy</ivue-icon>
                 </ivue-button>
                 <!-- 查看代码 -->
@@ -155,7 +161,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .doc-markdown {
     margin: 10px 0;
     width: 100%;
@@ -202,6 +208,10 @@ export default {
     &-content {
         padding: 16px;
         width: 100%;
+
+        p {
+            line-height: initial !important;
+        }
     }
 
     .ivue-button--icon {

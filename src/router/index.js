@@ -11,12 +11,12 @@ function lazyLoading(path, name) {
 
 const routes = [
   // 路径错误时跳转
-  {
-    path: '/:pathMatch(.*)*',
-    name: 'error',
-    redirect: '/',
-    component: lazyLoading('home', 'index'),
-  },
+  // {
+  //   path: '/:pathMatch(.*)*',
+  //   name: 'error',
+  //   redirect: '/',
+  //   component: lazyLoading('home', 'index'),
+  // },
   {
     path: '/',
     name: 'home',
