@@ -140,6 +140,10 @@ const routers = ref([
                 name: 'LoadingBar 加载进度条',
                 router: '/components/loading-bar',
             },
+            {
+                name: 'Tabs 标签页',
+                router: '/components/tabs',
+            },
         ],
     },
     {

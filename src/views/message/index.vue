@@ -110,13 +110,15 @@
         </ivue-table>
         <p>另外提供了全局配置、全局关闭某个通知和全局销毁的方法</p>
         <ul class="ul">
-            <li class="li">this.$message.config(options)</li>
             <li class="li">
-                this.$message.close(
-                <code>id(通知id)</code>,
-                <code>userOnClose(关闭时调用的回调)</code>)
+                <code>this.$message.config(options)</code>
             </li>
-            <li class="li">this.$message.closeAll()</li>
+            <li class="li">
+                <code>this.$message.close(id(通知id), userOnClose(关闭时调用的回调))</code>
+            </li>
+            <li class="li">
+                <code>this.$message.closeAll()</code>
+            </li>
         </ul>
         <pre-code>{{ code.config }}</pre-code>
         <ivue-table class="ivue-table" :data="configsData" border>

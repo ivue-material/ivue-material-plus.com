@@ -196,6 +196,18 @@ const routes = [
         name: 'loading-bar',
         component: lazyLoading('loading-bar', 'index'),
       },
+      // LoadingBar 加载进度条
+      {
+        path: 'loading-bar',
+        name: 'loading-bar',
+        component: lazyLoading('loading-bar', 'index'),
+      },
+        // Tabs 标签页
+        {
+          path: 'tabs',
+          name: 'tabs',
+          component: lazyLoading('tabs', 'index'),
+        },
     ],
   },
 ];

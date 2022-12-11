@@ -16,8 +16,7 @@ router.afterEach(route => {
 });
 `;
 
-code.async = `
-import { getCurrentInstance } from 'vue';
+code.async = `import { getCurrentInstance } from 'vue';
 const { proxy } = getCurrentInstance();
 
 const getData = () => {
@@ -36,7 +35,51 @@ const getData = () => {
 };`;
 
 
-code.default = '';
+code.default = `<template>
+    <ivue-button class="button" @click="handleStart">Start</ivue-button>
+    <ivue-button class="button" @click="handleFinish">Finish</ivue-button>
+    <ivue-button class="button" @click="handleError">Error</ivue-button>
+    <ivue-button class="button" @click="handleUpdate">Update 50%</ivue-button>
+</template>
+
+<script setup>
+import { getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
+
+const handleStart = () => {
+    proxy.$LoadingBar.start();
+};
+
+const handleFinish = () => {
+    proxy.$LoadingBar.finish();
+};
+
+const handleError = () => {
+    proxy.$LoadingBar.error();
+};
+
+const handleUpdate = () => {
+    proxy.$LoadingBar.update(50);
+};
+</script>
+
+<style  scoped>
+.button {
+    margin-right: 10px !important;
+}
+</style>
+`;
+
+
+code.config = `
+this.$LoadingBar.config({
+  color: '#27E2B2',
+  failedColor: '#FFBD3C',
+  height: 5,
+  duration: 1000
+});
+`;
 
 
 export default code;

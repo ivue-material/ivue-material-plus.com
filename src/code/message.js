@@ -190,4 +190,10 @@ const handleId = () => {
 </style>
 `;
 
+code.config = `this.$message.config({
+    top: 50,
+    duration: 3
+});
+`;
+
 export default code;
