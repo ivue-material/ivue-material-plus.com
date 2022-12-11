@@ -1,11 +1,9 @@
 <template>
-    <div class="button-wrapper">
-        <ivue-button
-            class="button"
-            status="primary"
-            href="https://github.com/qq282126990/ivue-ui-plus"
-        >Link Github</ivue-button>
-    </div>
+    <ivue-button
+        class="button"
+        status="primary"
+        href="https://github.com/qq282126990/ivue-ui-plus"
+    >Link Github</ivue-button>
 </template>
 
 <style scoped>

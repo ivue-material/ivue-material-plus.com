@@ -1,11 +1,6 @@
 <template>
     <h3>普通</h3>
-    <ivue-select
-        v-model="model"
-        :selected-color="['#E91E63', '#9C27B0']"
-        :hover-color="['#673AB7', '#2196F3']"
-        style="width:200px"
-    >
+    <ivue-select v-model="model" style="width:200px">
         <ivue-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</ivue-option>
     </ivue-select>
     <h3>渐变颜色</h3>

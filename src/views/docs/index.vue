@@ -9,7 +9,11 @@
                 ref="navigations"
             >
                 <!-- router -->
-                <ivue-menu accordion width="auto" :activeName="route.path" :open-names="openNames">
+                <ivue-menu
+                    width="auto"
+                    :activeName="route.path"
+                    :open-names="openNames()"
+                >
                     <template v-for="(item, index) in routers" :key="index">
                         <!-- 父菜单 -->
                         <ivue-menu-item
@@ -243,26 +247,6 @@ const docsStyles = computed(() => {
     };
 });
 
-// computed
-
-// 菜单打开列表
-const openNames = computed(() => {
-    let arr = [];
-
-    routers.value.forEach((item) => {
-        if (item.child) {
-            // item.child.forEach((child) => {
-            //     if (child.router === route.path) {
-            //         arr.push(item.name);
-            //     }
-            // });
-            arr.push(item.name);
-        }
-    });
-
-    return arr;
-});
-
 // methods
 
 // 隐藏菜单
@@ -270,6 +254,19 @@ const handleHideMenu = () => {
     if (window.innerWidth <= 800) {
         store.dispatch('setHideMenu', false);
     }
+};
+
+// 菜单打开列表
+const openNames = () => {
+    let arr = [];
+
+    routers.value.forEach((item) => {
+        if (item.child) {
+            arr.push(item.name);
+        }
+    });
+
+    return arr;
 };
 
 // 监听路由
@@ -344,7 +341,7 @@ onBeforeMount(() => {
 
         .ivue-menu-submenu {
             &--title {
-                cursor: inherit;
+                cursor: inherit !important;
 
                 &:hover {
                     color: currentColor;
@@ -352,7 +349,7 @@ onBeforeMount(() => {
             }
 
             &--opened__icon {
-                display: none;
+                display: none  !important;
             }
         }
 
