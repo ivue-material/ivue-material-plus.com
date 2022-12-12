@@ -148,6 +148,10 @@ const routers = ref([
                 name: 'Tabs 标签页',
                 router: '/components/tabs',
             },
+            {
+                name: 'Badge 徽标数',
+                router: '/components/badge',
+            },
         ],
     },
     {

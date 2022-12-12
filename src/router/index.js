@@ -202,12 +202,18 @@ const routes = [
         name: 'loading-bar',
         component: lazyLoading('loading-bar', 'index'),
       },
-        // Tabs 标签页
-        {
-          path: 'tabs',
-          name: 'tabs',
-          component: lazyLoading('tabs', 'index'),
-        },
+      // Tabs 标签页
+      {
+        path: 'tabs',
+        name: 'tabs',
+        component: lazyLoading('tabs', 'index'),
+      },
+      // Badge 徽标数
+      {
+        path: 'badge',
+        name: 'badge',
+        component: lazyLoading('badge', 'index'),
+      },
     ],
   },
 ];

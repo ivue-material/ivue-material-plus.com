@@ -36,7 +36,7 @@ const handleStartUse = () => {
 
 // 跳转github
 const handleGitHub = () => {
-    window.open('https://github.com/qq282126990/ivue-ui-plus');
+    window.open('https://github.com/ivue-material/ivue-material');
 };
 
 // 跳转2.0版本
