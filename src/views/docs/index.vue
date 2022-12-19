@@ -9,11 +9,7 @@
                 ref="navigations"
             >
                 <!-- router -->
-                <ivue-menu
-                    width="auto"
-                    :activeName="route.path"
-                    :open-names="openNames()"
-                >
+                <ivue-menu width="auto" :activeName="route.path" :open-names="openNames()">
                     <template v-for="(item, index) in routers" :key="index">
                         <!-- 父菜单 -->
                         <ivue-menu-item
@@ -206,6 +202,10 @@ const routers = ref([
                 name: 'Select 选择器',
                 router: '/components/select',
             },
+            {
+                name: 'DatePicker 日期/月份选择器',
+                router: '/components/date-picker',
+            },
         ],
     },
     {
@@ -353,7 +353,7 @@ onBeforeMount(() => {
             }
 
             &--opened__icon {
-                display: none  !important;
+                display: none !important;
             }
         }
 

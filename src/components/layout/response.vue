@@ -9,18 +9,18 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .response .ivue-layout-item {
     height: 40px;
     margin-top: 8px;
     margin-bottom: 8px;
+}
 
-    &:after {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background-color: purple;
-        content: ' ';
-    }
+.response .ivue-layout-item:after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: purple;
+    content: ' ';
 }
 </style>

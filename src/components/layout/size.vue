@@ -7,17 +7,17 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .size {
     height: 40px;
+}
 
-    &:after {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: rgb(0, 118, 0);
-        opacity: 0.2;
-        content: ' ';
-    }
+.size:after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgb(0, 118, 0);
+    opacity: 0.2;
+    content: ' ';
 }
 </style>

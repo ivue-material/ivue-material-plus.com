@@ -139,21 +139,21 @@ const anim10 = ref(true);
 const anim11 = ref(true);
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.animation-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.animation-content {
+    width: 200px;
+    height: 200px;
+}
+
 .animation {
     margin: 5px;
     padding: 10px;
     border: 1px solid #e8eaec;
-
-    &-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    &-content {
-        width: 200px;
-        height: 200px;
-    }
 }
 
 .transition-box {

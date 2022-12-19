@@ -44,7 +44,7 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .example {
     margin: 20px;
     height: 100px;
@@ -58,13 +58,13 @@
 .ivue-layout-item {
     height: 40px;
     font-size: 12px;
+}
 
-    span {
-        width: 100%;
-        height: 100%;
-        padding: 8px;
-        display: block;
-        background: rgba(0, 0, 255, 0.2);
-    }
+.ivue-layout-item span {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    display: block;
+    background: rgba(0, 0, 255, 0.2);
 }
 </style>

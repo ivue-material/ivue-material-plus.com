@@ -6,7 +6,7 @@
                 <router-link to="/">
                     <div class="app-header-img">
                         <img src="./static/logo.png" />
-                        <p class="text">IVue Plus</p>
+                        <p class="text" v-show="route.name === 'home'">IVue Material Plus</p>
                     </div>
                 </router-link>
                 <div class="app-header-menu" v-show="route.name !== 'home'">
@@ -132,7 +132,7 @@ watch(
         color: #2c3e50;
     }
 
-    h1{
+    h1 {
         margin-top: 0;
     }
 

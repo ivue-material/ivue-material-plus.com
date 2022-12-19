@@ -14,7 +14,7 @@ import { ref } from 'vue';
 const length = ref(25);
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .elevation-demo {
     padding: 16px;
     display: flex;

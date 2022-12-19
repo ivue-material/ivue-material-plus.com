@@ -11,9 +11,6 @@ code.default = `<template>
     </div>
 </template>
 
-<script setup>
-</script>
-
 <style scoped>
 .layout {
     height: 40px;
@@ -30,7 +27,8 @@ code.default = `<template>
 .layout:nth-child(3) {
     background: rgba(128, 128, 128, 0.5);
 }
-</style>`;
+</style>
+`;
 
 code.gutter = `<template>
     <link rel="stylesheet" href="//unpkg.com/ivue-material-plus/dist/styles/layout.css">
@@ -40,9 +38,6 @@ code.gutter = `<template>
         <div class="ivue-layout-item gutter-item"></div>
     </div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .gutter-item {
@@ -79,9 +74,6 @@ code.column = `<template>
         </div>
     </div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .ivue-layout-item {
@@ -158,9 +150,6 @@ code.alignment = `<template>
     </div>
 </template>
 
-<script setup>
-</script>
-
 <style scoped>
 .example {
     margin: 20px;
@@ -197,9 +186,6 @@ code.size = `<template>
     </div>
 </template>
 
-<script setup>
-</script>
-
 <style scoped>
 .size {
     height: 40px;
@@ -227,9 +213,6 @@ code.response = `<template>
         <div class="ivue-layout-item ivue-medium-size-33 ivue-small-size-50 ivue-xsmall-size-100"></div>
     </div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .response .ivue-layout-item {

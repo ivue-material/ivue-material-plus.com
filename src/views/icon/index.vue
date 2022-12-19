@@ -21,7 +21,7 @@
         <p>渲染后为</p>
         <pre-code>{{ code.render }}</pre-code>
         <h2>例子</h2>
-        <doc-markdown :code="code.default" jsfiddle="https://codesandbox.io/s/default-rbvzxp">
+        <doc-markdown :code="code.default">
             <template #demo>
                 <default></default>
             </template>

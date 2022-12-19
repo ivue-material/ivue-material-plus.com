@@ -133,4 +133,84 @@ code.alone = `<template>
 </style>
 `;
 
+code.setText = `<template>
+    <ivue-badge class="badge-wrapper" text="new">
+        <div class="badge"></div>
+    </ivue-badge>
+    <ivue-badge class="badge-wrapper" text="9999">
+        <div class="badge"></div>
+    </ivue-badge>
+</template>
+
+<style>
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #f3f3f3;
+    border-radius: 6px;
+}
+
+.badge-wrapper {
+    margin-right: 20px;
+}
+</style>
+`;
+
+
+code.status = `<template>
+    <h2>常规颜色</h2>
+    <ivue-badge status="success" text="success"></ivue-badge>
+    <ivue-badge status="error" text="error"></ivue-badge>
+    <ivue-badge status="default" text="default"></ivue-badge>
+    <ivue-badge status="processing" text="processing"></ivue-badge>
+    <ivue-badge status="warning" text="warning"></ivue-badge>
+    <h2>预设颜色</h2>
+    <ivue-badge status="blue" text="blue"></ivue-badge>
+    <ivue-badge status="green" text="green"></ivue-badge>
+    <ivue-badge status="red" text="red"></ivue-badge>
+    <ivue-badge status="yellow" text="yellow"></ivue-badge>
+    <ivue-badge status="pink" text="pink"></ivue-badge>
+    <ivue-badge status="orange" text="orange"></ivue-badge>
+    <ivue-badge status="gold" text="gold"></ivue-badge>
+    <ivue-badge status="lime" text="lime"></ivue-badge>
+    <ivue-badge status="cyan" text="cyan"></ivue-badge>
+    <ivue-badge status="purple" text="purple"></ivue-badge>
+    <h2>自定义颜色</h2>
+    <ivue-badge status="#FF80AB" text="#FF80AB"></ivue-badge>
+    <ivue-badge status="#EA80FC" text="#EA80FC"></ivue-badge>
+</template>
+`;
+
+
+code.customize = `<template>
+    <h4>设置show-zero时，当数值为0时显示</h4>
+    <ivue-badge class="badge-wrapper" :count="0" show-zero>
+        <div class="badge"></div>
+    </ivue-badge>
+    <h4>设置offset,自定义数字偏移位置,单位为px</h4>
+    <ivue-badge class="badge-wrapper" className="green" :count="90" :offset="[0,20]">
+        <div class="badge"></div>
+    </ivue-badge>
+</template>
+
+<style>
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #f3f3f3;
+    border-radius: 6px;
+}
+
+.badge-wrapper {
+    margin-right: 20px;
+}
+</style>
+`;
+
 export default code;

@@ -140,7 +140,7 @@ const data = ref([
 ]);
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .demo-auto-complete-item {
     padding: 4px 0;
     border-bottom: 1px solid #f6f6f6;

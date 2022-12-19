@@ -25,18 +25,18 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .hide .ivue-layout-item {
     height: 40px;
     margin-top: 8px;
     margin-bottom: 8px;
+}
 
-    span {
-        width: 100%;
-        height: 100%;
-        padding: 8px;
-        display: block;
-        background: rgba(rgb(0, 128, 128), 0.2);
-    }
+.hide .ivue-layout-item span {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    display: block;
+    background: rgba(0, 128, 128, 0.2);
 }
 </style>

@@ -8,28 +8,28 @@
         <h2>基本用法</h2>
         <p>头像有三种尺寸，两种形状可选</p>
         <p>size 可以设置为数值</p>
-        <doc-markdown :code="code.default" jsfiddle>
+        <doc-markdown :code="code.default">
             <template #demo>
                 <default></default>
             </template>
         </doc-markdown>
         <h2>类型</h2>
         <p>支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。</p>
-        <doc-markdown :code="code.type" jsfiddle>
+        <doc-markdown :code="code.type">
             <template #demo>
                 <type></type>
             </template>
         </doc-markdown>
         <h2>带徽标的头像</h2>
         <p>通常用于消息提示</p>
-        <doc-markdown :code="code.badge" jsfiddle>
+        <doc-markdown :code="code.badge">
             <template #demo>
                 <badge></badge>
             </template>
         </doc-markdown>
         <h2>自动调整字符大小</h2>
         <p>对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整。</p>
-        <doc-markdown :code="code.size" jsfiddle>
+        <doc-markdown :code="code.size">
             <template #demo>
                 <size></size>
             </template>
@@ -73,7 +73,7 @@ import Size from '@/components/avatar/size.vue';
 const code = ref(Code);
 
 // propsData
-const propsData = [
+const propsData = ref([
     {
         name: 'shape',
         illustrate: '指定头像的形状',
@@ -100,16 +100,16 @@ const propsData = [
         type: 'String',
         default: '-',
     },
-];
+]);
 
 // eventsData
-const eventsData = [
+const eventsData = ref([
     {
         name: 'on-error',
         illustrate: '在设置 src 且图片加载不成功时触发',
         default: 'event',
     },
-];
+]);
 </script>
 
 <style lang="scss" scoped>

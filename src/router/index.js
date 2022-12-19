@@ -214,6 +214,12 @@ const routes = [
         name: 'badge',
         component: lazyLoading('badge', 'index'),
       },
+      // DatePicker 日期/月份选择器
+      {
+        path: 'date-picker',
+        name: 'date-picker',
+        component: lazyLoading('date-picker', 'index'),
+      },
     ],
   },
 ];

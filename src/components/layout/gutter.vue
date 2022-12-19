@@ -6,16 +6,16 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .gutter-item {
     height: 40px;
+}
 
-    &:after {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: rgba(255, 0, 0, 0.2);
-        content: ' ';
-    }
+.gutter-item:after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(255, 0, 0, 0.2);
+    content: ' ';
 }
 </style>
