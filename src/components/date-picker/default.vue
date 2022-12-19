@@ -1,9 +1,14 @@
 <template>
-    <div></div>
+    <ivue-date-picker v-model="date" no-title @on-change="handleChange"></ivue-date-picker>
 </template>
 
 <script setup>
-</script>
+import { ref, getCurrentInstance } from 'vue';
+const { proxy } = getCurrentInstance();
 
-<style scoped>
-</style>
+const date = ref(new Date().toISOString().substr(0, 10));
+
+const handleChange = (value) => {
+    proxy.$message.info(`select:${value}`);
+};
+</script>

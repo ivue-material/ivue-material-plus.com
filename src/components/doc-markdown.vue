@@ -161,7 +161,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .doc-markdown {
     margin: 10px 0;
     width: 100%;
@@ -213,7 +213,11 @@ export default {
             line-height: initial !important;
         }
     }
+}
+</style>
 
+<style lang="scss">
+.doc-markdown-header {
     .ivue-button--icon {
         margin: 6px !important;
         width: 35px;
