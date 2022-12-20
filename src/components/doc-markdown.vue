@@ -45,7 +45,7 @@
                     icon
                     flat
                     :data-clipboard-text="code"
-                    @click="handleCopy(item)"
+                    @click="handleCopy"
                 >
                     <ivue-icon class="icon">content_copy</ivue-icon>
                 </ivue-button>
@@ -148,13 +148,15 @@ export default {
             window.open(this.github);
         },
         // 复制
-        handleCopy(item) {
+        handleCopy() {
             const clipboard = new Clipboard('.copy-code');
 
             clipboard.on('success', (event) => {
-                this.$message.success(`copy success ${item}`);
+                this.$message.success('copy success');
 
                 event.clearSelection();
+
+                clipboard.destroy();
             });
         },
     },

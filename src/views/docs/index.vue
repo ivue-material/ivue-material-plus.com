@@ -207,6 +207,10 @@ const routers = ref([
                 router: '/components/select',
             },
             {
+                name: 'Cascader 级联选择',
+                router: '/components/cascader',
+            },
+            {
                 name: 'DatePicker 日期/月份选择器',
                 router: '/components/date-picker',
             },

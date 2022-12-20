@@ -220,11 +220,17 @@ const routes = [
         name: 'date-picker',
         component: lazyLoading('date-picker', 'index'),
       },
-       // Collapse 折叠面板
-       {
+      // Collapse 折叠面板
+      {
         path: 'collapse',
         name: 'collapse',
         component: lazyLoading('collapse', 'index'),
+      },
+      // Cascader 级联选择
+      {
+        path: 'cascader',
+        name: 'cascader',
+        component: lazyLoading('cascader', 'index'),
       },
     ],
   },
