@@ -123,6 +123,10 @@ const routers = ref([
                 name: 'Card 卡片',
                 router: '/components/card',
             },
+            {
+                name: 'Collapse 折叠面板',
+                router: '/components/collapse',
+            },
         ],
     },
     {
@@ -324,7 +328,6 @@ onBeforeMount(() => {
         bottom: 0;
         margin-top: 60px;
         width: 17%;
-        // max-width: 250px;
         float: left;
         flex: 0 0 auto;
         overflow-y: auto;
@@ -332,7 +335,7 @@ onBeforeMount(() => {
         white-space: nowrap;
         font-size: 14px;
         z-index: 100;
-        background: #fff;
+        background: var(--ivue-white-color);
 
         &-hide {
             padding-left: 20px !important;

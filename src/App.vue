@@ -3,7 +3,7 @@
         <div class="app-header">
             <!-- 头部 -->
             <div class="app-header-wrapper">
-                <router-link to="/">
+                <router-link to="/" class="app-header-link">
                     <div class="app-header-img">
                         <img src="./static/logo.png" />
                         <p class="text" v-show="route.name === 'home'">IVue Material Plus</p>
@@ -104,6 +104,11 @@ watch(
 
         // 返回顶部
         window.scrollTo(0, 0);
+
+        // 回到主页
+        if (route.name === 'home') {
+            store.dispatch('setHideMenu', true);
+        }
     }
 );
 </script>
@@ -245,7 +250,6 @@ watch(
         &-img {
             display: flex;
             align-items: center;
-            margin-right: 10px;
 
             img {
                 height: 40px;
@@ -269,6 +273,9 @@ watch(
             .ivue-button--icon .ivue-icon {
                 font-size: 30px !important;
             }
+        }
+
+        &-link {
         }
 
         /* 生态 */

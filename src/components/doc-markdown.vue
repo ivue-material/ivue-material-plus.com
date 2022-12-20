@@ -213,6 +213,15 @@ export default {
             line-height: initial !important;
         }
     }
+
+    .code-enter-active,
+    .code-leave-active {
+        transition: all 0.5s;
+    }
+    .code-enter-from,
+    .code-leave-to {
+        max-height: 0;
+    }
 }
 </style>
 
@@ -228,15 +237,6 @@ export default {
     .ivue-button-content {
         display: flex;
         align-items: center;
-    }
-
-    .code-enter-active,
-    .code-leave-active {
-        transition: all 0.3s;
-    }
-    .code-enter-from,
-    .code-leave-to {
-        max-height: 0;
     }
 }
 </style>
