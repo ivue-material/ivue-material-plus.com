@@ -222,6 +222,10 @@ const routers = ref([
                 name: 'DatePicker 日期/月份选择器',
                 router: '/components/date-picker',
             },
+            {
+                name: 'Radio 单选框',
+                router: '/components/radio',
+            },
         ],
     },
     {

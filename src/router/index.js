@@ -244,6 +244,12 @@ const routes = [
         name: 'chip',
         component: lazyLoading('chip', 'index'),
       },
+      // Radio 单选框
+      {
+        path: 'radio',
+        name: 'radio',
+        component: lazyLoading('radio', 'index'),
+      },
     ],
   },
 ];
