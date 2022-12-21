@@ -256,6 +256,12 @@ const routes = [
         name: 'checkbox',
         component: lazyLoading('checkbox', 'index'),
       },
+      // Page 分页
+      {
+        path: 'page',
+        name: 'page',
+        component: lazyLoading('page', 'index'),
+      },
     ],
   },
 ];

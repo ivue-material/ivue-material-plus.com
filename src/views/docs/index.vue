@@ -152,6 +152,10 @@ const routers = ref([
                 name: 'Badge 徽标数',
                 router: '/components/badge',
             },
+            {
+                name: 'Page 分页',
+                router: '/components/page',
+            },
         ],
     },
     {
