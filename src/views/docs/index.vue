@@ -189,6 +189,10 @@ const routers = ref([
                 name: 'Tooltip 文字提示',
                 router: '/components/tooltip',
             },
+            {
+                name: 'Chip 芯片',
+                router: '/components/chip',
+            },
         ],
     },
     {
