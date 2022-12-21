@@ -226,6 +226,10 @@ const routers = ref([
                 name: 'Radio 单选框',
                 router: '/components/radio',
             },
+            {
+                name: 'Checkbox 多选框',
+                router: '/components/checkbox',
+            },
         ],
     },
     {

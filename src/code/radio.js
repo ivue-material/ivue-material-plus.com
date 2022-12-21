@@ -19,7 +19,7 @@ const value2 = ref(0);
 `;
 
 
-code.radioGroup = `<template>
+code.group = `<template>
     <h4>使用 label 的值</h4>
     <ivue-radio-group v-model="value1">
         <ivue-radio label="多啦a梦"></ivue-radio>

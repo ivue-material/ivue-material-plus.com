@@ -250,6 +250,12 @@ const routes = [
         name: 'radio',
         component: lazyLoading('radio', 'index'),
       },
+      // Checkbox 多选框
+      {
+        path: 'checkbox',
+        name: 'checkbox',
+        component: lazyLoading('checkbox', 'index'),
+      },
     ],
   },
 ];
