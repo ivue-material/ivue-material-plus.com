@@ -232,6 +232,12 @@ const routes = [
         name: 'cascader',
         component: lazyLoading('cascader', 'index'),
       },
+       // Tooltip 文字提示
+       {
+        path: 'tooltip',
+        name: 'tooltip',
+        component: lazyLoading('tooltip', 'index'),
+      },
     ],
   },
 ];

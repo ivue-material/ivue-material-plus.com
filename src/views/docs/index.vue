@@ -185,6 +185,10 @@ const routers = ref([
                 name: 'Message 全局提示',
                 router: '/components/message',
             },
+            {
+                name: 'Tooltip 文字提示',
+                router: '/components/tooltip',
+            },
         ],
     },
     {
