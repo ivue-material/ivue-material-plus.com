@@ -262,11 +262,17 @@ const routes = [
         name: 'page',
         component: lazyLoading('page', 'index'),
       },
-       // Spin 加载中
-       {
+      // Spin 加载中
+      {
         path: 'spin',
         name: 'spin',
         component: lazyLoading('spin', 'index'),
+      },
+      // Table 表格
+      {
+        path: 'table',
+        name: 'table',
+        component: lazyLoading('table', 'index'),
       },
     ],
   },

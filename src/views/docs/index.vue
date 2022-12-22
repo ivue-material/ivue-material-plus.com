@@ -234,6 +234,10 @@ const routers = ref([
                 name: 'Checkbox 多选框',
                 router: '/components/checkbox',
             },
+            {
+                name: 'Table 表格',
+                router: '/components/table',
+            },
         ],
     },
     {
