@@ -256,6 +256,10 @@ const routers = ref([
                 name: 'Loading 加载',
                 router: '/components/loading',
             },
+            {
+                name: 'Spin 加载中',
+                router: '/components/spin',
+            },
         ],
     },
 ]);

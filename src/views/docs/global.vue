@@ -60,8 +60,20 @@
                 </li>
             </ul>
         </div>
+        <p>用法如下</p>
+        <pre-code>{{ code.default }}</pre-code>
     </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+import Code from '@/code/global';
+
+const code = ref(Code);
+
+</script>
+
 
 <style lang="scss" scoped>
 .capture {

@@ -81,19 +81,19 @@ const propsData = ref([
     {
         name: 'offset-top',
         illustrate: '距离窗口顶部达到指定偏移量后触发',
-        type: 'number',
+        type: 'Number',
         default: '0',
     },
     {
         name: 'offset-bottom',
         illustrate: '距离窗口底部达到指定偏移量后触发',
-        type: 'number',
+        type: 'Number',
         default: '-',
     },
     {
         name: 'use-capture',
         illustrate: 'addEventListener 原生的 <code>useCapture</code> 选项',
-        type: 'boolean',
+        type: 'Boolean',
         default: 'false',
     },
 ]);
