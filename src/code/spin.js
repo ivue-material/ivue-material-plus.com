@@ -11,12 +11,6 @@ code.size = `<template>
     <h4>2rem</h4>
     <ivue-spin size="2rem"></ivue-spin>
 </template>
-
-<script setup>
-</script>
-
-<style lang="scss" scoped>
-</style>
 `;
 
 

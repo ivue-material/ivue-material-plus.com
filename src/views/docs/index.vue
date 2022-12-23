@@ -205,6 +205,10 @@ const routers = ref([
                 name: 'Chip 芯片',
                 router: '/components/chip',
             },
+            {
+                name: 'Image 图片',
+                router: '/components/image',
+            },
         ],
     },
     {

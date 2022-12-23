@@ -13,9 +13,6 @@ import { ref } from 'vue';
 const value1 = ref(false);
 const value2 = ref(0);
 </script>
-
-<style lang="scss" scoped>
-</style>
 `;
 
 

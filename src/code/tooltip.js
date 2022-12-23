@@ -126,9 +126,6 @@ const handleClick = () => {
 };
 
 </script>
-
-<style lang="scss" scoped>
-</style>
 `;
 
 

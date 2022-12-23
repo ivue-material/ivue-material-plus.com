@@ -125,9 +125,6 @@ const handleGroupChange = (data) => {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
 `;
 
 export default code;

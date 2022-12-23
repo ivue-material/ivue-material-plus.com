@@ -298,6 +298,12 @@ const routes = [
         name: 'scrollbar',
         component: lazyLoading('scrollbar', 'index'),
       },
+      // Image 图片
+      {
+        path: 'image',
+        name: 'image',
+        component: lazyLoading('image', 'index'),
+      },
     ],
   },
 ];
