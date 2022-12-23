@@ -51,11 +51,17 @@ const routes = [
         name: 'color',
         component: lazyLoading('docs', 'color'),
       },
-      // 颜色
+      // 动画
       {
         path: 'animation',
         name: 'animation',
         component: lazyLoading('animation', 'index'),
+      },
+      // css变量
+      {
+        path: 'var',
+        name: 'var',
+        component: lazyLoading('var', 'index'),
       },
     ],
   },
@@ -279,6 +285,12 @@ const routes = [
         path: 'count-down',
         name: 'count-down',
         component: lazyLoading('count-down', 'index'),
+      },
+      // CountUp 数字动画
+      {
+        path: 'count-up',
+        name: 'count-up',
+        component: lazyLoading('count-up', 'index'),
       },
     ],
   },

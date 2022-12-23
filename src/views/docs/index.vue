@@ -96,6 +96,10 @@ const routers = ref([
         router: '/docs/animation',
     },
     {
+        name: 'CSS Var',
+        router: '/docs/var',
+    },
+    {
         name: '基础',
         child: [
             {
@@ -267,6 +271,10 @@ const routers = ref([
             {
                 name: 'CountDown 倒计时',
                 router: '/components/count-down',
+            },
+            {
+                name: 'CountUp 数字动画',
+                router: '/components/count-up',
             },
         ],
     },
