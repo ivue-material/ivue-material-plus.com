@@ -274,6 +274,12 @@ const routes = [
         name: 'table',
         component: lazyLoading('table', 'index'),
       },
+      // CountDown 倒计时
+      {
+        path: 'count-down',
+        name: 'count-down',
+        component: lazyLoading('count-down', 'index'),
+      },
     ],
   },
 ];

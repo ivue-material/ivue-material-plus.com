@@ -264,6 +264,10 @@ const routers = ref([
                 name: 'Spin 加载中',
                 router: '/components/spin',
             },
+            {
+                name: 'CountDown 倒计时',
+                router: '/components/count-down',
+            },
         ],
     },
 ]);
