@@ -110,6 +110,10 @@ const routers = ref([
                 name: 'Button 按钮',
                 router: '/components/button',
             },
+            {
+                name: 'Scrollbar 滚动条',
+                router: '/components/scrollbar',
+            },
         ],
     },
     {

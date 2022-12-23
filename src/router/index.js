@@ -292,6 +292,12 @@ const routes = [
         name: 'count-up',
         component: lazyLoading('count-up', 'index'),
       },
+      // Scrollbar 滚动条
+      {
+        path: 'scrollbar',
+        name: 'scrollbar',
+        component: lazyLoading('scrollbar', 'index'),
+      },
     ],
   },
 ];
