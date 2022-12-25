@@ -15,6 +15,7 @@ const url = 'https://pic3.zhimg.com/v2-13744f101e60252ed8bd5dee09e7219a_b.jpg';
 <style scoped>
 .image-demo {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .image-demo-title {

@@ -209,6 +209,10 @@ const routers = ref([
                 name: 'Image 图片',
                 router: '/components/image',
             },
+            {
+                name: 'NoticeBar 通知栏',
+                router: '/components/notice-bar',
+            },
         ],
     },
     {

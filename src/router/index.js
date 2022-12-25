@@ -304,6 +304,12 @@ const routes = [
         name: 'image',
         component: lazyLoading('image', 'index'),
       },
+      // NoticeBar 通知栏
+      {
+        path: 'notice-bar',
+        name: 'notice-bar',
+        component: lazyLoading('notice-bar', 'index'),
+      },
     ],
   },
 ];
