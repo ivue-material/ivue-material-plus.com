@@ -15,7 +15,8 @@
     "material-icons": "^1.11.5",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
