@@ -328,6 +328,12 @@ const routes = [
         name: 'back-top',
         component: lazyLoading('back-top', 'index'),
       },
+      // Modal 对话框
+      {
+        path: 'modal',
+        name: 'modal',
+        component: lazyLoading('modal', 'index'),
+      },
     ],
   },
 ];

@@ -225,6 +225,10 @@ const routers = ref([
                 name: 'RelativeTime 相对时间',
                 router: '/components/relative-time',
             },
+            {
+                name: 'Modal 对话框',
+                router: '/components/modal',
+            },
         ],
     },
     {
@@ -414,7 +418,7 @@ onBeforeMount(() => {
         }
 
         .ivue-menu {
-            height: 100%;
+            min-height: 100%;
             transition: transform 0.3s ease-in-out;
         }
 

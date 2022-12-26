@@ -4,7 +4,7 @@
         <div class="doc-markdown-header">
             <div class="doc-markdown-header--content">
                 <!-- codesandbox -->
-                <ivue-button icon flat @click="clickJsfiddle" v-show="showPlayground">
+                <ivue-button icon flat @click="handleClickJsfiddle" v-show="showPlayground">
                     <svg width="25px" height="25px" viewBox="0 0 46 33">
                         <g stroke-width="3" fill="none" fill-rule="evenodd" stroke="#000">
                             <path
@@ -25,7 +25,7 @@
                     </svg>
                 </ivue-button>
                 <!-- github -->
-                <ivue-button icon flat @click="clickGithub" v-show="github">
+                <ivue-button icon flat @click="handleClickGithub" v-show="github">
                     <svg
                         width="20px"
                         viewBox="0 0 16 16"
@@ -59,7 +59,7 @@
         <transition name="code">
             <div class="doc-markdown-code" v-show="showCode">
                 <div class="doc-markdown-code--content">
-                    <pre><code class="hljs xml" ref="code">{{ code }}</code></pre>
+                    <pre><code class="hljs xml" ref="code">{{ props.code }}</code></pre>
                 </div>
             </div>
         </transition>
@@ -70,97 +70,94 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted, ref, getCurrentInstance } from 'vue';
 import Clipboard from 'clipboard';
 import Hljs from 'highlight.js';
 
 import { utoa } from '@/utils/encode';
 
-export default {
-    name: 'doc-markdown',
-    props: {
-        /**
-         * 显示游乐场
-         *
-         * @type {Boolean}
-         */
-        showPlayground: {
-            type: Boolean,
-            default: true,
-        },
-        /**
-         * github地址
-         *
-         * @type {String}
-         */
-        github: {
-            type: String,
-        },
-        /**
-         * code
-         *
-         * @type {String}
-         */
-        code: {
-            type: String,
-        },
+const { proxy } = getCurrentInstance();
+
+const props = defineProps({
+    /**
+     * 显示游乐场
+     *
+     * @type {Boolean}
+     */
+    showPlayground: {
+        type: Boolean,
+        default: true,
     },
-    data() {
-        return {
-            /**
-             * 查看代码
-             *
-             * @type {Boolean}
-             */
-            showCode: false,
-            /**
-             * 游乐场
-             *
-             * @type {Object}
-             */
-            playground: {},
-        };
+    /**
+     * github地址
+     *
+     * @type {String}
+     */
+    github: {
+        type: String,
     },
-    mounted() {
-        Hljs.highlightBlock(this.$refs.code);
-
-        if (this.code) {
-            this.playground = {
-                'App.vue': this.code,
-            };
-
-            this.playground = utoa(JSON.stringify(this.playground));
-        }
+    /**
+     * code
+     *
+     * @type {String}
+     */
+    code: {
+        type: String,
     },
-    methods: {
-        // 显示代码
-        handleShowCode() {
-            this.showCode = !this.showCode;
-        },
-        // 跳转测试网站
-        clickJsfiddle() {
-            let url = `https://lovevuerk.com/playground/#${this.playground}`;
+});
 
-            window.open(url);
-        },
-        // 跳转github
-        clickGithub() {
-            window.open(this.github);
-        },
-        // 复制
-        handleCopy() {
-            const clipboard = new Clipboard('.copy-code');
+// dom
+const code = ref();
 
-            clipboard.on('success', (event) => {
-                this.$message.success('copy success');
+// 查看代码
+const showCode = ref(false);
 
-                event.clearSelection();
+// 游乐场
+const playground = ref({});
 
-                clipboard.destroy();
-            });
-        },
-    },
+// methods
+
+// 显示代码
+const handleShowCode = () => {
+    showCode.value = !showCode.value;
 };
+
+// 跳转测试网站
+const handleClickJsfiddle = () => {
+    let url = `https://lovevuerk.com/playground/#${playground.value}`;
+
+    window.open(url);
+};
+
+// 跳转github
+const handleClickGithub = () => {
+    window.open(props.github);
+};
+
+// 复制
+const handleCopy = () => {
+    const clipboard = new Clipboard('.copy-code');
+
+    clipboard.on('success', (event) => {
+        proxy.$message.success('copy success');
+        event.clearSelection();
+        clipboard.destroy();
+    });
+};
+
+// onMounted
+onMounted(() => {
+    Hljs.highlightBlock(code.value);
+
+    if (props.code) {
+        playground.value = {
+            'App.vue': props.code,
+        };
+
+        playground.value = utoa(JSON.stringify(playground.value));
+    }
+});
 </script>
 
 <style lang="scss" scoped>
