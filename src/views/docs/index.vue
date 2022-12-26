@@ -217,6 +217,10 @@ const routers = ref([
                 name: 'NoticeBar 通知栏',
                 router: '/components/notice-bar',
             },
+            {
+                name: 'RelativeTime 相对时间',
+                router: '/components/relative-time',
+            },
         ],
     },
     {
