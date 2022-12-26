@@ -322,6 +322,12 @@ const routes = [
         name: 'ellipsis',
         component: lazyLoading('ellipsis', 'index'),
       },
+      // BackTop 返回顶部
+      {
+        path: 'back-top',
+        name: 'back-top',
+        component: lazyLoading('back-top', 'index'),
+      },
     ],
   },
 ];

@@ -300,6 +300,10 @@ const routers = ref([
                 name: 'CountUp 数字动画',
                 router: '/components/count-up',
             },
+            {
+                name: 'BackTop 返回顶部',
+                router: '/components/back-top',
+            },
         ],
     },
 ]);
