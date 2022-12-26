@@ -310,6 +310,12 @@ const routes = [
         name: 'notice-bar',
         component: lazyLoading('notice-bar', 'index'),
       },
+      // CarouselLoop 走马灯循环
+      {
+        path: 'carousel-loop',
+        name: 'carousel-loop',
+        component: lazyLoading('carousel-loop', 'index'),
+      },
     ],
   },
 ];

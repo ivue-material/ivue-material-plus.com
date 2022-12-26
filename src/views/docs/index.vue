@@ -178,6 +178,10 @@ const routers = ref([
                 router: '/components/carousel',
             },
             {
+                name: 'CarouselLoop 走马灯循环',
+                router: '/components/carousel-loop',
+            },
+            {
                 name: 'BottomNav 底部导航',
                 router: '/components/bottom-nav',
             },
