@@ -135,6 +135,10 @@ const routers = ref([
                 name: 'Collapse 折叠面板',
                 router: '/components/collapse',
             },
+            {
+                name: 'Ellipsis 文本自动省略号',
+                router: '/components/ellipsis',
+            },
         ],
     },
     {
@@ -221,6 +225,10 @@ const routers = ref([
                 name: 'RelativeTime 相对时间',
                 router: '/components/relative-time',
             },
+            {
+                name: 'Modal 对话框',
+                router: '/components/modal',
+            },
         ],
     },
     {
@@ -295,6 +303,10 @@ const routers = ref([
             {
                 name: 'CountUp 数字动画',
                 router: '/components/count-up',
+            },
+            {
+                name: 'BackTop 返回顶部',
+                router: '/components/back-top',
             },
         ],
     },
@@ -406,7 +418,7 @@ onBeforeMount(() => {
         }
 
         .ivue-menu {
-            height: 100%;
+            min-height: 100%;
             transition: transform 0.3s ease-in-out;
         }
 

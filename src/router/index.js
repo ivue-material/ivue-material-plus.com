@@ -322,6 +322,24 @@ const routes = [
         name: 'carousel-loop',
         component: lazyLoading('carousel-loop', 'index'),
       },
+      // Ellipsis 文本自动省略号
+      {
+        path: 'ellipsis',
+        name: 'ellipsis',
+        component: lazyLoading('ellipsis', 'index'),
+      },
+      // BackTop 返回顶部
+      {
+        path: 'back-top',
+        name: 'back-top',
+        component: lazyLoading('back-top', 'index'),
+      },
+      // Modal 对话框
+      {
+        path: 'modal',
+        name: 'modal',
+        component: lazyLoading('modal', 'index'),
+      },
     ],
   },
 ];
