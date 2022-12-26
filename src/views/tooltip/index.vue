@@ -222,9 +222,9 @@ const propsData = ref([
     {
         name: 'theme',
         illustrate: '主题颜色',
-        type: 'Boolean',
+        type: 'String',
         value: '<code>dark</code> | <code>light</code>',
-        default: 'true',
+        default: 'light',
     },
     {
         name: 'no-arrow',

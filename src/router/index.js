@@ -316,6 +316,12 @@ const routes = [
         name: 'carousel-loop',
         component: lazyLoading('carousel-loop', 'index'),
       },
+      // Ellipsis 文本自动省略号
+      {
+        path: 'ellipsis',
+        name: 'ellipsis',
+        component: lazyLoading('ellipsis', 'index'),
+      },
     ],
   },
 ];

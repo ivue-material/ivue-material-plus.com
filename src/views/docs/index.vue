@@ -135,6 +135,10 @@ const routers = ref([
                 name: 'Collapse 折叠面板',
                 router: '/components/collapse',
             },
+            {
+                name: 'Ellipsis 文本自动省略号',
+                router: '/components/ellipsis',
+            },
         ],
     },
     {
