@@ -310,6 +310,12 @@ const routes = [
         name: 'notice-bar',
         component: lazyLoading('notice-bar', 'index'),
       },
+      // RelativeTime 相对时间
+      {
+        path: 'relative-time',
+        name: 'relative-time',
+        component: lazyLoading('relative-time', 'index'),
+      },
       // CarouselLoop 走马灯循环
       {
         path: 'carousel-loop',
