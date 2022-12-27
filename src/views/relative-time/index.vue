@@ -71,7 +71,7 @@
                 </template>
             </ivue-table-column>
             <ivue-table-column prop="type" label="类型" width="200"></ivue-table-column>
-            <ivue-table-column prop="value" label="可选值" width="200">
+            <ivue-table-column prop="value" label="可选值" width="250">
                 <template #default="props">
                     <p v-html="props.row.value || '-'"></p>
                 </template>
@@ -130,7 +130,7 @@ const propsData = ref([
         name: 'date-start-type',
         illustrate: '月份格式开始类型，<code>type=relative</code> 下生效',
         type: 'String',
-        value: '<code>month</code> | <code>',
+        value: '<code>month</code> | <code>year</code>',
         default: '-',
     },
     {
