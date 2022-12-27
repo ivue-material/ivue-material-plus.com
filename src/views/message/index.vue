@@ -134,7 +134,7 @@
     </div>
 </template>
 
-<script  setup>
+<script setup>
 import { ref } from 'vue';
 
 import Code from '@/code/message';

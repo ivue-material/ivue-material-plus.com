@@ -168,6 +168,10 @@ const routers = ref([
                 name: 'Page 分页',
                 router: '/components/page',
             },
+            {
+                name: 'Menu 导航菜单',
+                router: '/components/menu',
+            },
         ],
     },
     {

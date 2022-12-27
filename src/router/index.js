@@ -352,6 +352,12 @@ const routes = [
         name: 'input-number',
         component: lazyLoading('input-number', 'index'),
       },
+      // Menu 导航菜单
+      {
+        path: 'menu',
+        name: 'menu',
+        component: lazyLoading('menu', 'index'),
+      },
     ],
   },
 ];
