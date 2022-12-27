@@ -61,4 +61,52 @@ code.vertical = `<template>
     </div>
 </template>
 `;
+
+code.external = `<template>
+    <div>
+        <ivue-progress :percent="percent"></ivue-progress>
+
+        <button icon="ios-add" @click="add">1</button>
+        <button icon="ios-remove" @click="minus">2</button>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            percent: 0,
+        };
+    },
+  methods: {
+    add() {
+            if (this.percent >= 100) {
+                return false;
+            }
+            this.percent += 10;
+        },
+        minus() {
+            if (this.percent <= 0) {
+                return false;
+            }
+            this.percent -= 10;
+        },
+  }
+};
+`;
+
+code.custom = `<template>
+<div>
+    <ivue-progress :percent="25" :stroke-width="5"></ivue-progress>
+    <ivue-progress :percent="100">
+        <span>成功</span>
+    </ivue-progress>
+</div>
+</template>`;
+
+code.gradient = `<template>
+<div>
+    <ivue-progress :strokeColor="['#5AB2FF', '#5B8EFF']" :percent="90"></ivue-progress>
+</div>
+</template>
+`;
 export default code;

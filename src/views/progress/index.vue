@@ -49,6 +49,49 @@
                 <vertical></vertical>
             </template>
         </doc-markdown>
+        <h2>配合外部组件使用</h2>
+        <p>通过数据的联动控制，实现动态效果</p>
+        <doc-markdown :code="code.external">
+            <template #demo>
+                <external></external>
+            </template>
+        </doc-markdown>
+        <h2>自定义更多样式</h2>
+        <p>
+            通过自定义
+            <code>slot</code>和属性
+            <code>stroke-width</code>改变进度条效果
+        </p>
+        <doc-markdown :code="code.custom">
+            <template #demo>
+                <custom></custom>
+            </template>
+        </doc-markdown>
+        <h2>渐变色</h2>
+        <p>
+            设置属性
+            <code>stroke-color</code> 为数组时，可以显示为渐变色
+        </p>
+        <p>数组只能设置为两项</p>
+        <doc-markdown :code="code.gradient">
+            <template #demo>
+                <gradient></gradient>
+            </template>
+        </doc-markdown>
+        <h2>分段进度条</h2>
+        <p>标准进度条</p>
+        <doc-markdown :code="code.gradient">
+            <template #demo>
+                <gradient></gradient>
+            </template>
+        </doc-markdown>
+        <h2>分段进度条</h2>
+        <p></p>
+        <doc-markdown :code="code.subsection">
+            <template #demo>
+                <subsection></subsection>
+            </template>
+        </doc-markdown>
     </div>
 </template>
 
@@ -58,6 +101,10 @@ import Default from '../../components/progress/default.vue';
 import Animation from '../../components/progress/animation.vue';
 import Percentage from '../../components/progress/percentage.vue';
 import Vertical from '../../components/progress/vertical.vue';
+import External from '../../components/progress/external.vue';
+import Custom from '../../components/progress/custom.vue';
+import Gradient from '../../components/progress/gradient.vue';
+import Subsection from '../../components/progress/subsection.vue';
 
 export default {
     data() {
@@ -70,6 +117,10 @@ export default {
         Animation,
         Percentage,
         Vertical,
+        External,
+        Custom,
+        Gradient,
+        Subsection,
     },
 };
 </script>
