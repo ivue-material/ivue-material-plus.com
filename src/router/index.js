@@ -340,6 +340,12 @@ const routes = [
         name: 'modal',
         component: lazyLoading('modal', 'index'),
       },
+      // Popover 气泡卡片
+      {
+        path: 'popover',
+        name: 'popover',
+        component: lazyLoading('popover', 'index'),
+      },
     ],
   },
 ];

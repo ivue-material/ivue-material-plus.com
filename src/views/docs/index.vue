@@ -210,6 +210,10 @@ const routers = ref([
                 router: '/components/tooltip',
             },
             {
+                name: 'Popover 气泡卡片',
+                router: '/components/popover',
+            },
+            {
                 name: 'Chip 芯片',
                 router: '/components/chip',
             },

@@ -109,4 +109,5 @@ code.gradient = `<template>
 </div>
 </template>
 `;
+
 export default code;
