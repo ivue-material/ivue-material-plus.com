@@ -1,35 +1,34 @@
 <template>
-    <div>
-        <ivue-progress :percent="percent"></ivue-progress>
+    <ivue-progress :percent="percent"></ivue-progress>
 
-        <button icon="ios-add" @click="add">1</button>
-        <button icon="ios-remove" @click="minus">2</button>
-    </div>
+    <ivue-button class="progress-button" @click="handleAdd">增加</ivue-button>
+    <ivue-button class="progress-button" @click="handleMinus">减少</ivue-button>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            percent: 0,
-        };
-    },
-    methods: {
-        add() {
-            if (this.percent >= 100) {
-                return false;
-            }
-            this.percent += 10;
-        },
-        minus() {
-            if (this.percent <= 0) {
-                return false;
-            }
-            this.percent -= 10;
-        },
-    },
+<script setup>
+import { ref } from 'vue';
+
+const percent = ref(0);
+
+const handleAdd = () => {
+    if (percent.value >= 100) {
+        return false;
+    }
+
+    percent.value += 10;
+};
+
+const handleMinus = () => {
+    if (percent.value <= 0) {
+        return false;
+    }
+
+    percent.value -= 10;
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.progress-button{
+    margin: 20px 20px 0 0;
+}
 </style>

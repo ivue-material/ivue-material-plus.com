@@ -1,12 +1,3 @@
 <template>
-    <div>
-        <ivue-progress :strokeColor="['#5AB2FF', '#5B8EFF']" :percent="90"></ivue-progress>
-    </div>
+    <ivue-progress :percent="60" :success-percent="30"></ivue-progress>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
-</style>
