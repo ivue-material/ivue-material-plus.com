@@ -1,21 +1,13 @@
 <template>
-    <div>
-        <ivue-relative-time :time="time2" :dateFunction="dateFunction"></ivue-relative-time>
-    </div>
+    <ivue-relative-time :time="time" :date-function="dateFunction"></ivue-relative-time>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const time2 = ref(new Date().getTime() - 86400 * 3 * 1000);
+const time = ref(new Date().getTime() - 86400 * 3 * 1000);
 
-// methods
-const dateFunction = (timeStamp, diff, _isEarly) => {
-  console.log(timeStamp, diff, _isEarly);
-  return '自定义时间';
+const dateFunction = (timeStamp, diff, isEarly) => {
+    return `当前时间:${timeStamp},两个时间搓差值:${diff},是否早于当前时间${isEarly}`;
 };
-
 </script>
-
-<style lang="scss" scoped>
-</style>

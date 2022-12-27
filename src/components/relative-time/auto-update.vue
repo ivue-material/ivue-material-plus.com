@@ -1,16 +1,9 @@
 <template>
-  <div>
-    <ivue-relative-time :time="time1"></ivue-relative-time>
-  </div>
+    <ivue-relative-time :time="time" :interval="1"></ivue-relative-time>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const time1 = ref(new Date().getTime() - 60 * 3 * 1000);
-
+const time = ref(new Date());
 </script>
-
-<style lang="scss" scoped>
-
-</style>

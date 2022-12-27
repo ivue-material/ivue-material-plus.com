@@ -15,7 +15,9 @@
         </doc-markdown>
         <h2>自动更新间隔</h2>
         <p>
-            设置自动更新时间间隔，默认为
+            设置
+            <code>interval</code>
+            属性自定义自动更新时间间隔，默认为
             <code>60秒</code>
         </p>
         <doc-markdown :code="code.autoUpdate">
@@ -24,21 +26,36 @@
             </template>
         </doc-markdown>
         <h2>不同类型的时间格式</h2>
-        <p>可以根据情况，设置不同的显示类型</p>
+        <p>
+            设置
+            <code>type</code>
+            属性可以根据情况，设置不同的显示类型
+        </p>
         <doc-markdown :code="code.different">
             <template #demo>
                 <different></different>
             </template>
         </doc-markdown>
         <h2>locale</h2>
-        <p>设置几分钟、几小时、几天前</p>
+        <p>
+            设置
+            <code>locale</code>
+            属性可自定义时间文案，设置几分钟、几小时、几天前
+        </p>
         <doc-markdown :code="code.locale">
             <template #demo>
                 <locale></locale>
             </template>
         </doc-markdown>
         <h2>自定义日期方法</h2>
-        <p>自定义时间</p>
+        <p>
+            设置
+            <code>date-function</code>
+            属性可自定义日期方法，返回3个参数
+            <code>timeStamp</code> 当前时间搓,
+            <code>diff</code> 两个时间戳差值,
+            <code>isEarly</code> 判断传入时间戳是否早于当前时间戳
+        </p>
         <doc-markdown :code="code.custom">
             <template #demo>
                 <custom></custom>
@@ -81,39 +98,52 @@ const code = ref(Code);
 const propsData = ref([
     {
         name: 'time',
-        illustrate: '需要对比的时间，可以是时间戳或是Date类型',
-        type: 'String',
+        illustrate: '需要对比的时间，可以是时间戳或是 <code>Date</code> 类型',
+        type: 'Number | Date | String',
         default: '-',
     },
     {
         name: 'type',
-        illustrate: '类型，可选值为相对时间、日期或日期时间',
+        illustrate: '日期类型，可选值为 相对时间、日期 或 日期时间',
         type: 'String',
+        value: '<code>relative</code> | <code>date</code> | <code>datetime</code>',
         default: 'relative',
     },
     {
         name: 'locale',
-        illustrate: '语言选择',
-        type: 'String',
+        illustrate: '日期语言',
+        type: 'Object',
+        value: `
+            <ul>
+                <li>before?: 前</li>
+                <li>after?: 后</li>
+                <li>just?: 刚刚</li>
+                <li>seconds?: 秒钟</li>
+                <li>minutes?: 分钟</li>
+                <li>hours?: 时</li>
+                <li>days?: 日</li>
+            </ul>
+        `,
         default: '-',
     },
     {
-        name: 'dateStartType',
-        illustrate: '日期格式开始类型',
+        name: 'date-start-type',
+        illustrate: '月份格式开始类型，<code>type=relative</code> 下生效',
         type: 'String',
+        value: '<code>month</code> | <code>',
         default: '-',
     },
     {
         name: 'interval',
         illustrate: '自动更新的间隔，单位：秒',
         type: 'Number',
-        default: '-',
+        default: '60',
     },
     {
-        name: 'dateFunction',
+        name: 'date-function',
         illustrate: '自定义日期方法',
-        type: 'function',
-        default: '() => {}',
+        type: 'Function',
+        default: '-',
     },
 ]);
 </script>

@@ -1,20 +1,14 @@
 <template>
-    <div>
-        <ivue-relative-time :time="time2"></ivue-relative-time>
-    </div>
-    <div>
-        <ivue-relative-time :time="time2" type="date"></ivue-relative-time>
-    </div>
-    <div>
-        <ivue-relative-time :time="time2" type="datetime"></ivue-relative-time>
-    </div>
+    <h4>默认</h4>
+    <ivue-relative-time :time="time"></ivue-relative-time>
+    <h4>date</h4>
+    <ivue-relative-time :time="time" type="date"></ivue-relative-time>
+    <h4>datetime</h4>
+    <ivue-relative-time :time="time" type="datetime"></ivue-relative-time>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const time2 = ref(new Date().getTime() - 86400 * 3 * 1000);
+const time = ref(new Date().getTime() - 86400 * 3 * 1000);
 </script>
-
-<style lang="scss" scoped>
-</style>
