@@ -178,6 +178,10 @@ const routers = ref([
                 router: '/components/input',
             },
             {
+                name: 'InputNumber 数字输入框',
+                router: '/components/input-number',
+            },
+            {
                 name: 'Carousel 走马灯',
                 router: '/components/carousel',
             },

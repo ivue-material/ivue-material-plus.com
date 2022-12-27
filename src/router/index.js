@@ -346,6 +346,12 @@ const routes = [
         name: 'popover',
         component: lazyLoading('popover', 'index'),
       },
+      // InputNumber 数字输入框
+      {
+        path: 'input-number',
+        name: 'input-number',
+        component: lazyLoading('input-number', 'index'),
+      },
     ],
   },
 ];
