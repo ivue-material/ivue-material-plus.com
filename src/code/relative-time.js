@@ -88,4 +88,5 @@ const dateFunction = (timeStamp, diff, isEarly) => {
 };
 </script>
 `;
+
 export default code;

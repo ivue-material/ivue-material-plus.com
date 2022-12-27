@@ -322,6 +322,15 @@ const routers = ref([
             },
         ],
     },
+    {
+        name: '指令',
+        child: [
+            {
+                name: 'Ripple 波纹指令',
+                router: '/components/ripple',
+            },
+        ],
+    },
 ]);
 
 // dom

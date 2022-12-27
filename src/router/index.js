@@ -358,6 +358,12 @@ const routes = [
         name: 'menu',
         component: lazyLoading('menu', 'index'),
       },
+      // Ripple 波纹指令
+      {
+        path: 'ripple',
+        name: 'ripple',
+        component: lazyLoading('ripple', 'index'),
+      },
     ],
   },
 ];
