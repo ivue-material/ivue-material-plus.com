@@ -337,6 +337,10 @@ const routers = ref([
                 name: 'LineClamp 文本按行省略指令',
                 router: '/components/line-clamp',
             },
+            {
+                name: 'ClickOutside 点击外部触发',
+                router: '/components/click-outside',
+            },
         ],
     },
 ]);

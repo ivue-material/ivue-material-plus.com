@@ -376,6 +376,12 @@ const routes = [
         name: 'line-clamp',
         component: lazyLoading('line-clamp', 'index'),
       },
+      // ClickOutside 点击外部触发
+      {
+        path: 'click-outside',
+        name: 'click-outside',
+        component: lazyLoading('click-outside', 'index'),
+      },
     ],
   },
 ];
