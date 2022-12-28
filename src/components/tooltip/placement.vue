@@ -68,7 +68,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 150px;
     max-width: 500px;
     margin: auto;
 }
