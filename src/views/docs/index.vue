@@ -333,6 +333,10 @@ const routers = ref([
                 name: 'Touch 手势',
                 router: '/components/touch',
             },
+            {
+                name: 'LineClamp 文本按行省略指令',
+                router: '/components/line-clamp',
+            },
         ],
     },
 ]);

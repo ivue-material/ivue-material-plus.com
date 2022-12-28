@@ -370,6 +370,12 @@ const routes = [
         name: 'touch',
         component: lazyLoading('touch', 'index'),
       },
+      // LineClamp 文本按行省略指令
+      {
+        path: 'line-clamp',
+        name: 'line-clamp',
+        component: lazyLoading('line-clamp', 'index'),
+      },
     ],
   },
 ];

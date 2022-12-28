@@ -46,6 +46,7 @@
                 <color></color>
             </template>
         </doc-markdown>
+        <h2>API</h2>
         <h3>Props</h3>
         <ivue-table :data="propsData" border>
             <ivue-table-column prop="name" label="名称" width="200"></ivue-table-column>
@@ -68,7 +69,7 @@
 <script setup>
 import { ref } from 'vue';
 
-import Code from '@/code/affix';
+import Code from '@/code/ripple';
 
 import Default from '@/components/ripple/default.vue';
 import Center from '@/components/ripple/center.vue';
