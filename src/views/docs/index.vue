@@ -326,8 +326,12 @@ const routers = ref([
         name: '指令',
         child: [
             {
-                name: 'Ripple 波纹指令',
+                name: 'Ripple 波纹',
                 router: '/components/ripple',
+            },
+            {
+                name: 'Touch 手势',
+                router: '/components/touch',
             },
         ],
     },

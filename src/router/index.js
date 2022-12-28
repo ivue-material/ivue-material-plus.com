@@ -364,6 +364,12 @@ const routes = [
         name: 'ripple',
         component: lazyLoading('ripple', 'index'),
       },
+      // Touch 手势指令
+      {
+        path: 'touch',
+        name: 'touch',
+        component: lazyLoading('touch', 'index'),
+      },
     ],
   },
 ];
