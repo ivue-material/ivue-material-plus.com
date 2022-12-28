@@ -1,7 +1,7 @@
 const code = {};
 
 code.cdn = `<!-- 引入 stylesheet -->
-<link rel="stylesheet" href="//unpkg.com/ivue-material-plus/dist/styles/ivue.css">
+<link rel="stylesheet" href="//unpkg.com/ivue-material-plus/dist/styles/index.css">
 <!-- import Vue.js -->
 <script src="https://unpkg.com/vue@next"></script>
 <!-- 引入 ivue-material -->

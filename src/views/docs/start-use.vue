@@ -81,6 +81,7 @@ onMounted(() => {
 .start-use {
     a {
         margin: 0 3px;
+        color: var(--ivue-primary-color);
     }
 }
 </style>
