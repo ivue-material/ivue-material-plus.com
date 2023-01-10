@@ -247,6 +247,10 @@ const routers = ref([
         name: '表单',
         child: [
             {
+                name: 'Form 表单',
+                router: '/components/form',
+            },
+            {
                 name: 'Upload 上传',
                 router: '/components/upload',
             },

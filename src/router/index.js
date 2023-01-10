@@ -382,6 +382,12 @@ const routes = [
         name: 'click-outside',
         component: lazyLoading('click-outside', 'index'),
       },
+      // Form 表单
+      {
+        path: 'form',
+        name: 'form',
+        component: lazyLoading('form', 'index'),
+      },
     ],
   },
 ];
