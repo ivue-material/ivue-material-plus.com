@@ -139,6 +139,10 @@ const routers = ref([
                 name: 'Ellipsis 文本自动省略号',
                 router: '/components/ellipsis',
             },
+            {
+                name: 'Skeleton 骨架屏',
+                router: '/components/skeleton',
+            },
         ],
     },
     {

@@ -388,6 +388,12 @@ const routes = [
         name: 'form',
         component: lazyLoading('form', 'index'),
       },
+      // Skeleton 骨架屏
+      {
+        path: 'skeleton',
+        name: 'skeleton',
+        component: lazyLoading('skeleton', 'index'),
+      },
     ],
   },
 ];
