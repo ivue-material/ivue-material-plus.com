@@ -131,6 +131,8 @@
             <ivue-table-column prop="type" label="类型" width="100"></ivue-table-column>
             <ivue-table-column prop="default" label="默认值" width="100"></ivue-table-column>
         </ivue-table>
+        <h3>注意：引入多个组件库名称冲突时需重新定义全局方法名称</h3>
+        <pre-code>{{ code.tips }}</pre-code>
     </div>
 </template>
 

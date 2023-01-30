@@ -290,6 +290,10 @@ const routers = ref([
                 name: 'Table 表格',
                 router: '/components/table',
             },
+            {
+                name: 'Tree 树形控件',
+                router: '/components/tree',
+            },
         ],
     },
     {

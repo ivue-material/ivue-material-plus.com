@@ -196,4 +196,10 @@ code.config = `this.$message.config({
 });
 `;
 
+code.tips = `
+import { IvueMessage } from 'ivue-material-plus';
+
+app.config.globalProperties.IvueMessage = IvueMessage
+`;
+
 export default code;

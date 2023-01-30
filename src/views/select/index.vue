@@ -115,6 +115,15 @@
             </template>
         </doc-markdown>
         <h2>可搜索</h2>
+        <p>
+            通过设置
+            <code>filterable</code>
+            属性可以开启搜索模式。单选和多选都支持搜索模式。
+            多选搜索时，
+            可以使用键盘
+            <code>Delete</code>
+            快捷删除最后一个已选项
+        </p>
         <doc-markdown :code="code.filterable">
             <template #demo>
                 <filterable></filterable>

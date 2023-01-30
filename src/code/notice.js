@@ -265,4 +265,10 @@ code.config = `this.$notice.config({
 });
 `;
 
+code.tips = `
+import { IvueNotice } from 'ivue-material-plus';
+
+app.config.globalProperties.IvueNotice = IvueNotice
+`;
+
 export default code;

@@ -14,6 +14,24 @@
                         <ivue-icon class="icon">menu_open</ivue-icon>
                     </ivue-button>
                 </div>
+                <!-- 搜索框 -->
+                <div class="app-header-search--wrapper">
+                    <ivue-select
+                        class="app-header-search"
+                        v-model="search"
+                        placeholder="需要搜索的组件"
+                        filterable
+                        clearable
+                        @on-change="handleSearch"
+                        ref="select"
+                    >
+                        <ivue-option
+                            v-for="item in componentList"
+                            :value="item.path"
+                            :key="item.path"
+                        >{{ item.mate }}</ivue-option>
+                    </ivue-select>
+                </div>
                 <!-- 生态系统 -->
                 <div class="app-header-github">
                     <div class="app-header-ecology">
@@ -31,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <a target="_blank" href="https://github.com/qq282126990/ivue-ui">
+                    <a target="_blank" href="https://github.com/ivue-material/ivue-material-plus">
                         <svg
                             height="32"
                             class="octicon octicon-mark-github"
@@ -58,7 +76,7 @@
 </template>
 
 <script setup>
-import { getCurrentInstance, ref, watch } from 'vue';
+import { computed, getCurrentInstance, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -70,6 +88,12 @@ const { proxy } = getCurrentInstance();
 // 初始化
 const initial = ref(true);
 
+// 搜索框
+const search = ref('');
+
+// 选择框dom
+const select = ref();
+
 // route
 const route = useRoute();
 const router = useRouter();
@@ -78,9 +102,38 @@ const router = useRouter();
 const store = useStore();
 const { hideMenu } = storeHook();
 
+// computed
+
+const componentList = computed(() => {
+    const options = router.options.routes;
+
+    let arr = [];
+
+    options.forEach((item) => {
+        if (item.name === 'components') {
+            arr = item.children;
+        }
+    });
+
+    return arr;
+});
+
 // methods
+
+// 隐藏菜单
 const handleMenu = () => {
     store.dispatch('setHideMenu', !hideMenu.value);
+};
+
+// 搜索
+const handleSearch = (name) => {
+    if (name) {
+        router.push({
+            name: name,
+        });
+
+        select.value.clearSingleSelect();
+    }
 };
 
 // 监听路由
@@ -264,7 +317,6 @@ watch(
 
         &-github {
             display: flex;
-            width: 100%;
             align-items: center;
             justify-content: flex-end;
         }
@@ -275,7 +327,15 @@ watch(
             }
         }
 
-        &-link {
+        &-search {
+            display: inline-flex;
+            width: 250px !important;
+
+            &--wrapper {
+                display: flex;
+                justify-content: flex-end;
+                flex: 1;
+            }
         }
 
         /* 生态 */
