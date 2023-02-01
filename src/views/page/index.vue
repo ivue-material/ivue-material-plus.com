@@ -121,7 +121,7 @@ import Slots from '@/components/page/slots.vue';
 const code = ref(Code);
 
 // propsData
-const propsData = ref([
+const propsData = [
     {
         name: 'model-value',
         illustrate: '当前页码, 可以使用 v-model来进行双向绑定',
@@ -227,10 +227,10 @@ const propsData = ref([
         type: 'Boolean',
         default: 'false',
     },
-]);
+];
 
 // eventsData
-const eventsData = ref([
+const eventsData = [
     {
         name: 'on-change',
         illustrate: '页码改变的回调，返回改变后的页码',
@@ -251,10 +251,10 @@ const eventsData = ref([
         illustrate: '切换下一页时触发，返回切换后的页码',
         value: 'page',
     },
-]);
+];
 
 // slotsData
-const slotsData = ref([
+const slotsData = [
     {
         name: 'prev',
         illustrate: '自定义上一页按钮',
@@ -275,7 +275,7 @@ const slotsData = ref([
         name: 'total',
         illustrate: '自定义总数内容',
     },
-]);
+];
 </script>
 
 <style lang="scss" scoped>

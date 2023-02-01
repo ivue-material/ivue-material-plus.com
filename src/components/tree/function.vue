@@ -26,6 +26,11 @@
             style="margin: 10px"
         >通过 key 设置某个节点的当前选中状态，使用此方法必须设置 node-key 属性</ivue-button>
         <ivue-button @click="setCurrentNode" style="margin: 10px">设置节点为选中状态，使用此方法必须设置 node-key 属性</ivue-button>
+        <ivue-button @click="getNode" style="margin: 10px">根据 data 或者 key 拿到 Tree 组件中的 node</ivue-button>
+        <ivue-button @click="remove" style="margin: 10px">删除 Tree 中的一个节点，使用此方法必须设置 node-key 属性</ivue-button>
+        <ivue-button @click="append" style="margin: 10px">为 Tree 中的一个节点追加一个子节点</ivue-button>
+        <ivue-button @click="insertBefore" style="margin: 10px">在 Tree 中给定节点前插入一个节点</ivue-button>
+        <ivue-button @click="insertAfter" style="margin: 10px">在 Tree 中给定节点后插入一个节点</ivue-button>
     </div>
 </template>
 
@@ -155,7 +160,50 @@ const setCurrentKey = () => {
 // 设置节点为选中状态，使用此方法必须设置 node-key 属性
 const setCurrentNode = () => {
     treeRef.value.setCurrentNode({
-      label: '害怕老鼠'
+        label: '害怕老鼠',
     });
+};
+
+// 根据 data 或者 key 拿到 Tree 组件中的 node
+const getNode = () => {
+    // eslint-disable-next-line no-console
+    console.log(treeRef.value.getNode('铜锣烧饼'));
+};
+
+// 删除 Tree 中的一个节点，使用此方法必须设置 node-key 属性
+const remove = () => {
+    treeRef.value.remove({
+        label: '最快0.93秒',
+    });
+};
+
+// 为 Tree 中的一个节点追加一个子节点
+const append = () => {
+    treeRef.value.append(
+        {
+            label: '源静香',
+        },
+        '野比大雄'
+    );
+};
+
+// 在 Tree 中给定节点前插入一个节点
+const insertBefore = () => {
+    treeRef.value.insertBefore(
+        {
+            label: '源静香',
+        },
+        '野比大雄'
+    );
+};
+
+// 在 Tree 中给定节点后插入一个节点
+const insertAfter = () => {
+    treeRef.value.insertAfter(
+        {
+            label: '胖虎',
+        },
+        '野比大雄'
+    );
 };
 </script>
