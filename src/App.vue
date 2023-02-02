@@ -34,6 +34,12 @@
                 </div>
                 <!-- 生态系统 -->
                 <div class="app-header-github">
+                    <div class="app-header-ecology" @click="handleGuide">
+                        <p>指南</p>
+                    </div>
+                    <div class="app-header-ecology" @click="handleComponents">
+                        <p>组件</p>
+                    </div>
                     <div class="app-header-ecology">
                         <p>生态系统</p>
                         <ivue-icon>arrow_drop_down</ivue-icon>
@@ -134,6 +140,20 @@ const handleSearch = (name) => {
 
         select.value.clearSingleSelect();
     }
+};
+
+// 跳转指南
+const handleGuide = () => {
+    router.push({
+        name: 'develop',
+    });
+};
+
+// 跳转组件
+const handleComponents = () => {
+    router.push({
+        name: 'install',
+    });
 };
 
 // 监听路由
@@ -335,13 +355,14 @@ watch(
                 display: flex;
                 justify-content: flex-end;
                 flex: 1;
+                margin-right: 10px;
             }
         }
 
         /* 生态 */
         &-ecology {
             position: relative;
-            padding: 0 20px;
+            padding: 0 10px;
             font-size: 16px;
             font-weight: 500;
             text-align: left;

@@ -686,7 +686,6 @@ watch(filterText, (val) => {
 </script>
 `;
 
-
 code.accordion = `<template>
     <ivue-tree :data="data" accordion></ivue-tree>
 </template>
@@ -744,7 +743,6 @@ const data = [
 ];
 </script>
 `;
-
 
 code.draggable = `<template>
     <ivue-tree

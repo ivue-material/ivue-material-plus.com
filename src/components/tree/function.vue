@@ -13,9 +13,9 @@
             style="margin: 10px"
         >为节点设置新数据，只有当设置 node-key 属性的时候才可用</ivue-button>
         <ivue-button @click="getCheckedNodes" style="margin: 10px">返回当前选中节点的数组 node-key 属性的时候才可用</ivue-button>
-        <ivue-button @click="setCheckedNodes" style="margin: 10px">设置目前勾选的节点，使用此方法必须提前设置 node-key 属性</ivue-button>
+        <ivue-button @click="setCheckedNodes" style="margin: 10px">通过 Node 节点数据设置复选框勾选的节，使用此方法必须提前设置 node-key 属性</ivue-button>
         <ivue-button @click="getCheckedKeys" style="margin: 10px">返回当前选中节点 key 的数组</ivue-button>
-        <ivue-button @click="setCheckedKeys" style="margin: 10px">设置目前选中的节点，使用此方法必须设置 node-key 属性</ivue-button>
+        <ivue-button @click="setCheckedKeys" style="margin: 10px">通过 key 数组设置复选框勾选的节点，使用此方法必须设置 node-key 属性</ivue-button>
         <ivue-button @click="setChecked" style="margin: 10px">设置节点是否被选中, 使用此方法必须设置 node-key 属性</ivue-button>
         <ivue-button @click="getHalfCheckedNodes" style="margin: 10px">返回当前半选中的节点组成的数组</ivue-button>
         <ivue-button @click="getHalfCheckedKeys" style="margin: 10px">返回目前半选中的节点的 key 所组成的数组</ivue-button>

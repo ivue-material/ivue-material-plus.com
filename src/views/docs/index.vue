@@ -439,7 +439,7 @@ onBeforeMount(() => {
     background: #f5f5f5;
     padding-left: calc(17% + 20px);
     padding-right: 20px;
-    transition: all 0.3s ease-in-out;
+    min-height: calc(100vh - 80px);
 
     // 导航
     &-navigations {

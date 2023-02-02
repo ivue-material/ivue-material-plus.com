@@ -1,11 +1,14 @@
-import {
-  createRouter,
-  createWebHistory,
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 function lazyLoading(path, name) {
   return function () {
     return import(`@/views/${path}/${name}.vue`);
+  };
+}
+
+function lazyGuideLoading(path, name) {
+  return function () {
+    return import(`@/guide/${path}/${name}.vue`);
   };
 }
 
@@ -447,6 +450,31 @@ const routes = [
         name: 'tree',
         mate: 'Tree 树形控件',
         component: lazyLoading('tree', 'index'),
+      },
+    ],
+  },
+  {
+    path: '/guide/',
+    name: 'guide',
+    component: lazyGuideLoading('content', 'index'),
+    children: [
+      // 开发
+      {
+        path: 'develop',
+        name: 'develop',
+        component: lazyGuideLoading('develop', 'index'),
+      },
+      // 如何贡献
+      {
+        path: 'contribute',
+        name: 'contribute',
+        component: lazyGuideLoading('contribute', 'index'),
+      },
+      // 提交示例
+      {
+        path: 'commit-message',
+        name: 'commit-message',
+        component: lazyGuideLoading('commit-message', 'index'),
       },
     ],
   },
