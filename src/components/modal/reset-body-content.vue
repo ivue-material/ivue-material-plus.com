@@ -1,5 +1,5 @@
 <template>
-    <ivue-input v-model="value1" placeholder="请输入内容"></ivue-input>
+  <ivue-input v-model="value1" placeholder="请输入内容"></ivue-input>
 </template>
 
 <script setup>
@@ -10,6 +10,6 @@ const value1 = ref('');
 
 <style scoped>
 .modal-button {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 </style>

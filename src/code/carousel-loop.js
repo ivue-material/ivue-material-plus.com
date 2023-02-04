@@ -134,7 +134,6 @@ const handleAdd2 = () => {
 </style>
 `;
 
-
 code.arrow = `<template>
     <h4>默认 always</h4>
     <ivue-carousel-loop class="carousel-loop-demo">
@@ -365,7 +364,6 @@ const list = [
 </style>
 `;
 
-
 code.scrollQuantity = `<template>
     <ivue-carousel-loop class="carousel-loop-demo" :scroll-quantity="1">
         <ivue-image
@@ -399,7 +397,6 @@ const list = [
 }
 </style>
 `;
-
 
 code.interval = `<template>
   <ivue-carousel-loop class="carousel-loop-demo" :interval="8">

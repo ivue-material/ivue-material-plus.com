@@ -1,6 +1,6 @@
 const code = {};
 
-code.default  = `<template>
+code.default = `<template>
     <ivue-popover
         trigger="hover"
         title="哆啦A梦"

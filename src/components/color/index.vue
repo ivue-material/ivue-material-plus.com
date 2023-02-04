@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="red">example</div>
-        <div class="red--text">example</div>
-    </div>
+  <div>
+    <div class="red">example</div>
+    <div class="red--text">example</div>
+  </div>
 </template>

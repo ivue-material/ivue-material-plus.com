@@ -78,7 +78,6 @@ code.dot = `<template>
 </style>
 `;
 
-
 code.overflowCount = `<template>
     <ivue-badge class="badge-wrapper" :count="100" color="#0DDECE">
         <div class="badge"></div>
@@ -116,7 +115,6 @@ code.overflowCount = `<template>
 }
 </style>
 `;
-
 
 code.alone = `<template>
     <ivue-badge class="alone" :count="10"></ivue-badge>
@@ -159,7 +157,6 @@ code.setText = `<template>
 </style>
 `;
 
-
 code.status = `<template>
     <h2>常规颜色</h2>
     <ivue-badge status="success" text="success"></ivue-badge>
@@ -183,7 +180,6 @@ code.status = `<template>
     <ivue-badge status="#EA80FC" text="#EA80FC"></ivue-badge>
 </template>
 `;
-
 
 code.customize = `<template>
     <h4>设置show-zero时，当数值为0时显示</h4>

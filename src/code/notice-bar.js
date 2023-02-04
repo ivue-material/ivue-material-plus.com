@@ -116,7 +116,6 @@ const handleLink = () => {
 </style>
 `;
 
-
 code.styles = `<template>
     <ivue-notice-bar
         class="notice-bar"

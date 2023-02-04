@@ -1,5 +1,8 @@
 <template>
-    <ivue-date-picker v-model="date" v-model:pickerDate="pickerDate"></ivue-date-picker>
+  <ivue-date-picker
+    v-model="date"
+    v-model:pickerDate="pickerDate"
+  ></ivue-date-picker>
 </template>
 
 <script setup>
@@ -11,9 +14,9 @@ const date = ref(new Date().toISOString().substr(0, 10));
 const pickerDate = ref('');
 
 watch(
-    () => pickerDate.value,
-    (value) => {
-        proxy.$message.info(`select:${value}`);
-    }
+  () => pickerDate.value,
+  (value) => {
+    proxy.$message.info(`select:${value}`);
+  }
 );
 </script>

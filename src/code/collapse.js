@@ -34,7 +34,7 @@ const value = ref('1');
 </script>
 `;
 
-code.accordion =  `<template>
+code.accordion = `<template>
     <ivue-collapse v-model="value" accordion>
         <ivue-collapse-panel name="1">
             <template #title>藤子·F·不二雄</template>

@@ -1,6 +1,5 @@
 const code = {};
 
-
 code.default = `<template>
     <ivue-date-picker v-model="date" no-title @on-change="handleChange"></ivue-date-picker>
 </template>
@@ -41,7 +40,6 @@ import { ref } from 'vue';
 const date = ref(new Date().toISOString().substr(0, 10));
 </script>
 `;
-
 
 code.color = `<template>
     <h4>只设置color</h4>
@@ -156,7 +154,6 @@ const date = ref(new Date().toISOString().substr(0, 10));
 </script>
 `;
 
-
 code.readonly = `<template>
   <ivue-date-picker v-model="date" readonly></ivue-date-picker>
 </template>
@@ -192,7 +189,7 @@ const date = ref(new Date().toISOString().substr(0, 10));
 </script>
 `;
 
-code.titleDateFormat =  `<template>
+code.titleDateFormat = `<template>
     <ivue-date-picker v-model="date" :title-date-format="titleDateFormat"></ivue-date-picker>
 </template>
 

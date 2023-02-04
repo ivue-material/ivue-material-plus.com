@@ -1,8 +1,8 @@
 <template>
-    <h4>分钟</h4>
-    <ivue-relative-time :time="time1"></ivue-relative-time>
-    <h4>天</h4>
-    <ivue-relative-time :time="time2"></ivue-relative-time>
+  <h4>分钟</h4>
+  <ivue-relative-time :time="time1"></ivue-relative-time>
+  <h4>天</h4>
+  <ivue-relative-time :time="time2"></ivue-relative-time>
 </template>
 
 <script setup>

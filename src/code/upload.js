@@ -16,7 +16,6 @@ const handleAfterRead = (file) => {
 </script>
 `;
 
-
 code.multiple = `<template>
     <ivue-upload v-model="fileList" multiple></ivue-upload>
 </template>
@@ -37,7 +36,6 @@ const fileList = ref([
 ]);
 </script>
 `;
-
 
 code.status = `<template>
     <ivue-upload v-model="fileList" :after-read="handleAfterRead"></ivue-upload>
@@ -76,7 +74,6 @@ const handleAfterRead = (file) => {
 </script>
 `;
 
-
 code.maxCount = `<template>
     <ivue-upload v-model="fileList" multiple :max-count="2"></ivue-upload>
 </template>
@@ -86,7 +83,6 @@ import { ref } from 'vue';
 const fileList = ref([]);
 </script>
 `;
-
 
 code.maxSize = `<template>
     <ivue-upload v-model="fileList" :max-size="500 * 1024" @on-oversize="handleOversize"></ivue-upload>
@@ -286,7 +282,6 @@ const fileList = ref([
 </script>
 `;
 
-
 code.drag = `<template>
     <ivue-upload
         v-model="fileList"
@@ -309,7 +304,6 @@ const handleUploadError = (file) => {
 };
 </script>
 `;
-
 
 code.compressor = '<ivue-uploader :before-read="beforeRead" />';
 code.compressorImport = `import Compressor from 'compressorjs';

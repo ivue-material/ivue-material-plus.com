@@ -16,7 +16,6 @@ const currentStep = ref(0);
 </script>
 `;
 
-
 code.icon = `<template>
     <ivue-steps :current-step="currentStep">
         <ivue-step title="已完成" content="这里是该步骤的描述信息" icon="sentiment_satisfied"></ivue-step>
@@ -68,7 +67,7 @@ const handleNext = () => {
 </style>
 `;
 
-code.status =  `<template>
+code.status = `<template>
     <ivue-steps :current-step="currentStep" status="error">
         <ivue-step title="已完成" content="这里是该步骤的描述信息"></ivue-step>
         <ivue-step title="进行中" content="这里是该步骤的描述信息"></ivue-step>
@@ -99,7 +98,6 @@ import { ref } from 'vue';
 const currentStep = ref(2);
 </script>
 `;
-
 
 code.space = `<template>
     <h3>横向</h3>

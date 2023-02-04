@@ -1,12 +1,12 @@
 <template>
   <ivue-carousel-loop class="carousel-loop-demo" :interval="8">
-      <ivue-image
-          v-for="(image, index) in list"
-          style="width: 150px;height: 200px;"
-          :src="image"
-          fit="cover"
-          :key="index"
-      ></ivue-image>
+    <ivue-image
+      v-for="(image, index) in list"
+      style="width: 150px; height: 200px"
+      :src="image"
+      fit="cover"
+      :key="index"
+    ></ivue-image>
   </ivue-carousel-loop>
 </template>
 

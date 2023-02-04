@@ -1,5 +1,9 @@
 <template>
-    <ivue-date-picker v-model="date" :min="`${year}-01-01`" :max="`${year + 1}-01-01`"></ivue-date-picker>
+  <ivue-date-picker
+    v-model="date"
+    :min="`${year}-01-01`"
+    :max="`${year + 1}-01-01`"
+  ></ivue-date-picker>
 </template>
 
 <script setup>

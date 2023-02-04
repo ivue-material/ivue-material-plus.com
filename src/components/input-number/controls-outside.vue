@@ -1,5 +1,10 @@
 <template>
-    <ivue-input-number v-model="value" :max="10" :min="1" controls-outside></ivue-input-number>
+  <ivue-input-number
+    v-model="value"
+    :max="10"
+    :min="1"
+    controls-outside
+  ></ivue-input-number>
 </template>
 
 <script setup>

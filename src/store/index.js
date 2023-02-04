@@ -1,6 +1,4 @@
-import {
-  createStore,
-} from 'vuex';
+import { createStore } from 'vuex';
 
 export const HIDE_MENU = 'HIDE_MENU';
 
@@ -22,9 +20,7 @@ export default createStore({
   },
   actions: {
     // 是否显示菜单导航
-    setHideMenu({
-      commit
-    }, state) {
+    setHideMenu({ commit }, state) {
       commit(HIDE_MENU, state);
     },
   },

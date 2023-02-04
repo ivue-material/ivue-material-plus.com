@@ -102,7 +102,6 @@ const active = ref('name1');
 </style>
 `;
 
-
 code.paging = `<template>
     <ivue-tabs v-model="active">
         <template #header>

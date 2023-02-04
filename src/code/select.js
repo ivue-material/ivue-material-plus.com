@@ -360,7 +360,6 @@ const model2 = ref('');
 </style>
 `;
 
-
 code.tag = `<template>
     <h3>多选时最多显示多少个 tag</h3>
     <ivue-select v-model="model1" multiple :max-tag-count="2" style="width:400px">

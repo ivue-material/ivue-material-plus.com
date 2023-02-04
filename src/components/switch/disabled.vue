@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <ivue-switch :disabled="disabled" class="switch"></ivue-switch>
+  <div>
+    <ivue-switch :disabled="disabled" class="switch"></ivue-switch>
 
-        <ivue-switch :disabled="disabled" emboss color="#5B8EFF"></ivue-switch>
-    </div>
-    <ivue-button type="primary" @click="disabled = !disabled">Toggle Disabled</ivue-button>
+    <ivue-switch :disabled="disabled" emboss color="#5B8EFF"></ivue-switch>
+  </div>
+  <ivue-button type="primary" @click="disabled = !disabled"
+    >Toggle Disabled</ivue-button
+  >
 </template>
 
 <script setup>
@@ -15,6 +17,6 @@ const disabled = ref(true);
 
 <style scoped>
 .switch {
-    margin: 20px;
+  margin: 20px;
 }
 </style>

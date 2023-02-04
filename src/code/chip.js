@@ -30,7 +30,6 @@ code.outline = `<template>
 </template>
 `;
 
-
 code.square = `<template>
     <ivue-chip color="#F41D74" text-color="#ffffff" square>
         <ivue-icon>account_circle</ivue-icon>AccountCircle

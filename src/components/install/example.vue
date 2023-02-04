@@ -1,14 +1,13 @@
 <template>
-    <div>
-        <ivue-button>example</ivue-button>
-    </div>
+  <div>
+    <ivue-button>example</ivue-button>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'example',
+  name: 'example',
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

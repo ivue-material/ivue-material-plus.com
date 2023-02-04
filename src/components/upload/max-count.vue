@@ -1,5 +1,5 @@
 <template>
-    <ivue-upload v-model="fileList" multiple :max-count="2"></ivue-upload>
+  <ivue-upload v-model="fileList" multiple :max-count="2"></ivue-upload>
 </template>
 
 <script setup>

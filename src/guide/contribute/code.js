@@ -5,5 +5,4 @@ code.default = `cd $THE_PROJECT_PATH_YOU_DOWNLOADED
 pnpm install
 `;
 
-
 export default code;

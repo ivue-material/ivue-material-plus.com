@@ -163,7 +163,6 @@ const handleOpen4 = () => {
 </style>
 `;
 
-
 code.custom = `<template>
     <h4>Render 函数</h4>
     <ivue-button class="button" type="primary" @click="handleRender">打开通知提醒</ivue-button>
@@ -257,7 +256,6 @@ const handleOpen5 = () => {
 }
 </style>
 `;
-
 
 code.config = `this.$notice.config({
   offset: 50,

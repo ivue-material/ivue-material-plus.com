@@ -1,10 +1,10 @@
 <template>
-    <ivue-date-picker
-        v-model="date"
-        prev-icon="arrow_back"
-        next-icon="arrow_forward"
-        year-icon="favorite"
-    ></ivue-date-picker>
+  <ivue-date-picker
+    v-model="date"
+    prev-icon="arrow_back"
+    next-icon="arrow_forward"
+    year-icon="favorite"
+  ></ivue-date-picker>
 </template>
 
 <script setup>
