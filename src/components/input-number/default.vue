@@ -1,5 +1,5 @@
 <template>
-    <ivue-input-number v-model="value" :max="10" :min="1"></ivue-input-number>
+  <ivue-input-number v-model="value" :max="10" :min="1"></ivue-input-number>
 </template>
 
 <script setup>

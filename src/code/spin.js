@@ -13,7 +13,6 @@ code.size = `<template>
 </template>
 `;
 
-
 code.center = `<template>
     <div class="spin">
         <ivue-spin fix></ivue-spin>

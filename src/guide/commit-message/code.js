@@ -45,7 +45,6 @@ code.default = `# (如果通过, 当前提交会实现...) <subject> (最多 72 
 # --------------------
 `;
 
-
 code.template = `
 feat(components): [button] 我用按钮实现了某些功能
 

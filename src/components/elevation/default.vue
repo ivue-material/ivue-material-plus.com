@@ -1,11 +1,13 @@
 <template>
-    <div class="elevation-demo">
-        <div
-            :class="`ivue-content ivue-elevation-${index}`"
-            v-for="(item, index) in length"
-            :key="index"
-        >{{ index }}</div>
+  <div class="elevation-demo">
+    <div
+      :class="`ivue-content ivue-elevation-${index}`"
+      v-for="(item, index) in length"
+      :key="index"
+    >
+      {{ index }}
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -16,17 +18,17 @@ const length = ref(25);
 
 <style scoped>
 .elevation-demo {
-    padding: 16px;
-    display: flex;
-    flex-wrap: wrap;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ivue-content {
-    width: 100px;
-    height: 100px;
-    margin: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

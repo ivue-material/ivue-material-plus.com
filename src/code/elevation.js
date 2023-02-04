@@ -1,6 +1,6 @@
 const code = {};
 
-code.import = 'import \'ivue-material-plus/dist/styles/elevation.css\';';
+code.import = "import 'ivue-material-plus/dist/styles/elevation.css';";
 
 code.default = `<template>
     <link rel="stylesheet" href="//unpkg.com/ivue-material-plus/dist/styles/elevation.css">

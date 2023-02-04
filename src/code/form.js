@@ -122,7 +122,6 @@ const formItem = ref({
 </script>
 `;
 
-
 code.labelPosition = `<template>
     <h4>left 左对齐</h4>
     <ivue-form :model="formItem" :label-width="100" label-position="left">
@@ -165,7 +164,6 @@ const formItem = ref({
 });
 </script>
 `;
-
 
 code.rules = `<template>
     <ivue-form :model="formItem" :rules="rulesList" :label-width="120" ref="formRef">
@@ -429,7 +427,6 @@ const handleReset = () => {
 }
 </style>
 `;
-
 
 code.dynamic = `<template>
     <ivue-form :model="formData" :label-width="120" ref="formRef">

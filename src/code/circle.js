@@ -23,7 +23,6 @@ code.default = `<template>
 </style>
 `;
 
-
 code.linkage = `<template>
     <div>
         <ivue-circular class="circular" :stroke-color="color" :percent="percent">

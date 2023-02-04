@@ -15,7 +15,6 @@ const value2 = ref(0);
 </script>
 `;
 
-
 code.group = `<template>
     <h4>使用 label 的值</h4>
     <ivue-radio-group v-model="value1">
@@ -38,7 +37,6 @@ const value1 = ref('多啦a梦');
 const value2 = ref('多啦a梦');
 </script>
 `;
-
 
 code.disabled = `<template>
     <h4>禁用单个</h4>

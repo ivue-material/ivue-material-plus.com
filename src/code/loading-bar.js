@@ -1,6 +1,5 @@
 const code = {};
 
-
 code.route = `import IvueMaterialPlus from 'ivue-material-plus';
 app.use(IvueMaterialPlus);
 
@@ -33,7 +32,6 @@ const getData = () => {
         },
     });
 };`;
-
 
 code.default = `<template>
     <ivue-button class="button" @click="handleStart">Start</ivue-button>
@@ -71,7 +69,6 @@ const handleUpdate = () => {
 </style>
 `;
 
-
 code.config = `
 this.$LoadingBar.config({
   color: '#27E2B2',
@@ -80,6 +77,5 @@ this.$LoadingBar.config({
   duration: 1000
 });
 `;
-
 
 export default code;

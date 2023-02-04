@@ -1,12 +1,17 @@
 <template>
-    <ivue-input class="input" v-model="value" disabled placeholder="Enter something..."></ivue-input>
-    <ivue-input
-        class="input"
-        v-model="value"
-        disabled
-        type="textarea"
-        placeholder="Enter something..."
-    ></ivue-input>
+  <ivue-input
+    class="input"
+    v-model="value"
+    disabled
+    placeholder="Enter something..."
+  ></ivue-input>
+  <ivue-input
+    class="input"
+    v-model="value"
+    disabled
+    type="textarea"
+    placeholder="Enter something..."
+  ></ivue-input>
 </template>
 
 <script setup>
@@ -17,7 +22,7 @@ const value = ref('');
 
 <style>
 .input {
-    display: flex;
-    margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
 }
 </style>

@@ -68,7 +68,6 @@ const tableData = [
 </script>
 `;
 
-
 code.border = `<template>
     <ivue-table :data="tableData" border>
         <ivue-table-column prop="movie" label="剧场版" width="250"></ivue-table-column>
@@ -305,7 +304,6 @@ const tableData = [
 </script>
 `;
 
-
 code.maxHeight = `<template>
     <ivue-table :data="tableData" max-height="300">
         <ivue-table-column prop="movie" label="剧场版" width="250"></ivue-table-column>
@@ -367,7 +365,6 @@ const handleDeleteRow = (index) => {
 </style>
 `;
 
-
 code.multistage = `<template>
     <ivue-table :data="tableData" style="width: 100%">
         <ivue-table-column prop="index" label="序号" width="100"></ivue-table-column>
@@ -415,7 +412,6 @@ const tableData = [
 ];
 </script>
 `;
-
 
 code.highlightCurrentRow = `<template>
     <h4>
@@ -486,7 +482,6 @@ const handleClear = () => {
 }
 </style>
 `;
-
 
 code.selection = `<template>
     <h4>
@@ -862,7 +857,6 @@ const tableData = [
 </script>
 `;
 
-
 code.slotsHeader = `<template>
     <ivue-table :data="tableData">
         <ivue-table-column prop="movie" label="剧场版" width="250">
@@ -951,7 +945,6 @@ const tableData = [
 ];
 </script>
 `;
-
 
 code.tree = `<template>
     <h4>树形数据</h4>
@@ -1529,6 +1522,5 @@ const tableData = [
 ];
 </script>
 `;
-
 
 export default code;

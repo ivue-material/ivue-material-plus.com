@@ -97,7 +97,6 @@ const handleCallback = (value) => {
 </script>
 `;
 
-
 code.options = `<template>
     <h4>不显示分隔符及 easing 动画</h4>
     <h1>

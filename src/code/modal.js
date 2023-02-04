@@ -318,7 +318,6 @@ const handleInstance = (type) => {
 </style>
 `;
 
-
 code.confirm = `<template>
     <ivue-button class="modal-button" @click="handleConfirm">普通对话框</ivue-button>
     <ivue-button class="modal-button" @click="handleText">自定义按钮文案</ivue-button>
@@ -375,7 +374,6 @@ const handleAsync = () => {
 }
 </style>
 `;
-
 
 code.render = `<template>
     <ivue-button @click="handleRender">自定义render</ivue-button>

@@ -1,3 +1,3 @@
 <template>
-    <ivue-skeleton></ivue-skeleton>
+  <ivue-skeleton></ivue-skeleton>
 </template>

@@ -186,7 +186,6 @@ const data = ref([
 </script>
 `;
 
-
 code.disabled = `<template>
     <h4>禁用组件</h4>
     <ivue-cascader v-model="value" :options="data" disabled></ivue-cascader>
@@ -387,7 +386,6 @@ const renderFormat = (labels, selectedData) => {
 </script>
 `;
 
-
 code.loadData = `<template>
     <ivue-cascader v-model="value" :options="data" :loadData="loadData"></ivue-cascader>
 </template>
@@ -465,7 +463,6 @@ const loadData = (item, callback) => {
 };
 </script>
 `;
-
 
 code.filterable = `<template>
     <ivue-cascader v-model="value" :options="data" filterable></ivue-cascader>

@@ -191,7 +191,6 @@ const value = ref('');
 </style>
 `;
 
-
 code.disabled = `<template>
     <ivue-input class="input" v-model="value" disabled placeholder="Enter something..."></ivue-input>
     <ivue-input
@@ -217,7 +216,6 @@ const value = ref('');
 </style>
 `;
 
-
 code.noBorder = `<template>
     <ivue-input
         v-model="value"
@@ -232,7 +230,6 @@ import { ref } from 'vue';
 const value = ref('');
 </script>
 `;
-
 
 code.compound = `<template>
     <ivue-input class="input" v-model="value" placeholder="Enter something...">

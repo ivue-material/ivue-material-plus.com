@@ -1,5 +1,9 @@
 <template>
-    <ivue-date-picker v-model="date" firstDayOfWeek="1" locale="zh-CN"></ivue-date-picker>
+  <ivue-date-picker
+    v-model="date"
+    firstDayOfWeek="1"
+    locale="zh-CN"
+  ></ivue-date-picker>
 </template>
 
 <script setup>

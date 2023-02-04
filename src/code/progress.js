@@ -25,7 +25,6 @@ code.default = `<template>
 </template>
 `;
 
-
 code.animation = `<template>
     <h4>默认</h4>
     <ivue-progress :percent="45" indeterminate></ivue-progress>

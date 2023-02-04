@@ -1,9 +1,5 @@
-import {
-  computed
-} from 'vue';
-import {
-  useStore
-} from 'vuex';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
 const storeHook = () => {
   const store = useStore();

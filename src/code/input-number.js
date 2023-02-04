@@ -49,7 +49,6 @@ const value = ref(1);
 </script>
 `;
 
-
 code.disabled = `<template>
     <ivue-input-number v-model="value" :max="10" :min="1" :disabled="disabled"></ivue-input-number>
     <ivue-button class="input-number-button" @click="disabled = !disabled">切换禁用</ivue-button>

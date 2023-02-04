@@ -1,6 +1,6 @@
 const code = {};
 
-code.default  = `<template>
+code.default = `<template>
     <h4>手势移动</h4>
     <div
         class="touch-demo"

@@ -152,7 +152,6 @@ code.setup = `const { proxy } = getCurrentInstance();
 proxy.$loading(options)
 `;
 
-
 code.close = `const loadingInstance = IvueLoading.$loading(options)
 
 loadingInstance.close()

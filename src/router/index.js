@@ -1,8 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import Docs from '@/components/docs.vue';
 
 function lazyLoading(path, name) {
   return function () {
     return import(`@/views/${path}/${name}.vue`);
+  };
+}
+
+function lazyDocsLoading(path, name) {
+  return function () {
+    return import(`@/docs/${path}/${name}.vue`);
   };
 }
 
@@ -28,31 +35,31 @@ const routes = [
   {
     path: '/docs/',
     name: 'docs',
-    component: lazyLoading('docs', 'index'),
+    component: Docs,
     children: [
       // 安装
       {
         path: 'install',
         name: 'install',
-        component: lazyLoading('docs', 'install'),
+        component: lazyDocsLoading('install', 'index'),
       },
       // 快速开始
       {
         path: 'start-use',
         name: 'start-use',
-        component: lazyLoading('docs', 'start-use'),
+        component: lazyDocsLoading('start-use', 'index'),
       },
       // 全局配置
       {
         path: 'global',
         name: 'global',
-        component: lazyLoading('docs', 'global'),
+        component: lazyDocsLoading('global', 'index'),
       },
       // 颜色
       {
         path: 'color',
         name: 'color',
-        component: lazyLoading('docs', 'color'),
+        component: lazyDocsLoading('color', 'index'),
       },
       // 动画
       {
@@ -71,7 +78,7 @@ const routes = [
   {
     path: '/components/',
     name: 'components',
-    component: lazyLoading('docs', 'index'),
+    component: Docs,
     children: [
       // Button 按钮
       {

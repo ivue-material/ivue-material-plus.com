@@ -1,3 +1,3 @@
 <template>
-    <ivue-spin></ivue-spin>
+  <ivue-spin></ivue-spin>
 </template>

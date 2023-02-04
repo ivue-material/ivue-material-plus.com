@@ -1,9 +1,9 @@
 <template>
-    <ivue-input
-        v-model="value"
-        :border="false"
-        placeholder="Enter something..."
-    ></ivue-input>
+  <ivue-input
+    v-model="value"
+    :border="false"
+    placeholder="Enter something..."
+  ></ivue-input>
 </template>
 
 <script setup>

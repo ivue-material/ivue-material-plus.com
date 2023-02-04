@@ -284,7 +284,7 @@ const propsData = [
     name: 'props',
     illustrate: '配置选项，具体看下表',
     type: 'Object',
-    default: '{ children: \'children\', label: \'label\', disabled: \'disabled\', }',
+    default: "{ children: 'children', label: 'label', disabled: 'disabled', }",
   },
   {
     name: 'empty-text',

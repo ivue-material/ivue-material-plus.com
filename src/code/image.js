@@ -256,5 +256,4 @@ const handleShowPreview = () => {
 </style>
 `;
 
-
 export default code;

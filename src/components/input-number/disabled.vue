@@ -1,6 +1,13 @@
 <template>
-    <ivue-input-number v-model="value" :max="10" :min="1" :disabled="disabled"></ivue-input-number>
-    <ivue-button class="input-number-button" @click="disabled = !disabled">切换禁用</ivue-button>
+  <ivue-input-number
+    v-model="value"
+    :max="10"
+    :min="1"
+    :disabled="disabled"
+  ></ivue-input-number>
+  <ivue-button class="input-number-button" @click="disabled = !disabled"
+    >切换禁用</ivue-button
+  >
 </template>
 
 <script setup>
@@ -12,6 +19,6 @@ const disabled = ref(true);
 
 <style scoped>
 .input-number-button {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 </style>

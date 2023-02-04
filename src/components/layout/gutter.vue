@@ -1,21 +1,21 @@
 <template>
-    <div class="ivue-layout ivue-gutter">
-        <div class="ivue-layout-item gutter-item"></div>
-        <div class="ivue-layout-item gutter-item"></div>
-        <div class="ivue-layout-item gutter-item"></div>
-    </div>
+  <div class="ivue-layout ivue-gutter">
+    <div class="ivue-layout-item gutter-item"></div>
+    <div class="ivue-layout-item gutter-item"></div>
+    <div class="ivue-layout-item gutter-item"></div>
+  </div>
 </template>
 
 <style scoped>
 .gutter-item {
-    height: 40px;
+  height: 40px;
 }
 
 .gutter-item:after {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: rgba(255, 0, 0, 0.2);
-    content: ' ';
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(255, 0, 0, 0.2);
+  content: ' ';
 }
 </style>

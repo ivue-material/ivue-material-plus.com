@@ -1,5 +1,5 @@
 <template>
-    <ivue-date-picker v-model="date" type="month"></ivue-date-picker>
+  <ivue-date-picker v-model="date" type="month"></ivue-date-picker>
 </template>
 
 <script setup>
