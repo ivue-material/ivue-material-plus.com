@@ -118,6 +118,12 @@ const propsData = ref([
     type: 'Boolean',
     default: 'false',
   },
+  {
+    name: 'target',
+    illustrate: '设置 <code>ivue-affix</code> 需要监听其滚动事件的元素，值为一个 DOM 元素',
+    type: 'HTMLElement',
+    default: '-',
+  },
 ]);
 
 // eventsData
