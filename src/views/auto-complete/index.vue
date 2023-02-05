@@ -184,8 +184,8 @@ const propsData = ref([
     name: 'filter-method',
     illustrate:
       '是否根据输入项进行筛选。当其为一个函数时，会接收 <code>value</code> 和 <code>option</code> 两个参数，当 <code>option</code> 符合筛选条件时，应返回 <code>true</code>，反之则返回 <code>false</code>',
-    type: 'Function | Boolean',
-    default: 'false',
+    type: 'Function',
+    default: '-',
   },
   {
     name: 'remote-method',
